@@ -6,12 +6,12 @@ import { fontConfig } from "./fontConfig";
 const SITE_LANG = "zh_CN"; 
 
 export const siteConfig: SiteConfig = {
-  title: "Firefly",
+  title: "WindHolm",
   subtitle: "Demo site",
   description:
-    "Firefly 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+    "WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
   keywords: [
-    "Firefly",
+    "WindHolm",
     "Fuwari",
     "Astro",
     "ACGN",
@@ -84,7 +84,7 @@ export const siteConfig: SiteConfig = {
     // 壁纸模式："banner" 横幅壁纸，"overlay" 全屏壁纸，"none" 纯色背景无壁纸
     mode: "banner",
     // 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
-    switchable: true,
+    switchable: false,
 
     // 背景图片配置
     src: {
