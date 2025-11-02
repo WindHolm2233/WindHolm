@@ -37,6 +37,12 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
         icon: "fa6-brands:x-twitter",
         external: true,
         url: "https://x.com/SLKaFAGNHI11131",
+      },
+      {
+        name: "开往",
+        icon: "fa6-solid fa-train",
+        external: true,
+        url: "https://www.travellings.cn/train.html",
      },
     ],
   });
