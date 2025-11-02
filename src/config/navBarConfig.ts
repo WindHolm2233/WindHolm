@@ -35,6 +35,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
       {
         name: "X",
         icon: "fa6-brands:x-twitter",
+        external: true,
         url: "https://x.com/SLKaFAGNHI11131",
      },
     ],
