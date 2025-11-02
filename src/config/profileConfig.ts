@@ -3,7 +3,7 @@ import type { ProfileConfig } from "../types/config";
 export const profileConfig: ProfileConfig = {
   avatar: "/assets/images/avatar.webp",
   name: "WindHolm",
-  bio: "Hello, There is WindHolm.",
+  bio: "Hello, Here is WindHolm.",
   links: [
     {
       name: "Bilibli",
