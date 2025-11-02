@@ -32,6 +32,11 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
         external: true,
         icon: "fa6-brands:bilibili",
       },
+      {
+        name: "X",
+        icon: "fa6-brands:x-twitter",
+        url: "https://x.com/SLKaFAGNHI11131",
+     },
     ],
   });
 
