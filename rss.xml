@@ -198,6 +198,393 @@ URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
 &lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
 &lt;/ul&gt;
+</content:encoded></item><item><title>Firefly 字体配置指南</title><link>https://windholm.dpdns.org/posts/firefly-font-config/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/firefly-font-config/</guid><description>详细介绍如何在 Firefly 博客主题中配置和管理字体，包括系统字体、Google Fonts、自定义字体等多种配置方式，以及字体优化和性能提升技巧。</description><pubDate>Fri, 24 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Firefly 字体配置完全指南&lt;/h1&gt;
+&lt;p&gt;Firefly 提供了强大而灵活的字体管理系统，支持多种字体来源和配置方式。本文将详细介绍如何在 Firefly 中配置字体，包括系统字体、Google Fonts、自定义字体等，以及字体优化和性能提升的最佳实践。&lt;/p&gt;
+&lt;h2&gt;📋 目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE%E5%9F%BA%E7%A1%80&quot;&gt;字体配置基础&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84&quot;&gt;配置文件结构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AD%97%E4%BD%93%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3&quot;&gt;字体类型详解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B&quot;&gt;配置示例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AD%97%E4%BD%93%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7&quot;&gt;字体优化技巧&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94&quot;&gt;常见问题解答&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE&quot;&gt;最佳实践建议&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;字体配置基础&lt;/h2&gt;
+&lt;p&gt;Firefly 的字体配置位于 &lt;code&gt;src/config/fontConfig.ts&lt;/code&gt; 文件中，通过模块化的配置方式，您可以轻松管理网站的所有字体设置。&lt;/p&gt;
+&lt;h3&gt;基本配置结构&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;export const fontConfig = {
+  enable: true,           // 启用自定义字体功能
+  preload: true,         // 预加载字体文件以提高性能
+  selected: [&quot;system&quot;],  // 当前选择的字体
+  fonts: {               // 字体定义
+    // 字体配置...
+  },
+  fallback: [            // 全局字体回退
+    &quot;system-ui&quot;,
+    &quot;-apple-system&quot;,
+    &quot;BlinkMacSystemFont&quot;,
+    &quot;Segoe UI&quot;,
+    &quot;Roboto&quot;,
+    &quot;sans-serif&quot;,
+  ],
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;配置文件结构&lt;/h2&gt;
+&lt;h3&gt;主要配置项说明&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;配置项&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;enable&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;boolean&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;是否启用自定义字体功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;preload&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;boolean&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;是否预加载字体文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;selected&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string[]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;当前选中的字体ID数组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;fonts&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;字体定义对象&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;fallback&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string[]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;字体回退列表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;字体对象结构&lt;/h3&gt;
+&lt;p&gt;每个字体对象包含以下属性：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  id: &quot;font-id&quot;,                    // 字体唯一标识
+  name: &quot;字体显示名称&quot;,              // 字体在界面中的显示名称
+  src: &quot;字体源地址&quot;,                 // 字体文件URL或CSS链接
+  family: &quot;字体族名称&quot;,              // CSS font-family 值
+  weight?: 400,                     // 字体粗细（可选）
+  style?: &quot;normal&quot;,                 // 字体样式（可选）
+  display?: &quot;swap&quot;,                 // 字体显示策略（可选）
+  format?: &quot;woff2&quot;,                 // 字体格式（可选）
+  unicodeRange?: &quot;U+0000-00FF&quot;,     // Unicode范围（可选）
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;字体类型详解&lt;/h2&gt;
+&lt;h3&gt;1. 系统字体&lt;/h3&gt;
+&lt;p&gt;系统字体无需外部加载，直接使用操作系统默认字体：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;system: {
+  id: &quot;system&quot;,
+  name: &quot;系统字体&quot;,
+  src: &quot;&quot;, // 系统字体无需 src
+  family: &quot;system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;特点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加载速度快，无需网络请求&lt;/li&gt;
+&lt;li&gt;在不同操作系统上显示效果一致&lt;/li&gt;
+&lt;li&gt;适合追求性能的场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Google Fonts&lt;/h3&gt;
+&lt;p&gt;通过 Google Fonts CDN 加载的字体：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;zen-maru-gothic&quot;: {
+  id: &quot;zen-maru-gothic&quot;,
+  name: &quot;Zen Maru Gothic&quot;,
+  src: &quot;https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&amp;amp;display=swap&quot;,
+  family: &quot;Zen Maru Gothic&quot;,
+  display: &quot;swap&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;特点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字体库丰富，质量高&lt;/li&gt;
+&lt;li&gt;CDN 分发，加载速度快&lt;/li&gt;
+&lt;li&gt;支持多种字重和样式&lt;/li&gt;
+&lt;li&gt;自动优化字体加载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 第三方字体库&lt;/h3&gt;
+&lt;p&gt;使用其他 CDN 提供的字体：&lt;/p&gt;
+&lt;p&gt;比如小米的MiSans字体&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;misans-normal&quot;: {
+  id: &quot;misans-normal&quot;,
+  name: &quot;MiSans Normal&quot;,
+  src: &quot;https://unpkg.com/misans@4.1.0/lib/Normal/MiSans-Normal.min.css&quot;,
+  family: &quot;MiSans&quot;,
+  weight: 400,
+  display: &quot;swap&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;4. 本地字体&lt;/h3&gt;
+&lt;p&gt;使用本地字体文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;custom-font&quot;: {
+  id: &quot;custom-font&quot;,
+  name: &quot;自定义字体&quot;,
+  src: &quot;/assets/fonts/custom-font.woff2&quot;,
+  family: &quot;Custom Font&quot;,
+  format: &quot;woff2&quot;,
+  display: &quot;swap&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;配置示例&lt;/h2&gt;
+&lt;h3&gt;基础配置示例&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;export const fontConfig = {
+  enable: true,
+  preload: true,
+  selected: [&quot;inter&quot;], // 选择 Inter 字体
+  fonts: {
+    // 系统字体
+    system: {
+      id: &quot;system&quot;,
+      name: &quot;系统字体&quot;,
+      src: &quot;&quot;,
+      family: &quot;system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif&quot;,
+    },
+    // Google Fonts - Inter
+    inter: {
+      id: &quot;inter&quot;,
+      name: &quot;Inter&quot;,
+      src: &quot;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;amp;display=swap&quot;,
+      family: &quot;Inter&quot;,
+      display: &quot;swap&quot;,
+    },
+  },
+  fallback: [
+    &quot;system-ui&quot;,
+    &quot;-apple-system&quot;,
+    &quot;BlinkMacSystemFont&quot;,
+    &quot;Segoe UI&quot;,
+    &quot;Roboto&quot;,
+    &quot;sans-serif&quot;,
+  ],
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;多字体组合配置&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;export const fontConfig = {
+  enable: true,
+  preload: true,
+  selected: [&quot;inter&quot;, &quot;zen-maru-gothic&quot;], // 多字体组合
+  fonts: {
+    system: {
+      id: &quot;system&quot;,
+      name: &quot;系统字体&quot;,
+      src: &quot;&quot;,
+      family: &quot;system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif&quot;,
+    },
+    inter: {
+      id: &quot;inter&quot;,
+      name: &quot;Inter&quot;,
+      src: &quot;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;amp;display=swap&quot;,
+      family: &quot;Inter&quot;,
+      display: &quot;swap&quot;,
+    },
+    &quot;zen-maru-gothic&quot;: {
+      id: &quot;zen-maru-gothic&quot;,
+      name: &quot;Zen Maru Gothic&quot;,
+      src: &quot;https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&amp;amp;display=swap&quot;,
+      family: &quot;Zen Maru Gothic&quot;,
+      display: &quot;swap&quot;,
+    },
+  },
+  fallback: [
+    &quot;system-ui&quot;,
+    &quot;-apple-system&quot;,
+    &quot;BlinkMacSystemFont&quot;,
+    &quot;Segoe UI&quot;,
+    &quot;Roboto&quot;,
+    &quot;sans-serif&quot;,
+  ],
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;中文字体配置示例&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;export const fontConfig = {
+  enable: true,
+  preload: true,
+  selected: [&quot;noto-sans-sc&quot;],
+  fonts: {
+    &quot;noto-sans-sc&quot;: {
+      id: &quot;noto-sans-sc&quot;,
+      name: &quot;思源黑体&quot;,
+      src: &quot;https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&amp;amp;display=swap&quot;,
+      family: &quot;Noto Sans SC&quot;,
+      display: &quot;swap&quot;,
+    },
+    &quot;source-han-sans&quot;: {
+      id: &quot;source-han-sans&quot;,
+      name: &quot;思源黑体（本地）&quot;,
+      src: &quot;/assets/fonts/SourceHanSansCN-Regular.woff2&quot;,
+      family: &quot;Source Han Sans CN&quot;,
+      format: &quot;woff2&quot;,
+      display: &quot;swap&quot;,
+    },
+  },
+  fallback: [
+    &quot;PingFang SC&quot;,
+    &quot;Hiragino Sans GB&quot;,
+    &quot;Microsoft YaHei&quot;,
+    &quot;WenQuanYi Micro Hei&quot;,
+    &quot;sans-serif&quot;,
+  ],
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;字体优化技巧&lt;/h2&gt;
+&lt;h3&gt;1. 字体预加载&lt;/h3&gt;
+&lt;p&gt;启用字体预加载可以显著提升字体加载性能：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export const fontConfig = {
+  enable: true,
+  preload: true, // 启用预加载
+  // ... 其他配置
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;预加载机制：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自动为本地字体文件添加 &lt;code&gt;preload&lt;/code&gt; 链接&lt;/li&gt;
+&lt;li&gt;优化字体加载顺序&lt;/li&gt;
+&lt;li&gt;减少字体闪烁（FOUT）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 字体显示策略&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;font-display: swap&lt;/code&gt; 优化字体加载体验：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;inter&quot;: {
+  id: &quot;inter&quot;,
+  name: &quot;Inter&quot;,
+  src: &quot;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;amp;display=swap&quot;,
+  family: &quot;Inter&quot;,
+  display: &quot;swap&quot;, // 字体交换策略
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;显示策略说明：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;swap&lt;/code&gt;: 立即显示回退字体，字体加载完成后交换&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;block&lt;/code&gt;: 等待字体加载完成再显示文本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fallback&lt;/code&gt;: 短时间等待后显示回退字体&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;optional&lt;/code&gt;: 仅在字体快速加载时使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 字体子集化&lt;/h3&gt;
+&lt;p&gt;对于中文字体，建议使用子集化字体：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;custom-chinese&quot;: {
+  id: &quot;custom-chinese&quot;,
+  name: &quot;自定义中文字体&quot;,
+  src: &quot;/assets/fonts/chinese-subset.woff2&quot;,
+  family: &quot;Custom Chinese&quot;,
+  format: &quot;woff2&quot;,
+  unicodeRange: &quot;U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF&quot;, // 中文字符范围
+  display: &quot;swap&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;4. 字体回退优化&lt;/h3&gt;
+&lt;p&gt;合理配置字体回退顺序：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fallback: [
+  &quot;system-ui&quot;,           // 现代系统字体
+  &quot;-apple-system&quot;,       // macOS 系统字体
+  &quot;BlinkMacSystemFont&quot;,  // macOS 备用字体
+  &quot;Segoe UI&quot;,            // Windows 系统字体
+  &quot;Roboto&quot;,              // Android 系统字体
+  &quot;sans-serif&quot;,          // 通用无衬线字体
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;常见问题解答&lt;/h2&gt;
+&lt;h3&gt;Q: 如何添加自定义字体？&lt;/h3&gt;
+&lt;p&gt;A: 将字体文件放置在 &lt;code&gt;public/assets/fonts/&lt;/code&gt; 目录下，然后在配置中添加：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;my-custom-font&quot;: {
+  id: &quot;my-custom-font&quot;,
+  name: &quot;我的自定义字体&quot;,
+  src: &quot;/assets/fonts/my-custom-font.woff2&quot;,
+  family: &quot;My Custom Font&quot;,
+  format: &quot;woff2&quot;,
+  display: &quot;swap&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Q: 字体加载失败怎么办？&lt;/h3&gt;
+&lt;p&gt;A: Firefly 会自动使用回退字体，确保网站正常显示。您也可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;检查字体文件路径是否正确&lt;/li&gt;
+&lt;li&gt;确认字体文件格式是否支持&lt;/li&gt;
+&lt;li&gt;检查网络连接和CDN可用性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Q: 如何优化字体加载性能？&lt;/h3&gt;
+&lt;p&gt;A: 建议采用以下策略：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;启用字体预加载&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;font-display: swap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;选择字体子集&lt;/li&gt;
+&lt;li&gt;合理配置回退字体&lt;/li&gt;
+&lt;li&gt;使用现代字体格式（WOFF2）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Q: 支持哪些字体格式？&lt;/h3&gt;
+&lt;p&gt;A: Firefly 支持以下字体格式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;WOFF2（推荐）&lt;/li&gt;
+&lt;li&gt;WOFF&lt;/li&gt;
+&lt;li&gt;TTF&lt;/li&gt;
+&lt;li&gt;OTF&lt;/li&gt;
+&lt;li&gt;EOT（IE兼容）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Q: 如何实现字体切换功能？&lt;/h3&gt;
+&lt;p&gt;A: 修改 &lt;code&gt;selected&lt;/code&gt; 数组即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 切换到系统字体
+selected: [&quot;system&quot;]
+
+// 切换到 Inter 字体
+selected: [&quot;inter&quot;]
+
+// 使用多字体组合
+selected: [&quot;inter&quot;, &quot;zen-maru-gothic&quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;最佳实践建议&lt;/h2&gt;
+&lt;h3&gt;1. 字体选择原则&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可读性优先&lt;/strong&gt;：选择易读性好的字体&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;性能考虑&lt;/strong&gt;：优先使用系统字体或轻量字体&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;品牌一致性&lt;/strong&gt;：保持网站整体视觉风格统一&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多语言支持&lt;/strong&gt;：考虑中英文混排效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 性能优化建议&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;启用字体预加载&lt;/li&gt;
+&lt;li&gt;使用字体子集&lt;/li&gt;
+&lt;li&gt;合理配置回退字体&lt;/li&gt;
+&lt;li&gt;避免加载过多字体&lt;/li&gt;
+&lt;li&gt;使用现代字体格式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 用户体验优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 &lt;code&gt;font-display: swap&lt;/code&gt; 减少闪烁&lt;/li&gt;
+&lt;li&gt;提供合适的回退字体&lt;/li&gt;
+&lt;li&gt;考虑不同设备的显示效果&lt;/li&gt;
+&lt;li&gt;测试字体在不同浏览器中的表现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. 维护建议&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;定期检查字体CDN可用性&lt;/li&gt;
+&lt;li&gt;监控字体加载性能&lt;/li&gt;
+&lt;li&gt;及时更新字体版本&lt;/li&gt;
+&lt;li&gt;备份重要字体文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;Firefly 的字体配置系统提供了强大而灵活的字体管理能力。通过合理配置，您可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;轻松管理多种字体来源&lt;/li&gt;
+&lt;li&gt;优化字体加载性能&lt;/li&gt;
+&lt;li&gt;提升用户体验&lt;/li&gt;
+&lt;li&gt;保持网站视觉一致性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;希望本指南能帮助您更好地使用 Firefly 的字体功能，打造出更加美观和专业的博客网站！&lt;/p&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;提示&lt;/strong&gt;：更多 Firefly 配置信息，请参考 &lt;a href=&quot;https://docs-firefly.cuteleaf.cn/&quot;&gt;Firefly 使用文档&lt;/a&gt; 或访问 &lt;a href=&quot;https://github.com/CuteLeaf/Firefly&quot;&gt;GitHub 仓库&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
 </content:encoded></item><item><title>Firefly 代码块示例</title><link>https://windholm.dpdns.org/posts/code-examples/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/code-examples/</guid><description>在Firefly中使用表达性代码的代码块在 Markdown 中的外观。</description><pubDate>Wed, 20 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在这里，我们将探索如何使用 &lt;a href=&quot;https://expressive-code.com/&quot;&gt;Expressive Code&lt;/a&gt; 展示代码块。提供的示例基于官方文档，您可以参考以获取更多详细信息。&lt;/p&gt;
 &lt;h2&gt;表达性代&lt;/h2&gt;
 &lt;h3&gt;语法高亮&lt;/h3&gt;
