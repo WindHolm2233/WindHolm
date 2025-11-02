@@ -15,5 +15,10 @@ export const profileConfig: ProfileConfig = {
       icon: "fa6-brands:github",
       url: "https://github.com/Parssama2233",
     },
+    {
+      name: "X",
+      icon: "fa6-brands:X",
+      url: "https://x.com/SLKaFAGNHI11131",
+    },
   ],
 };
