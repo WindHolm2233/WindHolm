@@ -40,7 +40,6 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
       },
       {
         name: "开往",
-        icon: "fa6-solid fa-train",
         external: true,
         url: "https://www.travellings.cn/train.html",
      },
