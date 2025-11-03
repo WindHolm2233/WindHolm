@@ -198,7 +198,7 @@ URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
 &lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>我的第一篇博客文章</title><link>https://windholm.dpdns.org/posts/nihao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/nihao/</guid><description>这是我新 Astro 博客的第一篇文章。</description><pubDate>Sun, 02 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;芽衣才是1&lt;/p&gt;
+</content:encoded></item><item><title>我的第一篇博客文章</title><link>https://windholm.dpdns.org/posts/nihao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/nihao/</guid><description>这是我新 Astro 博客的第一篇文章。</description><pubDate>Sun, 02 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;芽衣才是1芽一芽一芽一芽一芽一芽一芽一&lt;/p&gt;
 </content:encoded></item><item><title>Firefly 代码块示例</title><link>https://windholm.dpdns.org/posts/code-examples/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/code-examples/</guid><description>在Firefly中使用表达性代码的代码块在 Markdown 中的外观。</description><pubDate>Wed, 20 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在这里，我们将探索如何使用 &lt;a href=&quot;https://expressive-code.com/&quot;&gt;Expressive Code&lt;/a&gt; 展示代码块。提供的示例基于官方文档，您可以参考以获取更多详细信息。&lt;/p&gt;
 &lt;h2&gt;表达性代&lt;/h2&gt;
 &lt;h3&gt;语法高亮&lt;/h3&gt;
