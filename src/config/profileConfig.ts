@@ -1,7 +1,7 @@
 import type { ProfileConfig } from "../types/config";
 
 export const profileConfig: ProfileConfig = {
-  avatar: "/assets/images/avatar.webp",
+  avatar: "https://q.qlogo.cn/headimg_dl?dst_uin=1323472112&spec=640&img_type=png",
   name: "WindHolm",
   bio: "Hello, Here is WindHolm.",
   links: [
