@@ -12,8 +12,8 @@ description: "与优秀的朋友们一起成长"
 ```yaml
 站点名称: WindHolm
 站点描述: 追求爱的过程也是爱！
-站点链接: https://blog.cuteleaf.cn
-头像链接: https://q.qlogo.cn/headimg_dl?dst_uin=7618557&spec=640&img_type=jpg
+站点链接: https://windholm.dpdns.org/
+头像链接: https://q.qlogo.cn/headimg_dl?dst_uin=1323472112&spec=640&img_type=png
 
 ```
 
