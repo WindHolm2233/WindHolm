@@ -142,8 +142,8 @@ export const siteConfig: SiteConfig = {
       // 波浪动画效果配置，开启可能会影响页面性能，请根据实际情况开启
       waves: {
         enable: {
-          desktop: true, // 桌面端启用波浪动画效果
-          mobile: true, // 移动端启用波浪动画效果
+          desktop: false, // 桌面端启用波浪动画效果
+          mobile: false, // 移动端启用波浪动画效果
         },
         performance: {
           quality: "high", 
