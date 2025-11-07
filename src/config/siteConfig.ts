@@ -89,7 +89,7 @@ export const siteConfig: SiteConfig = {
     // 背景图片配置
     src: {
       // 桌面背景图片
-      desktop: "/assets/images/meme.png",
+      desktop: "/assets/images/xilian.mp4",
       // 移动背景图片
       mobile: "/assets/images/pe.jpg",
     },
