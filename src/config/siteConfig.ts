@@ -85,7 +85,7 @@ export const siteConfig: SiteConfig = {
     mode: "banner",
     // 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
     switchable: false,
-    src: "/videos/Cyrene.mp4", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src:{ "/videos/Cyrene.mp4", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
       // 如果要使用MP4视频，可以这样配置：
        // src: "/assets/images/xilian.mp4", // 视频文件放在 public/videos/ 目录下
        // type: "video", // 设置为视频类型
@@ -96,6 +96,8 @@ export const siteConfig: SiteConfig = {
             text: "", // Credit text to be displayed
             url: "", // (Optional) URL link to the original artwork or artist's page
     // 背景图片配置
+       }
+        },
     src: {
       // 移动背景图片
       mobile: "/assets/images/pe.jpg",
