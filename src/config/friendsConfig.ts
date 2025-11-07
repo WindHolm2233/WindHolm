@@ -18,7 +18,7 @@ export const friendsConfig: FriendLink[] = [
     title: "yousen的博客",
     imgurl: "https://q.qlogo.cn/headimg_dl?dst_uin=1607737794&spec=640&img_type=png",
     desc: "机械结构工程师",
-    siteurl: "www.yousen1.top",
+    siteurl: "https://yousen1.top",
     tags: ["Blog"],
     weight: 9,
     enabled: true,
