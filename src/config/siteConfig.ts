@@ -85,12 +85,11 @@ export const siteConfig: SiteConfig = {
     switchable: false,
     // 背景图片配置
     src: {
-        desktop: : "/assets/images/meme.jpg",  // 视频路径
-        type: "image",                     // 桌面端类型：视频
-        mobile: : "/assets/images/pe.jpg",      // 移动端图片路径
-        type: "image",                     // 移动端类型：图片
+      // 桌面背景图片
+      desktop: "/assets/images/meme.png",
+      // 移动背景图片
+      mobile: "/assets/images/pe.jpg",
     },
-
     // 图片位置
     // 支持所有CSS object-position值，如: 'top', 'center', 'bottom', 'left top', 'right bottom', '25% 75%', '10px 20px'..
     // 如果不知道怎么配置百分百之类的配置，推荐直接使用：'center'居中，'top'顶部居中，'bottom' 底部居中，'left'左侧居中，'right'右侧居中
