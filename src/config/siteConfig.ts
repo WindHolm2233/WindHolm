@@ -73,12 +73,16 @@ export const siteConfig: SiteConfig = {
     // 是否允许用户切换布局
     allowSwitch: false,
   },
-
-  // 分页配置
-  pagination: {
+ pagination: {
     // 每页显示的文章数量
     postsPerPage: 10,
   },
+
+  backgroundWallpaper: {
+    // 壁纸模式："banner" 横幅壁纸，"overlay" 全屏壁纸，"none" 纯色背景无壁纸
+    mode: "banner",
+    // 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
+    switchable: false,
     // 背景图片配置
     src: {
       desktop: "/videos/Cyrene.mp4",
