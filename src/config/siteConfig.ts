@@ -85,12 +85,23 @@ export const siteConfig: SiteConfig = {
     switchable: false,
     // 背景图片配置
     src: {
-      desktop: "/assets/images/xilian.mp4",
-      type: "video", 
-      position: "center", 
-      // 移动背景图片
-      mobile: "/assets/images/pe.jpg",
-    },
+        desktop: {
+            url: "/assets/images/xilian.mp4",  // 视频路径
+            type: "video",                     // 桌面端类型：视频
+            position: "center",                // 定位：center（可试 "cover" 以填充横幅）
+            options: {                         // 视频播放选项（如果框架支持）
+                autoplay: true,                // 自动播放
+                loop: true,                    // 循环播放
+                muted: true,                   // 静音（浏览器要求背景视频必须静音）
+                playsInline: true              // 移动端内联播放（iOS 兼容）
+            }
+        },
+        mobile: {
+            url: "/assets/images/pe.jpg",      // 移动端图片路径
+            type: "image",                     // 移动端类型：图片
+            position: "center"                 // 定位
+        }
+    }
 
     // 图片位置
     // 支持所有CSS object-position值，如: 'top', 'center', 'bottom', 'left top', 'right bottom', '25% 75%', '10px 20px'..
