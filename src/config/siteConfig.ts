@@ -101,7 +101,7 @@ export const siteConfig: SiteConfig = {
         type: "image",
         position: "center"
       }
-    }
+    },
     // Banner模式特有配置
     banner: {
       homeText: {
