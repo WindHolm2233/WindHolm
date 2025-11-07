@@ -88,13 +88,11 @@ export const siteConfig: SiteConfig = {
         desktop: {
             url: "/assets/images/meme.jpg",  // 视频路径
             type: "image",                     // 桌面端类型：视频
-            position: "center",                // 定位：center（可试 "cover" 以填充横幅）
             }
         },
         mobile: {
             url: "/assets/images/pe.jpg",      // 移动端图片路径
             type: "image",                     // 移动端类型：图片
-            position: "center"                 // 定位
         }
     }
 
