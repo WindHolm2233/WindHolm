@@ -85,16 +85,23 @@ export const siteConfig: SiteConfig = {
     switchable: false,
     // 背景图片配置
     src: {
-      // 桌面背景图片
-      desktop: "/assets/images/meme.png",
-      // 移动背景图片
-      mobile: "/assets/images/pe.jpg",
-    },
-    // 图片位置
-    // 支持所有CSS object-position值，如: 'top', 'center', 'bottom', 'left top', 'right bottom', '25% 75%', '10px 20px'..
-    // 如果不知道怎么配置百分百之类的配置，推荐直接使用：'center'居中，'top'顶部居中，'bottom' 底部居中，'left'左侧居中，'right'右侧居中
-    position: "0% 20%",
-
+      desktop: {
+        url: "/assets/images/xilian.mp4",
+        type: "video",
+        position: "center",
+        options: {
+          autoplay: true,
+          loop: true,
+          muted: true,
+          playsInline: true
+        }
+      },
+      mobile: {
+        url: "/assets/images/pe.jpg",
+        type: "image",
+        position: "center"
+      }
+    }
     // Banner模式特有配置
     banner: {
       homeText: {
