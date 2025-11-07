@@ -86,14 +86,9 @@ export const siteConfig: SiteConfig = {
     // 背景图片配置
     src: {
         desktop: {
-            url: "/assets/images/xilian.mp4",  // 视频路径
-            type: "video",                     // 桌面端类型：视频
+            url: "/assets/images/meme.jpg",  // 视频路径
+            type: "image",                     // 桌面端类型：视频
             position: "center",                // 定位：center（可试 "cover" 以填充横幅）
-            options: {                         // 视频播放选项（如果框架支持）
-                autoplay: true,                // 自动播放
-                loop: true,                    // 循环播放
-                muted: true,                   // 静音（浏览器要求背景视频必须静音）
-                playsInline: true              // 移动端内联播放（iOS 兼容）
             }
         },
         mobile: {
