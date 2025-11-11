@@ -2,7 +2,7 @@
 title: Markdown 扩展功能
 published: 2024-05-01
 updated: 2024-11-29
-description: '了解 Firefly 中的 Markdown 功能'
+description: '了解 WindHolm 中的 Markdown 功能'
 image: ''
 tags: [演示, 示例, Markdown, Firefly]
 category: '文章示例'
