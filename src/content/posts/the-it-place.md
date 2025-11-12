@@ -6,6 +6,7 @@ description: 这篇博客为编程新手提供C语言基础教程，并逐步扩
 tags: [编程, C语言, Java, 初学者]
 category: 计算机科学
 author: Pars
+pinned: false
 ---
 
 # 从C语言入门到Java扩展：初学者实用指南
