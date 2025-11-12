@@ -1,6 +1,6 @@
 ---
 title: 从C语言入门到Java扩展：初学者实用指南
-date: 2025-11-12
+published: 2025-11-12
 pinned: false
 author: Pars
 tags: [编程, C语言, Java, 入门]
