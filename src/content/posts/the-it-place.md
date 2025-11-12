@@ -3,6 +3,7 @@ title: 从C语言入门到Java扩展：初学者实用指南
 date: 2025-11-12
 author: Pars
 tags: [编程, C语言, Java, 入门]
+category: 计算机科学
 description: 这篇博客为编程新手提供C语言基础教程，并逐步扩展到Java，帮助你理解两种语言的核心相似性和差异。
 ---
 
