@@ -120,7 +120,7 @@ URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
 &lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>从C语言入门到Java扩展：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace/</guid><description>这篇博客为编程新手提供C语言基础教程，并逐步扩展到Java，帮助你理解两种语言的核心相似性和差异。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从C语言入门到Java扩展：初学者实用指南&lt;/h1&gt;
+</content:encoded></item><item><title>从C语言入门到Java扩展：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace-yuyan/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-yuyan/</guid><description>这篇博客为编程新手提供C语言基础教程，并逐步扩展到Java，帮助你理解两种语言的核心相似性和差异。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从C语言入门到Java扩展：初学者实用指南&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;欢迎阅读这份实用指南！如果你是编程新手，从C语言起步是一个明智的选择。C语言是许多现代语言（如Java）的“祖先”，它能帮助你理解底层概念，如内存管理和程序结构。随后，我们将扩展到Java——一种更现代、面向对象的语言，广泛用于Web开发、Android应用和企业软件。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;为什么这个路径？&lt;/strong&gt;&lt;/p&gt;
