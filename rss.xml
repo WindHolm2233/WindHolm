@@ -121,12 +121,27 @@ URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded></item><item><title>从C语言入门到Java扩展：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace/</guid><description>这篇博客为编程新手提供C语言基础教程，并逐步扩展到Java，帮助你理解两种语言的核心相似性和差异。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从C语言入门到Java扩展：初学者实用指南&lt;/h1&gt;
-&lt;p&gt;欢迎来到编程的世界！如果你是编程初学者，选择C语言作为起点是一个明智的决定。它是许多现代语言（如Java）的“祖先”，能帮助你理解计算机底层逻辑。同时，我们会逐步扩展到Java——一种更现代、高级的语言，适合构建实际应用。&lt;/p&gt;
-&lt;p&gt;本文将以简单易懂的方式讲解C语言基础，然后对比Java的改进点。别担心，我们会用代码示例和解释来引导你。准备好你的代码编辑器（如VS Code或在线IDE），让我们开始吧！&lt;/p&gt;
-&lt;h2&gt;第一部分：C语言基础&lt;/h2&gt;
-&lt;p&gt;C语言是一种过程式编程语言，由Dennis Ritchie在1972年开发。它强调效率和底层控制，是系统编程的基石。学习C能让你掌握变量、循环、函数等核心概念。&lt;/p&gt;
-&lt;h3&gt;1. 你的第一个C程序&lt;/h3&gt;
-&lt;p&gt;C程序从&lt;code&gt;main()&lt;/code&gt;函数开始。以下是一个“Hello, World!”示例：&lt;/p&gt;
+&lt;h2&gt;引言&lt;/h2&gt;
+&lt;p&gt;欢迎阅读这份实用指南！如果你是编程新手，从C语言起步是一个明智的选择。C语言是许多现代语言（如Java）的“祖先”，它能帮助你理解底层概念，如内存管理和程序结构。随后，我们将扩展到Java——一种更现代、面向对象的语言，广泛用于Web开发、Android应用和企业软件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么这个路径？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C语言：教你“怎么让计算机做事”，强调效率和基础。&lt;/li&gt;
+&lt;li&gt;Java：扩展到“怎么组织代码”，引入面向对象编程（OOP），更易于大规模开发。&lt;/li&gt;
+&lt;li&gt;实用性：每节都有代码示例和练习，逐步构建技能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;前提&lt;/strong&gt;：安装C编译器（如GCC）和Java开发环境（如JDK + IDE如IntelliJ IDEA或Eclipse）。我们假设你有基本计算机知识。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;学习建议&lt;/strong&gt;：边读边敲代码，运行测试。预计时间：C入门1-2周，Java扩展1-2周。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;第一部分：C语言入门&lt;/h2&gt;
+&lt;p&gt;C语言简单高效，但需注意细节（如分号和括号）。我们从基础开始。&lt;/p&gt;
+&lt;h3&gt;1.1 第一个程序：Hello World&lt;/h3&gt;
+&lt;p&gt;C程序的基本结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/code&gt;：引入标准输入输出库。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;main()&lt;/code&gt;：程序入口。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;printf()&lt;/code&gt;：输出。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;return 0;&lt;/code&gt;：结束。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
 
 int main() {
@@ -134,83 +149,70 @@ int main() {
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;运行&lt;/strong&gt;：用&lt;code&gt;gcc hello.c -o hello&lt;/code&gt;编译，然后&lt;code&gt;./hello&lt;/code&gt;执行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：修改输出你的名字。&lt;/p&gt;
+&lt;h3&gt;1.2 变量与数据类型&lt;/h3&gt;
+&lt;p&gt;C使用静态类型：声明时指定类型。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;解释&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/code&gt;：引入标准输入输出库。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;int main()&lt;/code&gt;：程序入口，&lt;code&gt;int&lt;/code&gt;表示返回整数（0表示成功）。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;printf()&lt;/code&gt;：输出文本，&lt;code&gt;\n&lt;/code&gt;是换行符。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;return 0;&lt;/code&gt;：结束程序。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int&lt;/code&gt;：整数（如10）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;float&lt;/code&gt;：浮点数（如3.14）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;char&lt;/code&gt;：字符（如&apos;a&apos;）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;double&lt;/code&gt;：高精度浮点。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：编译运行这个程序（用gcc命令：&lt;code&gt;gcc hello.c -o hello&lt;/code&gt;），观察输出。&lt;/p&gt;
-&lt;h3&gt;2. 变量和数据类型&lt;/h3&gt;
-&lt;p&gt;C使用变量存储数据。常见类型包括：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;类型&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;th&gt;示例声明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;int&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;整数（通常4字节）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;int age = 25;&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;float&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;浮点数（单精度）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;float pi = 3.14;&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;char&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;单个字符&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;char grade = &apos;A&apos;;&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;double&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;浮点数（双精度）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;double salary = 50000.50;&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;示例代码&lt;/strong&gt;：&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
 
 int main() {
     int age = 25;
     float height = 1.75;
-    printf(&quot;Age: %d, Height: %.2f\n&quot;, age, height);  // %d for int, %.2f for float (2位小数)
+    char grade = &apos;A&apos;;
+    
+    printf(&quot;Age: %d, Height: %.2f, Grade: %c\n&quot;, age, height, grade);
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;提示&lt;/strong&gt;：用&lt;code&gt;%&lt;/code&gt;格式化输出。记住，C是静态类型语言——变量类型在编译时固定。&lt;/p&gt;
-&lt;h3&gt;3. 控制结构：条件和循环&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;格式化输出&lt;/strong&gt;：&lt;code&gt;%d&lt;/code&gt;（int）、&lt;code&gt;%f&lt;/code&gt;（float）、&lt;code&gt;%c&lt;/code&gt;（char）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：计算BMI（体重/身高²），输入体重和身高。&lt;/p&gt;
+&lt;h3&gt;1.3 运算符与表达式&lt;/h3&gt;
+&lt;p&gt;基本运算：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;if-else&lt;/strong&gt;（条件判断）：&lt;/li&gt;
+&lt;li&gt;算术：&lt;code&gt;+ - * / %&lt;/code&gt;（取模）。&lt;/li&gt;
+&lt;li&gt;关系：&lt;code&gt;== != &amp;gt; &amp;lt; &amp;gt;= &amp;lt;=&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;逻辑：&lt;code&gt;&amp;amp;&amp;amp; || !&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;示例（简单计算器）：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
 
 int main() {
-    int score = 85;
+    int a = 10, b = 3;
+    printf(&quot;Sum: %d\n&quot;, a + b);
+    printf(&quot;Mod: %d\n&quot;, a % b);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：编写判断偶奇数的程序（用&lt;code&gt;% 2 == 0&lt;/code&gt;）。&lt;/p&gt;
+&lt;h3&gt;1.4 控制结构&lt;/h3&gt;
+&lt;h4&gt;条件语句（if-else）&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    int score;
+    printf(&quot;Enter score: &quot;);
+    scanf(&quot;%d&quot;, &amp;amp;score);  // 输入，用&amp;amp;取地址
+    
     if (score &amp;gt;= 90) {
-        printf(&quot;Excellent!\n&quot;);
-    } else if (score &amp;gt;= 60) {
-        printf(&quot;Pass\n&quot;);
+        printf(&quot;A\n&quot;);
+    } else if (score &amp;gt;= 80) {
+        printf(&quot;B\n&quot;);
     } else {
-        printf(&quot;Fail\n&quot;);
+        printf(&quot;C\n&quot;);
     }
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;循环（for/while）&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;for循环&lt;/strong&gt;（重复执行）：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;for&lt;/code&gt;：已知次数。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
 
@@ -218,166 +220,295 @@ int main() {
     for (int i = 1; i &amp;lt;= 5; i++) {
         printf(&quot;%d &quot;, i);
     }
-    printf(&quot;\n&quot;);  // 输出: 1 2 3 4 5
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：修改循环打印偶数（用&lt;code&gt;% 2 == 0&lt;/code&gt;判断）。&lt;/p&gt;
-&lt;h3&gt;4. 函数：代码复用&lt;/h3&gt;
-&lt;p&gt;函数让代码模块化。定义一个求和函数：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int add(int a, int b) {  // 函数定义
-    return a + b;
-}
-
-int main() {
-    int sum = add(3, 4);  // 函数调用
-    printf(&quot;Sum: %d\n&quot;, sum);  // 输出: 7
+    printf(&quot;\n&quot;);
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;解释&lt;/strong&gt;：&lt;code&gt;int add(int a, int b)&lt;/code&gt; 表示函数返回int，参数a和b是int。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;while&lt;/code&gt;：未知次数。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;5. 指针简介（C的独特之处）&lt;/h3&gt;
-&lt;p&gt;指针是C的“杀手锏”，存储内存地址。但初学者只需了解基础：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
 
 int main() {
-    int x = 10;
-    int *ptr = &amp;amp;x;  // ptr指向x的地址 (&amp;amp;是取地址)
-    printf(&quot;Value: %d, Address: %p\n&quot;, x, (void*)ptr);
-    *ptr = 20;  // 通过指针修改x
-    printf(&quot;New value: %d\n&quot;, x);  // 输出: 20
+    int sum = 0, num;
+    printf(&quot;Enter numbers (0 to stop): &quot;);
+    scanf(&quot;%d&quot;, &amp;amp;num);
+    while (num != 0) {
+        sum += num;
+        scanf(&quot;%d&quot;, &amp;amp;num);
+    }
+    printf(&quot;Sum: %d\n&quot;, sum);
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;警告&lt;/strong&gt;：指针易出错（如空指针），Java中无需担心这个。&lt;/p&gt;
-&lt;h2&gt;第二部分：扩展到Java&lt;/h2&gt;
-&lt;p&gt;Java是C的“后代”，由Sun Microsystems在1995年推出。它是面向对象语言（OOP），更安全、更易移植（“一次编写，到处运行”）。Java借鉴了C的语法，但去除了指针、添加了垃圾回收和类机制。&lt;/p&gt;
-&lt;h3&gt;1. Java vs C：相似与不同&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;方面&lt;/th&gt;
-&lt;th&gt;C语言&lt;/th&gt;
-&lt;th&gt;Java&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;类似（;结尾，{}块）&lt;/td&gt;
-&lt;td&gt;几乎相同，但用&lt;code&gt;System.out.println&lt;/code&gt;输出&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;基本类型（int, float）&lt;/td&gt;
-&lt;td&gt;基本类型 + 对象引用&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;内存&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;手动管理（malloc/free）&lt;/td&gt;
-&lt;td&gt;自动垃圾回收，无指针&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;OOP&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;无（过程式）&lt;/td&gt;
-&lt;td&gt;核心（类、继承、多态）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;编译&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;编译到机器码&lt;/td&gt;
-&lt;td&gt;编译到字节码（JVM运行）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Java更适合初学者，因为它减少了低级错误。&lt;/p&gt;
-&lt;h3&gt;2. 你的第一个Java程序&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;public class HelloWorld {
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：打印1-100的斐波那契数列（前20项）。&lt;/p&gt;
+&lt;h3&gt;1.5 函数&lt;/h3&gt;
+&lt;p&gt;函数封装代码，提高复用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+// 函数声明
+int add(int x, int y);
+
+int main() {
+    int result = add(5, 3);
+    printf(&quot;Result: %d\n&quot;, result);
+    return 0;
+}
+
+// 函数定义
+int add(int x, int y) {
+    return x + y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：写一个&lt;code&gt;factorial(int n)&lt;/code&gt;函数计算阶乘。&lt;/p&gt;
+&lt;h3&gt;1.6 数组与简单指针&lt;/h3&gt;
+&lt;p&gt;数组：存储多个相同类型数据。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    for (int i = 0; i &amp;lt; 5; i++) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+    printf(&quot;\n&quot;);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;指针：变量的地址（C特色，Java无）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    int num = 10;
+    int *ptr = &amp;amp;num;  // ptr指向num地址
+    printf(&quot;Value: %d, Address: %p\n&quot;, *ptr, ptr);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用数组计算10个数的平均值。避免深挖指针（初学者易错）。&lt;/p&gt;
+&lt;h3&gt;1.7 实用项目：简单计算器&lt;/h3&gt;
+&lt;p&gt;整合以上知识：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    double a, b;
+    char op;
+    
+    printf(&quot;Enter expression (a op b): &quot;);
+    scanf(&quot;%lf %c %lf&quot;, &amp;amp;a, &amp;amp;op, &amp;amp;b);
+    
+    switch (op) {
+        case &apos;+&apos;: printf(&quot;%.2f\n&quot;, a + b); break;
+        case &apos;-&apos;: printf(&quot;%.2f\n&quot;, a - b); break;
+        case &apos;*&apos;: printf(&quot;%.2f\n&quot;, a * b); break;
+        case &apos;/&apos;: 
+            if (b != 0) printf(&quot;%.2f\n&quot;, a / b);
+            else printf(&quot;Error: Division by zero\n&quot;);
+            break;
+        default: printf(&quot;Invalid operator\n&quot;);
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加循环支持多计算。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;C小结&lt;/strong&gt;：掌握后，你能写命令行工具。常见错误：忘记&lt;code&gt;;&lt;/code&gt;、&lt;code&gt;{}&lt;/code&gt;或&lt;code&gt;&amp;amp;&lt;/code&gt;输入。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;第二部分：从C过渡到Java&lt;/h2&gt;
+&lt;p&gt;C和Java语法相似（Java受C影响），但Java更安全：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;相似&lt;/strong&gt;：变量、循环、if、函数（Java叫方法）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不同&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;Java无指针、自动垃圾回收（无&lt;code&gt;free&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;一切是对象：用类封装。&lt;/li&gt;
+&lt;li&gt;强类型，但有自动类型转换。&lt;/li&gt;
+&lt;li&gt;输入输出：用&lt;code&gt;Scanner&lt;/code&gt;类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;迁移提示&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C的&lt;code&gt;main()&lt;/code&gt; → Java的&lt;code&gt;public static void main(String[] args)&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;C的&lt;code&gt;printf/scanf&lt;/code&gt; → Java的&lt;code&gt;System.out.println&lt;/code&gt;和&lt;code&gt;Scanner&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;数组：Java数组是对象，需&lt;code&gt;new&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：C的Hello World到Java。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Java版本
+public class Hello {
     public static void main(String[] args) {
         System.out.println(&quot;Hello, World!&quot;);
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;解释&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;public class HelloWorld&lt;/code&gt;：类定义，文件名必须匹配类名。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;main&lt;/code&gt;方法：入口，&lt;code&gt;String[] args&lt;/code&gt;是命令行参数。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;System.out.println&lt;/code&gt;：输出，无需库引入。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用在线IDE（如Replit）运行它。&lt;/p&gt;
-&lt;h3&gt;3. Java变量和控制结构&lt;/h3&gt;
-&lt;p&gt;变量类似C，但需声明在类中：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;public class Variables {
-    public static void main(String[] args) {
-        int age = 25;
-        double height = 1.75;
-        System.out.printf(&quot;Age: %d, Height: %.2f%n&quot;, age, height);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;控制结构几乎相同：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;if-else和for循环语法一致。&lt;/li&gt;
-&lt;li&gt;示例（for循环打印1-5）：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;for (int i = 1; i &amp;lt;= 5; i++) {
-    System.out.print(i + &quot; &quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;4. Java函数：方法&lt;/h3&gt;
-&lt;p&gt;在类中定义方法：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;public class Adder {
-    public static int add(int a, int b) {
-        return a + b;
-    }
-
-    public static void main(String[] args) {
-        int sum = add(3, 4);
-        System.out.println(&quot;Sum: &quot; + sum);  // 输出: 7
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;区别&lt;/strong&gt;：Java方法必须在类中，&lt;code&gt;static&lt;/code&gt;表示类方法（无需实例）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;5. Java的OOP扩展&lt;/h3&gt;
-&lt;p&gt;C无OOP，但Java的核心是类和对象。简单类示例：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Person {
-    String name;  // 实例变量
+&lt;p&gt;&lt;strong&gt;编译运行&lt;/strong&gt;：&lt;code&gt;javac Hello.java&lt;/code&gt;，然后&lt;code&gt;java Hello&lt;/code&gt;。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;第三部分：Java扩展（OOP基础）&lt;/h2&gt;
+&lt;p&gt;Java的核心是面向对象：类、对象、继承。&lt;/p&gt;
+&lt;h3&gt;3.1 类与对象&lt;/h3&gt;
+&lt;p&gt;类：蓝图；对象：实例。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 定义类
+class Person {
+    String name;  // 属性
     int age;
-
+    
     void greet() {  // 方法
-        System.out.println(&quot;Hi, I&apos;m &quot; + name + &quot;, age &quot; + age);
+        System.out.println(&quot;Hi, I&apos;m &quot; + name);
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Person p = new Person();  // 创建对象
-        p.name = &quot;Alice&quot;;
-        p.age = 25;
-        p.greet();  // 输出: Hi, I&apos;m Alice, age 25
+        Person p1 = new Person();  // 创建对象
+        p1.name = &quot;Alice&quot;;
+        p1.age = 25;
+        p1.greet();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：创建&lt;code&gt;Car&lt;/code&gt;类，有&lt;code&gt;brand&lt;/code&gt;和&lt;code&gt;drive()&lt;/code&gt;方法。&lt;/p&gt;
+&lt;h3&gt;3.2 构造函数与封装&lt;/h3&gt;
+&lt;p&gt;构造函数：初始化对象。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Person {
+    private String name;  // private：封装，保护数据
+    private int age;
+    
+    // 构造函数
+    public Person(String n, int a) {
+        name = n;
+        age = a;
+    }
+    
+    // Getter/Setter
+    public String getName() { return name; }
+    public void setName(String n) { name = n; }
+    
+    public void greet() {
+        System.out.println(&quot;Hi, I&apos;m &quot; + name + &quot;, age &quot; + age);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用Scanner输入创建Person对象。&lt;/p&gt;
+&lt;h3&gt;3.3 继承与多态&lt;/h3&gt;
+&lt;p&gt;继承：子类复用父类。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Animal {
+    void eat() { System.out.println(&quot;Eating...&quot;); }
+}
+
+class Dog extends Animal {  // 继承
+    void bark() { System.out.println(&quot;Woof!&quot;); }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();  // 继承的方法
+        d.bark();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;多态：父类引用子类对象。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Animal myDog = new Dog();  // 多态
+myDog.eat();  // 调用Dog的eat（若重写）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：创建&lt;code&gt;Shape&lt;/code&gt;父类，&lt;code&gt;Circle&lt;/code&gt;子类计算面积。&lt;/p&gt;
+&lt;h3&gt;3.4 数组、集合与异常&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数组：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;int[] nums = new int[5];
+nums[0] = 1;
+// 或 int[] nums = {1,2,3};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;集合（ArrayList，更灵活）：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
+        Scanner sc = new Scanner(System.in);
+        String input;
+        while (!(input = sc.nextLine()).equals(&quot;quit&quot;)) {
+            list.add(input);
+        }
+        System.out.println(list);
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;关键&lt;/strong&gt;：&lt;code&gt;new&lt;/code&gt;创建对象，方法用&lt;code&gt;.&lt;/code&gt;调用。这让代码更模块化。&lt;/li&gt;
+&lt;li&gt;异常处理：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;结论：从C到Java的旅程&lt;/h2&gt;
-&lt;p&gt;恭喜！你已掌握C基础，并看到Java如何“升级”它。C教你严谨，Java教你高效。下一步：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;实践&lt;/strong&gt;：用C写计算器，用Java建简单GUI。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;资源&lt;/strong&gt;：C - 《C Primer Plus》；Java - Oracle教程。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;挑战&lt;/strong&gt;：试将C的指针逻辑用Java数组替换。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;编程是实践出来的。遇到bug？用Stack Overflow搜索。保持好奇，继续前进！有问题，欢迎评论。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;try {
+    int x = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println(&quot;Error: &quot; + e.getMessage());
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用ArrayList存储学生成绩，计算平均分（处理输入异常）。&lt;/p&gt;
+&lt;h3&gt;3.5 实用项目：学生管理系统&lt;/h3&gt;
+&lt;p&gt;用OOP构建：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import java.util.ArrayList;
+import java.util.Scanner;
+
+class Student {
+    private String name;
+    private int score;
+    
+    public Student(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+    
+    // Getters...
+    public String getName() { return name; }
+    public int getScore() { return score; }
+    
+    public String toString() {
+        return name + &quot;: &quot; + score;
+    }
+}
+
+public class StudentManager {
+    public static void main(String[] args) {
+        ArrayList&amp;lt;Student&amp;gt; students = new ArrayList&amp;lt;&amp;gt;();
+        Scanner sc = new Scanner(System.in);
+        
+        while (true) {
+            System.out.print(&quot;1.Add 2.List 3.Quit: &quot;);
+            int choice = sc.nextInt();
+            sc.nextLine();  // 消耗换行
+            
+            if (choice == 1) {
+                System.out.print(&quot;Name: &quot;);
+                String name = sc.nextLine();
+                System.out.print(&quot;Score: &quot;);
+                int score = sc.nextInt();
+                students.add(new Student(name, score));
+            } else if (choice == 2) {
+                for (Student s : students) {
+                    System.out.println(s);
+                }
+            } else {
+                break;
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加删除功能、排序成绩。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Java小结&lt;/strong&gt;：OOP让代码模块化。常见错误：忘记&lt;code&gt;new&lt;/code&gt;或&lt;code&gt;import&lt;/code&gt;。&lt;/p&gt;
 &lt;hr /&gt;
+&lt;h2&gt;结语与资源&lt;/h2&gt;
+&lt;p&gt;恭喜！你已从C的“底层魔法”过渡到Java的“对象世界”。下一步：实践项目，如用Java写Web爬虫（需学更多库）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;资源&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C：书籍《C Primer Plus》，在线：freeCodeCamp C教程。&lt;/li&gt;
+&lt;li&gt;Java：Oracle官方文档，书籍《Head First Java》，在线：Coursera “Java Programming”。&lt;/li&gt;
+&lt;li&gt;工具：VS Code（插件支持C/Java），LeetCode练习算法。&lt;/li&gt;
+&lt;li&gt;社区：Stack Overflow，Reddit r/learnprogramming。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有疑问？多调试代码，坚持就是胜利！🚀&lt;/p&gt;
 </content:encoded></item><item><title>我的第一篇博客文章</title><link>https://windholm.dpdns.org/posts/nihao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/nihao/</guid><description>这是我新 Astro 博客的第一篇文章。</description><pubDate>Sun, 02 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;芽衣才是1芽一芽一芽一芽一芽一芽一芽一&lt;/p&gt;
 </content:encoded></item><item><title>WindHolm 代码块示例</title><link>https://windholm.dpdns.org/posts/code-examples/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/code-examples/</guid><description>在WindHolm中使用表达性代码的代码块在 Markdown 中的外观。</description><pubDate>Wed, 20 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在这里，我们将探索如何使用 &lt;a href=&quot;https://expressive-code.com/&quot;&gt;Expressive Code&lt;/a&gt; 展示代码块。提供的示例基于官方文档，您可以参考以获取更多详细信息。&lt;/p&gt;
 &lt;h2&gt;表达性代&lt;/h2&gt;
