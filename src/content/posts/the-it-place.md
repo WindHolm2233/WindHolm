@@ -5,8 +5,6 @@ draft: false
 description: 这篇博客为编程新手提供C语言基础教程，并逐步扩展到Java，帮助你理解两种语言的核心相似性和差异。
 tags: [编程, C语言, Java, 初学者]
 category: 计算机科学
-lang: zh
-pinned: false
 author: Pars
 ---
 
