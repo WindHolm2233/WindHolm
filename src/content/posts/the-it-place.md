@@ -1,7 +1,7 @@
 ---
 title: 从C语言入门到Java扩展：初学者实用指南
 published: 2025-11-12
-pinned: ture
+pinned: false
 tags: [编程, C语言, Java, 入门]
 category: 计算机科学
 draft: false
