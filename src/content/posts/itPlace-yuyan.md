@@ -4,7 +4,7 @@ published: 2025-11-12
 draft: false
 description: 这篇博客为编程新手提供C语言基础教程，并逐步扩展到Java，帮助你理解两种语言的核心相似性和差异。
 tags: [编程, C语言, Java, 快速入门]
-images: /assets/images/cpp.png
+image: /assets/images/cpp.png
 category: 计算机科学
 author: Pars
 pinned: false
