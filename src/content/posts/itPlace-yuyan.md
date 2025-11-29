@@ -460,5 +460,3 @@ public class StudentManager {
 - Java：Oracle官方文档，书籍《Head First Java》，在线：Coursera “Java Programming”。
 - 工具：VS Code（插件支持C/Java），LeetCode练习算法。
 - 社区：Stack Overflow，Reddit r/learnprogramming。
-
-有疑问？多调试代码，坚持就是胜利！🚀
