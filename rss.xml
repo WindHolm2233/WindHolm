@@ -422,18 +422,7 @@ int main() {
     }
     return 0;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加音效 (&lt;code&gt;sf::Sound&lt;/code&gt;)、AI 拍子、多关卡。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;进阶游戏&lt;/strong&gt;：用 OpenGL (GLFW + GLM) 做 3D；或 Unreal Engine（C++ 脚本）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;修改 Pong：添加球加速。&lt;/li&gt;
-&lt;li&gt;开发简单平台游戏：角色跳跃、敌人。&lt;/li&gt;
-&lt;li&gt;用多线程加载游戏资源（背景音乐）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;结语&lt;/strong&gt;：恭喜！你现在能开发基本游戏了。继续实践：克隆 Flappy Bird 或用 Godot (C++ 支持)。有问题随时问，我可以帮调试代码或扩展某个部分。加油！🚀&lt;/p&gt;
+---&lt;/code&gt;&lt;/pre&gt;
 </content:encoded></item><item><title>xml和json的快速上手：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace/</guid><description>这篇博客为编程新手提供xml/json的基础教程，帮助你理解两种语言的核心相似性和差异。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从XML入门到JSON扩展：初学者实用指南&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;欢迎阅读这份实用指南！如果你是数据格式新手，从XML起步是个好选择。XML（Extensible Markup Language）是结构化数据的“老将”，广泛用于配置文件和文档。随后，我们扩展到JSON（JavaScript Object Notation）——一种轻量级、现代格式，主导Web API和NoSQL数据库。&lt;/p&gt;
