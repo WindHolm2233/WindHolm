@@ -1,4 +1,206 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风与你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>从C语言入门到c++快速实战：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>这篇博客提供C++快速实战教程</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从零基础到游戏开发深度指南&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风与你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>C#的核心思想——面向对象</title><link>https://windholm.dpdns.org/posts/itplace-cc/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cc/</guid><description>这篇博客为编程新手提供C#的基础教程，帮助你理解核心思想———面向对象。</description><pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C#的核心思想——面向对象&lt;/h1&gt;
+&lt;p&gt;本指南是对 C# 语言核心概念的深度扩展，重点聚焦类（Class）、继承（Inheritance）、接口（Interface）等面向对象编程（OOP）基础。相比基础版，本版添加了更多子主题、访问修饰符细节、构造函数重载、多态机制、显式接口实现、泛型支持、异常处理集成等高级用法。所有示例基于 C# 11+ 版本（兼容 .NET 8+），并包含完整可运行代码片段。建议使用 Visual Studio 或 Rider IDE 进行测试。本文适用于编程思想的入门，对于C#的使用特性会在后续更.&lt;/p&gt;
+&lt;p&gt;指南结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;理论解释&lt;/strong&gt;：概念定义与原理。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语法与示例&lt;/strong&gt;：详细代码 + 输出解释。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;：常见陷阱与最佳实践。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;扩展用法&lt;/strong&gt;：高级变体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更多资源：参考 &lt;a href=&quot;https://learn.microsoft.com/zh-cn/dotnet/csharp/&quot;&gt;Microsoft C# 官方文档&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;1. 类（Class）&lt;/h2&gt;
+&lt;p&gt;类是 C# OOP 的基石，用于封装数据和行为。类定义对象的结构，包括字段（数据存储）、属性（访问控制）、方法（行为逻辑）、构造函数（初始化）和析构函数（清理）。C# 类支持访问修饰符（Access Modifiers）控制可见性：&lt;code&gt;public&lt;/code&gt;（公开）、&lt;code&gt;private&lt;/code&gt;（私有，默认）、&lt;code&gt;protected&lt;/code&gt;（保护，仅派生类访问）、&lt;code&gt;internal&lt;/code&gt;（程序集内可见）、&lt;code&gt;protected internal&lt;/code&gt;（程序集内或派生类可见）、&lt;code&gt;private protected&lt;/code&gt;（派生类且同一程序集）。&lt;/p&gt;
+&lt;h3&gt;1.1 基本语法与访问修饰符&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;类默认是 &lt;code&gt;internal&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;成员默认是 &lt;code&gt;private&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;示例：完整类定义（包含访问修饰符）&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;using System;
+
+// 公共类
+public class Employee
+{
+    // 私有字段（封装数据）
+    private string id;
+    private decimal salary;  // protected internal 示例：程序集内或派生类可见
+
+    // 公共属性（自动实现，C# 3.0+）
+    public string Name { get; set; } = string.Empty;
+
+    // 保护属性（仅派生类访问）
+    protected int DepartmentId { get; set; }
+
+    // 内部属性（仅当前程序集可见）
+    internal DateTime HireDate { get; private set; }  // 私有 setter
+
+    // 构造函数重载（多种初始化方式）
+    public Employee()  // 默认构造函数
+    {
+        id = Guid.NewGuid().ToString();
+        HireDate = DateTime.Now;
+    }
+
+    public Employee(string name, decimal salary) : this()  // 链式调用默认构造函数
+    {
+        Name = name;
+        Salary = salary;  // 通过属性设置，触发验证
+    }
+
+    // 属性带验证的 setter
+    public decimal Salary
+    {
+        get =&amp;gt; salary;
+        private set  // 私有 setter，仅类内部修改
+        {
+            if (value &amp;lt; 0)
+                throw new ArgumentException(&quot;薪资不能为负数&quot;);
+            salary = value;
+        }
+    }
+
+    // 私有方法（辅助逻辑）
+    private void ValidateEmployee()
+    {
+        if (string.IsNullOrEmpty(Name))
+            throw new InvalidOperationException(&quot;姓名不能为空&quot;);
+    }
+
+    // 公共方法
+    public void Promote(decimal raise)
+    {
+        ValidateEmployee();
+        Salary += raise;  // 私有 setter 允许内部访问
+        Console.WriteLine($&quot;{Name} 晋升，薪资增加 {raise:C}。&quot;);
+    }
+
+    // 静态成员（类级）
+    public static int TotalEmployees { get; private set; } = 0;
+
+    // 静态构造函数（初始化静态成员）
+    static Employee()
+    {
+        Console.WriteLine(&quot;Employee 类静态初始化。&quot;);
+    }
+}
+
+// 使用类
+class Program
+{
+    static void Main()
+    {
+        Employee emp = new Employee(&quot;李四&quot;, 5000m);
+        emp.Promote(1000m);  // 输出: 李四 晋升，薪资增加 ￥1,000.00。
+
+        Console.WriteLine(Employee.TotalEmployees);  // 输出: 0（静态计数需手动增）
+        Employee.TotalEmployees++;  // 手动更新
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;输出解释&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;静态构造函数在首次访问类时运行。&lt;/li&gt;
+&lt;li&gt;属性 setter 验证确保数据完整性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.2 注意事项&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;不可变类&lt;/strong&gt;（C# 9.0+）：使用 &lt;code&gt;init&lt;/code&gt; 仅允许初始化时设置，如 &lt;code&gt;public string Name { get; init; }&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记录类型&lt;/strong&gt;（Record，C# 9.0+）：简洁不可变类，如 &lt;code&gt;public record Person(string Name, int Age);&lt;/code&gt;（自动生成相等比较）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;嵌套类&lt;/strong&gt;：类内定义类，如 &lt;code&gt;public class Outer { private class Inner { } }&lt;/code&gt;（仅 Outer 访问）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;部分类&lt;/strong&gt;（Partial Class）：跨文件定义，如 &lt;code&gt;partial class MyClass { }&lt;/code&gt; 和另一个文件 &lt;code&gt;partial class MyClass { }&lt;/code&gt;（用于代码生成）。&lt;/li&gt;
+&lt;li&gt;陷阱：忘记 &lt;code&gt;new&lt;/code&gt; 关键字实例化会导致编译错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.3 扩展用法：析构函数与 IDisposable&lt;/h3&gt;
+&lt;p&gt;类可实现 &lt;code&gt;IDisposable&lt;/code&gt; 接口进行资源管理（详见接口部分）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class ResourceHolder : IDisposable
+{
+    private bool disposed = false;
+
+    public void Dispose()
+    {
+        if (!disposed)
+        {
+            // 清理资源
+            Console.WriteLine(&quot;资源已释放。&quot;);
+            disposed = true;
+        }
+    }
+
+    ~ResourceHolder()  // 析构函数（Finalizer，垃圾回收时调用）
+    {
+        Dispose();  // 确保清理
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用 &lt;code&gt;using&lt;/code&gt; 语句：&lt;code&gt;using var holder = new ResourceHolder();&lt;/code&gt;（自动 Dispose）。&lt;/p&gt;
+&lt;h2&gt;2. 继承（Inheritance）&lt;/h2&gt;
+&lt;p&gt;继承实现“Is-A”关系（如 Dog 是 Animal），支持代码复用和多态。C# 只支持单继承（类继承一个基类），但接口多继承。关键：虚方法（virtual）允许重写（override），&lt;code&gt;new&lt;/code&gt; 隐藏基类方法。&lt;/p&gt;
+&lt;h3&gt;2.1 基本语法与多态&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 &lt;code&gt;:&lt;/code&gt; 继承。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;virtual&lt;/code&gt; / &lt;code&gt;override&lt;/code&gt; 启用运行时多态。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;base&lt;/code&gt; 访问基类成员。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;示例：多态继承（包含隐藏方法）&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;using System;
+
+// 基类
+public class Shape
+{
+    protected string Color { get; set; } = &quot;黑色&quot;;
+
+    public Shape(string color)
+    {
+        Color = color;
+    }
+
+    // 虚方法（多态基础）
+    public virtual double CalculateArea() =&amp;gt; 0;  // 默认实现
+
+    // 普通方法（用 new 隐藏）
+    public void DisplayInfo()
+    {
+        Console.WriteLine($&quot;形状颜色: {Color}&quot;);
+    }
+}
+
+// 派生类1
+public class Circle : Shape
+{
+    public double Radius { get; set; }
+
+    public Circle(double radius, string color) : base(color)
+    {
+        Radius = radius;
+    }
+
+    // 重写虚方法（多态）
+    public override double CalculateArea()
+    {
+        return Math.PI * Radius * Radius;
+    }
+
+    // 隐藏基类方法（new 关键字，编译时绑定）
+    public new void DisplayInfo()
+    {
+        Console.WriteLine($&quot;圆形，半径: {Radius}，颜色: {Color}&quot;);
+    }
+}
+
+// 派生类2（sealed 防止进一步继承）
+public sealed class Square : Shape
+{
+    public double Side { get; set; }
+
+    public Square(double side) : base(&quot;蓝色&quot;)
+    {
+        Side = side;
+    }
+
+    public override double CalculateArea() =&amp;gt; Side * Side;
+
+    //&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>从C语言入门到c++快速实战：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>这篇博客提供C++快速实战教程</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从零基础到游戏开发深度指南&lt;/h3&gt;
 &lt;p&gt;欢迎学习 C++！C++ 是一种高效、灵活的编程语言，特别适合游戏开发，因为它能直接访问硬件资源（如内存和 CPU），支持高性能渲染和实时计算。许多知名游戏引擎（如 Unreal Engine、Unity 的底层）都基于 C++。这个教程将从基础开始，逐步深入，到能独立开发简单 2D/3D 游戏的程度。&lt;strong&gt;总深度&lt;/strong&gt;：约 20-30 小时学习 + 练习，目标是让你能用 SFML 库实现一个完整的小游戏（如 Pong 或平台跳跃）。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;学习路径概述&lt;/strong&gt;：&lt;/p&gt;
 &lt;table&gt;
