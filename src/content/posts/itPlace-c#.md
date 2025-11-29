@@ -1,13 +1,15 @@
 ---
-title: C#的核心思想——面向对象
+title:  C#的核心思想——面向对象
 published: 2025-11-29
 draft: false
 description: 这篇博客为编程新手提供C#的基础教程，帮助你理解核心思想———面向对象。
-tags: [编程, C#, 计算机科学]
+tags: [编程, C#, 面向对象 ,计算机科学]
+image: /assets/images/cpp.png
 category: 计算机科学
 author: Pars
-pinned: ture
+pinned: false
 ---
+
 # C#的核心思想——面向对象
 
 本指南是对 C# 语言核心概念的深度扩展，重点聚焦类（Class）、继承（Inheritance）、接口（Interface）等面向对象编程（OOP）基础。相比基础版，本版添加了更多子主题、访问修饰符细节、构造函数重载、多态机制、显式接口实现、泛型支持、异常处理集成等高级用法。所有示例基于 C# 11+ 版本（兼容 .NET 8+），并包含完整可运行代码片段。建议使用 Visual Studio 或 Rider IDE 进行测试。本文适用于编程思想的入门，对于C#的使用特性会在后续更.
