@@ -80,7 +80,7 @@ export const siteConfig: SiteConfig = {
 
   backgroundWallpaper: {
     // 壁纸模式："banner" 横幅壁纸，"overlay" 全屏壁纸，"none" 纯色背景无壁纸
-    mode: "overlay",
+    mode: "banner",
     // 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
     switchable: false,
     // 背景图片配置
@@ -94,7 +94,7 @@ export const siteConfig: SiteConfig = {
     // 图片位置
     // 支持所有CSS object-position值，如: 'top', 'center', 'bottom', 'left top', 'right bottom', '25% 75%', '10px 20px'..
     // 如果不知道怎么配置百分百之类的配置，推荐直接使用：'center'居中，'top'顶部居中，'bottom' 底部居中，'left'左侧居中，'right'右侧居中
-    position: "0% 20%",
+    position: "bottom",
     // Banner模式特有配置
     banner: {
       homeText: {
