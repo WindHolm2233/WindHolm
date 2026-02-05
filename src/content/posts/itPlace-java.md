@@ -6,8 +6,8 @@ description: 这篇博客为编程新手提供C语言基础教程，并逐步扩
 tags: [编程, C语言, Java, 快速入门]
 image: /assets/images/cpp.png
 category: 计算机科学
-author: Pars
 image: /assets/images/java.png
+author: Pars
 pinned: false
 ---
 
