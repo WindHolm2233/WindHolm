@@ -1,4 +1,11 @@
-
+---
+title: VScode的环境配置(Computer Graphics)
+published: 2026-02-05
+pinned: false
+description: 环境配置复盘报告：Windows 下使用 VS Code + CMake + vcpkg开发环境
+tags: [计算机科学，config指南，Computer Graphics]
+category: 计算机科学
+draft: false
 ---
 
 ## 🛠️ 环境配置复盘报告：Windows 下使用 VS Code + CMake + vcpkg开发环境
@@ -35,7 +42,7 @@
 2. **强制指定工具链**：
 ```json
 "cmake.configureSettings": {
-    "CMAKE_TOOLCHAIN_FILE": "安装路径\vcpkg/scripts/buildsystems/vcpkg.cmake"
+    "CMAKE_TOOLCHAIN_FILE": "安装路径/vcpkg/scripts/buildsystems/vcpkg.cmake"
 }
 
 ```
