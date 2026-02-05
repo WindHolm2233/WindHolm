@@ -44,7 +44,7 @@ export const siteConfig: SiteConfig = {
   // { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
   navbarLogo: {
     type: "image",
-    value: "/assets/images/IMG_20251105_144406.jpg",
+    value: "docs/images/windholm.png",
     alt: "🍀",
   },
   navbarTitle: "WindHolm", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
