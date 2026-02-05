@@ -1,5 +1,5 @@
 ---
-title:计算机图形学学习指南
+title: 计算机图形学学习指南
 published: 2026-02-05
 pinned: false
 description: 🚀 计算机图形学入行指南：从数学基石到真实感渲染
