@@ -5,6 +5,7 @@ pinned: false
 description: 🚀 计算机图形学入行指南：从数学基石到真实感渲染
 tags: [计算机科学,Introduction,ComputerGraphics]
 category: 计算机科学
+author: Pars
 draft: false
 ---
 # 计算机图形学学习指南
