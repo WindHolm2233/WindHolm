@@ -7,6 +7,7 @@ tags: [编程, C语言, Java, 快速入门]
 image: /assets/images/cpp.png
 category: 计算机科学
 author: Pars
+image: /assets/images/java.png
 pinned: false
 ---
 
