@@ -3,7 +3,7 @@ title: VScode的环境配置(Computer Graphics)
 published: 2026-02-05
 pinned: false
 description: 环境配置复盘报告：Windows 下使用 VS Code + CMake + vcpkg开发环境
-tags: [计算机科学,config指南,Computer,Graphics]
+tags: [计算机科学,config指南,ComputerGraphics]
 category: 计算机科学
 draft: false
 ---
