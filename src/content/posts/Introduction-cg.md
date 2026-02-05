@@ -1,4 +1,13 @@
-# 计算机图形学学习指南（扩展版）
+---
+title:计算机图形学学习指南
+published: 2026-02-05
+pinned: false
+description: 🚀 计算机图形学入行指南：从数学基石到真实感渲染
+tags: [CG,计算机科学，Introduction]
+category: 文章示例
+draft: false
+---
+# 计算机图形学学习指南
 
 ## 一、图形系统与可编程流水线：理解“从无到有”
 
