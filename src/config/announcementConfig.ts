@@ -1,8 +1,12 @@
 import type { AnnouncementConfig } from "../types/config";
 
 export const announcementConfig: AnnouncementConfig = {
-  title: "公告", // 公告标题
-  content: "**【WindHolm 小站公告】202X.XX.XX**
+  title: "公告",
+  content: `**【WindHolm 小站公告】${new Date().toLocaleDateString('zh-CN', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).replace(/\//g, '.')}**
 
 大家好！我是 WindHolm ✧*｡٩(ˊᗜˋ*)و✧
 
@@ -15,27 +19,26 @@ export const announcementConfig: AnnouncementConfig = {
 • Java / JSON / XML 等“配置党”友好语言  
 • Markdown 写文 / 配置指南 / 快速入门类文章
 
-欢迎对以下任一关键词有兴趣的朋友关注或留言交流：
-
+欢迎对以下任一关键词有兴趣的朋友关注或留言交流：  
 快速入门 · 实战示例 · 踩坑记录 · 代码片段 · 视频学习笔记 · 渲染管线 · 游戏开发 · 面向对象设计 · ……
 
 最近在持续更新：
 - C++ 现代写法与工程实践系列
 - 简单光栅化渲染器从零Copy
 - Shader 写着玩小实验
-- 一些乱七八糟但我踩过坑的 config 过程
+- 一些乱七八糟但我踩过坑的 config 过程（.clang-format / CMake / vs code / …）
 
 有想看的专题、想讨论的 bug都可以直接评论或私信丢过来（・∀・）
 
 最后感谢每一位点进来看的你～  
 我们代码里见！( •̀ ω •́ )✧
 
-#C++ #ComputerGraphics #编程 #渲染 #学习笔记 #WindHolm", // 公告内容
-  closable: true, // 允许用户关闭公告
+#C++ #ComputerGraphics #编程 #渲染 #学习笔记 #WindHolm`,
+  closable: true,
   link: {
-    enable: true, // 启用链接
-    text: "了解更多", // 链接文本
-    url: "/about/", // 链接 URL
-    external: false, // 内部链接
+    enable: true,
+    text: "了解更多",
+    url: "/about/",
+    external: false,
   },
 };
