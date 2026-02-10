@@ -909,19 +909,8 @@ print(json_str2)
   }
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：用JSON Schema验证。用JSONPath计算总点赞数。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;JSON小结&lt;/strong&gt;：适合API和配置。常见错误：逗号遗漏、未引号键。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h2&gt;结语与资源&lt;/h2&gt;
-&lt;p&gt;恭喜！你从XML的“严谨标签”过渡到JSON的“简洁流动”。下一步：实践，如用Postman测试JSON API。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;资源&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;XML：W3Schools XML教程，书籍《Learning XML》。&lt;/li&gt;
-&lt;li&gt;JSON：JSON.org官方指南，书籍《JSON at Work》，在线：MDN Web Docs。&lt;/li&gt;
-&lt;li&gt;工具：VS Code扩展，Postman（API测试）。&lt;/li&gt;
-&lt;li&gt;社区：Stack Overflow，Reddit r/xml或r/json。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有疑问？多实验转换，坚持实践！🚀&lt;/p&gt;
+&lt;p&gt;此文章由本人学习配置语言时的总结整理而来，由gork辅助优化格式。&lt;/p&gt;
 </content:encoded></item><item><title>从C语言入门到Java扩展：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace-java/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-java/</guid><description>这篇博客为编程新手提供C语言基础教程，并逐步扩展到Java，帮助你理解两种语言的核心相似性和差异。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从C语言入门到Java扩展：初学者实用指南&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;欢迎阅读这份实用指南！如果你是编程新手，从C语言起步是一个明智的选择。C语言是许多现代语言（如Java）的“祖先”，它能帮助你理解底层概念，如内存管理和程序结构。随后，我们将扩展到Java——一种更现代、面向对象的语言，广泛用于Web开发、Android应用和企业软件。&lt;/p&gt;
