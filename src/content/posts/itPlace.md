@@ -5,7 +5,7 @@ draft: false
 description: 这篇博客为编程新手提供xml/json的基础教程，帮助你理解两种语言的核心相似性和差异。
 tags: [编程, xml, json, 快速入门]
 category: 计算机科学
-author: Pars
+author: Pars, gork
 pinned: false
 ---
 # 从XML入门到JSON扩展：初学者实用指南
@@ -314,20 +314,8 @@ print(json_str2)
 }
 ```
 
-**扩展**：用JSON Schema验证。用JSONPath计算总点赞数。
-
-**JSON小结**：适合API和配置。常见错误：逗号遗漏、未引号键。
 
 ---
+此文章由本人学习配置语言时的总结整理而来，由gork辅助优化格式。
 
-## 结语与资源
 
-恭喜！你从XML的“严谨标签”过渡到JSON的“简洁流动”。下一步：实践，如用Postman测试JSON API。
-
-**资源**：
-- XML：W3Schools XML教程，书籍《Learning XML》。
-- JSON：JSON.org官方指南，书籍《JSON at Work》，在线：MDN Web Docs。
-- 工具：VS Code扩展，Postman（API测试）。
-- 社区：Stack Overflow，Reddit r/xml或r/json。
-
-有疑问？多实验转换，坚持实践！🚀
