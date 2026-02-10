@@ -451,12 +451,7 @@ public class StudentManager {
 
 ---
 
-## 结语与资源
-
-恭喜！你已从C的“底层魔法”过渡到Java的“对象世界”。下一步：实践项目，如用Java写Web爬虫（需学更多库）。
-
 **资源**：
 - C：书籍《C Primer Plus》，在线：freeCodeCamp C教程。
 - Java：Oracle官方文档，书籍《Head First Java》，在线：Coursera “Java Programming”。
 - 工具：VS Code（插件支持C/Java），LeetCode练习算法。
-- 社区：Stack Overflow，Reddit r/learnprogramming。
