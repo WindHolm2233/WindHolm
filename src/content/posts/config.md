@@ -15,8 +15,8 @@ draft: false
 
 在开始之前，我们需要明确这套方案中各个组件的角色：
 
-* **vcpkg**: C++ 包管理器，负责下载和管理 `Eigen`、`OpenCV` 等图形学库。
-* **CMake**: 构建系统生成器，负责协调编译器（MSVC）和库路径。
+* **vcpkg**: C++ 包管理器，负责下载和管理 `Eigen`、`OpenCV` 等库。
+* **CMake**: 构建系统生成器，负责协调编译器（MSVC）和库路径。（一般vs下载好后自带，在控制台跑 Developer Command Prompt for VS 即可使vscode识别到）
 * **Toolchain File (`vcpkg.cmake`)**: 桥梁，告诉 CMake 去哪里找 vcpkg 安装的库。
 
 ### 2. 配置步骤记录
@@ -28,9 +28,9 @@ draft: false
 
 #### 第二步：处理 CMake 中的路径转义问题
 
-* **遇到的坑**：在 CMakeLists.txt 中直接写 `安装路径\config\...` 导致报错 `Invalid character escape '\c'`。
+* **遇到的坑**：在 CMakeLists.txt 中直接写 `安装路径\...` 导致报错 `Invalid character escape '\c'`。
 * **解决方法**：
-* **原则**：在 CMake 和 C++ 编程中，路径分隔符必须使用**正斜杠 `/**` 或 **双反斜杠 `\\**`。
+* **原则**：在 CMake 和 C++ 编程中，路径分隔符必须使用**正斜杠 `/` 或 双反斜杠 `\\`。
 * **原因**：单反斜杠 `\` 在计算机语言中是转义字符（如 `\n` 是换行），`\c` 无法被识别，从而引发语法错误。
 
 
