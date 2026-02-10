@@ -198,14 +198,14 @@
 &lt;li&gt;&lt;strong&gt;缓存意识&lt;/strong&gt;：改了配置不生效，先删 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;解耦配置&lt;/strong&gt;：尽量不要在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里写死绝对路径，通过 IDE 的设置或命令行传入，这样项目更易于移植。&lt;/li&gt;
 &lt;/ol&gt;
-</content:encoded></item><item><title>C#的核心思想——面向对象</title><link>https://windholm.dpdns.org/posts/itplace-cs/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cs/</guid><description>这篇博客为编程新手提供C#的基础教程，帮助你理解核心思想———面向对象。</description><pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C# 核心思想深度解析报告&lt;/h1&gt;
-&lt;h2&gt;⚖️ 核心哲学：平衡之道&lt;/h2&gt;
+</content:encoded></item><item><title>C#的核心思想——面向对象</title><link>https://windholm.dpdns.org/posts/itplace-cs/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cs/</guid><description>这篇博客为编程新手提供C#的基础教程，帮助你理解核心思想———面向对象。</description><pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C# 的基本学习&lt;/h1&gt;
+&lt;h2&gt;为什么要设计C#&lt;/h2&gt;
 &lt;p&gt;C# 的设计初衷是在 &lt;strong&gt;开发生产力 (Productivity)&lt;/strong&gt;、&lt;strong&gt;运行安全 (Safety)&lt;/strong&gt; 与 &lt;strong&gt;现代抽象 (Modern Abstraction)&lt;/strong&gt; 之间找到最佳平衡点。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;生态位定义&lt;/strong&gt;：C# 结合了 Java 的严谨托管环境与 C++ 的性能控制潜力，并通过极其激进的语法进化，成为了目前最现代化的通用编程语言之一。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;h2&gt;🏗️ 四大思想支柱&lt;/h2&gt;
+&lt;h2&gt;C#好在哪里&lt;/h2&gt;
 &lt;h3&gt;1. 全面对象化与组件化 (Component-Oriented)&lt;/h3&gt;
 &lt;p&gt;不同于 C++ 的多范式杂糅，C# 最初就是为“软件组件”而生的。&lt;/p&gt;
 &lt;ul&gt;
@@ -243,6 +243,8 @@
 &lt;li&gt;&lt;strong&gt;高层&lt;/strong&gt;：支撑企业级 Web 应用 (ASP.NET Core)。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;低层&lt;/strong&gt;：通过 &lt;code&gt;Span&amp;lt;T&amp;gt;&lt;/code&gt;、&lt;code&gt;Memory&amp;lt;T&amp;gt;&lt;/code&gt; 和 &lt;code&gt;unsafe&lt;/code&gt; 模式提供接近 C++ 的指针级内存操作。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;文章涉及实际应用部分知识由Gemini提供，感谢gemini在我疯狂压力下仍然愿意理解我&lt;/p&gt;
 </content:encoded></item><item><title>从C语言入门到c++快速实战：初学者实用指南</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>这篇博客提供C++快速实战教程</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从零基础到入门（aigc）&lt;/h3&gt;
 &lt;p&gt;欢迎学习 C++！C++ 是一种高效、灵活的编程语言，特别适合游戏开发，因为它能直接访问硬件资源（如内存和 CPU），支持高性能渲染和实时计算。许多知名游戏引擎（如 Unreal Engine、Unity 的底层）都基于 C++。这个教程将从基础开始，逐步深入，到能独立开发简单 2D/3D 游戏的程度。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;学习路径概述&lt;/strong&gt;：&lt;/p&gt;
