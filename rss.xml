@@ -1301,14 +1301,11 @@ public class StudentManager {
 &lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加删除功能、排序成绩。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Java小结&lt;/strong&gt;：OOP让代码模块化。常见错误：忘记&lt;code&gt;new&lt;/code&gt;或&lt;code&gt;import&lt;/code&gt;。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h2&gt;结语与资源&lt;/h2&gt;
-&lt;p&gt;恭喜！你已从C的“底层魔法”过渡到Java的“对象世界”。下一步：实践项目，如用Java写Web爬虫（需学更多库）。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;资源&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;C：书籍《C Primer Plus》，在线：freeCodeCamp C教程。&lt;/li&gt;
 &lt;li&gt;Java：Oracle官方文档，书籍《Head First Java》，在线：Coursera “Java Programming”。&lt;/li&gt;
 &lt;li&gt;工具：VS Code（插件支持C/Java），LeetCode练习算法。&lt;/li&gt;
-&lt;li&gt;社区：Stack Overflow，Reddit r/learnprogramming。&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded></item><item><title>我的第一篇博客文章</title><link>https://windholm.dpdns.org/posts/nihao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/nihao/</guid><description>这是我新 Astro 博客的第一篇文章。</description><pubDate>Sun, 02 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;芽衣才是1芽一芽一芽一芽一芽一芽一芽一&lt;/p&gt;
 </content:encoded></item><item><title>WindHolm 代码块示例</title><link>https://windholm.dpdns.org/posts/code-examples/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/code-examples/</guid><description>在WindHolm中使用表达性代码的代码块在 Markdown 中的外观。</description><pubDate>Wed, 20 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在这里，我们将探索如何使用 &lt;a href=&quot;https://expressive-code.com/&quot;&gt;Expressive Code&lt;/a&gt; 展示代码块。提供的示例基于官方文档，您可以参考以获取更多详细信息。&lt;/p&gt;
