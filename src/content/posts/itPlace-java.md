@@ -7,7 +7,7 @@ tags: [编程, C语言, Java, 快速入门]
 category: 计算机科学
 image: /assets/images/java.png
 author: Pars
-pinned: ture
+pinned: true
 ---
 
 # 从C语言入门到Java扩展：初学者实用指南
