@@ -7,7 +7,7 @@ tags: [编程, C语言, C++, 快速入门, 实战]
 image: /assets/images/cpp.png
 category: 计算机科学
 author: Grok，Pars
-pinned: false
+pinned: ture
 ---
 ### C++ 学习教程：从零基础到入门（aigc）
 
@@ -407,6 +407,7 @@ int main() {
 }
 ---
 该文章撰写素材来自平时课程时问grok的问题总结而来，由grok优化格式
+
 
 
 
