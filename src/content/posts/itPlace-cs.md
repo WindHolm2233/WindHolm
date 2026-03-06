@@ -7,7 +7,7 @@ tags: [编程, C#, 面向对象 ,计算机科学]
 image: /assets/images/cpp.png
 category: 计算机科学
 author: Pars, gemini
-pinned: ture
+pinned: true
 ---
 # C# 的基本学习
 
