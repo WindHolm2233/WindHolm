@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风屿你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>C# 入门笔记：先把面向对象讲明白</title><link>https://windholm.dpdns.org/posts/itplace-cs/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cs/</guid><description>从更自然的角度整理 C# 的入门思路，重点放在面向对象、托管环境和日常开发体验上。</description><pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C# 入门笔记&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风屿你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>C# 学习整理</title><link>https://windholm.dpdns.org/posts/itplace-cs/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cs/</guid><description>从更自然的角度整理 C# 的入门思路，重点放在面向对象、托管环境和日常开发体验上。</description><pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C# 入门笔记&lt;/h1&gt;
 &lt;h2&gt;为什么会有 C#&lt;/h2&gt;
 &lt;p&gt;C# 的设计目标很直接，就是想让开发者写出更顺手、更安全、也更适合长期维护的代码。它不追求“写得最少”或者“最底层”，而是尽量在效率、类型安全和表达力之间找个平衡。&lt;/p&gt;
 &lt;p&gt;你可以把它理解成：既保留了托管语言的安全感，又尽量提供接近现代应用开发所需的灵活性。&lt;/p&gt;
@@ -44,7 +44,7 @@
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;p&gt;文章涉及实际应用部分知识由Gemini提供，感谢gemini在我疯狂压力下仍然愿意理解我&lt;/p&gt;
-</content:encoded></item><item><title>Python 入门：先把脚本跑起来</title><link>https://windholm.dpdns.org/posts/itplace-python/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-python/</guid><description>用更轻松的方式讲 Python 的入门思路，先建立手感，再慢慢扩展到日常脚本和小项目。</description><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Python 入门：先把脚本跑起来&lt;/h1&gt;
+</content:encoded></item><item><title>Python 学习整理</title><link>https://windholm.dpdns.org/posts/itplace-python/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-python/</guid><description>用更轻松的方式讲 Python 的入门思路，先建立手感，再慢慢扩展到日常脚本和小项目。</description><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Python 入门：先把脚本跑起来&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;如果你想找一门上手快、读起来也比较顺的语言，Python 很适合先接触一下。它的语法不算复杂，很多时候你可以先写出来、跑起来，再慢慢理解背后的东西。&lt;/p&gt;
 &lt;p&gt;我更喜欢把 Python 当成“先做事，再补概念”的语言。它可以是你的第一门编程语言，也可以是你在写脚本、做数据处理、自动化小工具时最顺手的选择。&lt;/p&gt;
@@ -537,7 +537,7 @@ int main() {
 }
 ---
 该文章撰写素材来自平时课程时问grok的问题总结而来，由grok优化格式&lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>XML 和 JSON 入门：先看结构，再看数据</title><link>https://windholm.dpdns.org/posts/itplace/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace/</guid><description>用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;XML 和 JSON 入门&lt;/h1&gt;
+</content:encoded></item><item><title>XML 和 JSON 学习</title><link>https://windholm.dpdns.org/posts/itplace-xml-josn/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-xml-josn/</guid><description>用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;XML 和 JSON 入门&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;如果你第一次接触数据格式，XML 和 JSON 基本就是绕不开的两位老朋友。XML 更像“把结构写清楚”，JSON 更像“把数据写轻一点”。这篇文章不想讲得太学术，只想帮你快速知道它们各自适合干什么、长什么样、什么时候该用哪个。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;为什么先看它们？&lt;/strong&gt;&lt;/p&gt;
@@ -790,7 +790,618 @@ print(json_str2)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;p&gt;此文章由本人学习配置语言时的总结整理而来，由gork辅助优化格式。&lt;/p&gt;
-</content:encoded></item><item><title>从 C 语言到 Java：一份更顺手的入门笔记</title><link>https://windholm.dpdns.org/posts/itplace-java/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-java/</guid><description>用更自然的方式讲 C 语言和 Java 的入门路径，重点放在理解思路和实际编码感受上。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从 C 语言到 Java&lt;/h1&gt;
+</content:encoded></item><item><title>WindHolm 一款清新美观的 Astro 博客主题模板</title><link>https://windholm.dpdns.org/posts/firefly/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/firefly/</guid><description>WindHolm 是一款基于 Astro 的个人博客主题，强调清爽视觉、现代布局和高可定制性。</description><pubDate>Thu, 06 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🌟 项目概述&lt;/h2&gt;
+&lt;p&gt;WindHolm 是一款基于 Astro 的个人博客主题，主打清爽视觉、现代化布局和高可定制性，适合技术博客与内容创作场景。&lt;/p&gt;
+&lt;h2&gt;🔗 在线资源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在线预览: &lt;a href=&quot;https://demo-firefly.netlify.app/&quot;&gt;Firefly - Demo site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;我的博客: &lt;a href=&quot;https://blog.cuteleaf.cn/&quot;&gt;https://blog.cuteleaf.cn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;使用文档: &lt;a href=&quot;https://docs-firefly.cuteleaf.cn/&quot;&gt;https://docs-firefly.cuteleaf.cn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开源地址: https://github.com/CuteLeaf/Firefly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;::github{repo=&quot;CuteLeaf/Firefly&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&quot;/assets/images/firefly.png&quot; /&amp;gt;&lt;/p&gt;
+&lt;h2&gt;🚀 技术架构&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;静态站点生成&lt;/strong&gt;: 基于 Astro ，提供极快的加载速度和优秀的 SEO 优化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TypeScript 支持&lt;/strong&gt;: 完整的类型安全，提升开发体验和代码质量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;响应式设计&lt;/strong&gt;: 使用 Tailwind CSS 构建，完美适配桌面端和移动端&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;组件化开发&lt;/strong&gt;: 支持 Astro、Svelte 组件，灵活可扩展&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;🎨 界面与主题模块&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主题色彩系统&lt;/strong&gt;: 0-360度色相调节、主题色固定、三种默认模式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;背景壁纸系统&lt;/strong&gt;: Banner/覆盖双模式、响应式图片、图片定位、打字机效果&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;看板娘系统&lt;/strong&gt;: Spine/Live2D双引擎、交互功能、动画配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;字体系统&lt;/strong&gt;: 多字体支持、预加载优化、字体回退&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;🧭 导航与布局模块&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;导航栏配置&lt;/strong&gt;: 多级菜单、图标支持、预设/自定义链接&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;侧边栏系统&lt;/strong&gt;: 模块化组件、布局控制、响应式行为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;📢 内容展示模块&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;公告系统&lt;/strong&gt;: 内容配置、交互功能、显示控制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;友链系统&lt;/strong&gt;: 权重排序、启用控制、标签分类&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;广告系统&lt;/strong&gt;: 多种广告类型、配置选项、广告位管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;目录大纲&lt;/strong&gt;：移动端和桌面端均支持目录大纲，方便快速浏览&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;🎛️ 高级配置模块&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;特效系统&lt;/strong&gt;: 樱花特效、动画参数、循环控制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;统计系统&lt;/strong&gt;: 文章访问量统计、独立开关控制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开发工具&lt;/strong&gt;: 代码高亮、主题支持、插件支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;许可证系统&lt;/strong&gt;: 许可证显示、链接配置、开关控制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SEO优化&lt;/strong&gt;: OpenGraph、站点信息、关键词、语言设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;⚙️ 配置系统详解&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;模块化配置&lt;/strong&gt;: 每个功能模块都有独立的配置文件，便于管理和维护&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;站点配置&lt;/strong&gt;：网站基础信息、主题色彩、图标、语言设置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用户资料配置&lt;/strong&gt;：头像、姓名、简介、社交链接&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;功能配置&lt;/strong&gt;：评论系统、公告、许可证、页脚、统计&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;样式配置&lt;/strong&gt;：代码高亮、樱花特效、字体管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;布局配置&lt;/strong&gt;：侧边栏、导航栏组件管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;组件配置&lt;/strong&gt;：音乐播放器、看板娘、广告、友链&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;页脚HTML&lt;/strong&gt;：自定义HTML内容注入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;📖 配置说明&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📚 &lt;strong&gt;详细配置文档&lt;/strong&gt;: 查看 &lt;a href=&quot;https://docs-firefly.cuteleaf.cn/&quot;&gt;Firefly使用文档&lt;/a&gt; 获取完整的配置指南&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;配置文件结构&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;src/
+├── config/
+│   ├── index.ts              # 配置索引文件
+│   ├── siteConfig.ts         # 站点基础配置
+│   ├── profileConfig.ts      # 用户资料配置
+│   ├── commentConfig.ts      # 评论系统配置
+│   ├── announcementConfig.ts # 公告配置
+│   ├── licenseConfig.ts      # 许可证配置
+│   ├── footerConfig.ts       # 页脚配置
+│   ├── FooterConfig.html     # 页脚HTML内容
+│   ├── expressiveCodeConfig.ts # 代码高亮配置
+│   ├── sakuraConfig.ts       # 樱花特效配置
+│   ├── fontConfig.ts         # 字体配置
+│   ├── sidebarConfig.ts      # 侧边栏布局配置
+│   ├── navBarConfig.ts       # 导航栏配置
+│   ├── musicConfig.ts        # 音乐播放器配置
+│   ├── pioConfig.ts          # 看板娘配置
+│   ├── adConfig.ts           # 广告配置
+│   └── friendsConfig.ts      # 友链配置
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>WindHolm 使用指南</title><link>https://windholm.dpdns.org/posts/guide/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/guide/</guid><description>介绍 WindHolm 的基本用法、文章写法和常见配置思路。</description><pubDate>Thu, 06 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这个模板基于 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建。这里先把最常用的用法放在前面，剩下的细节可以再去看 &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro 文档&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;文章的 Frontmatter&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: 我的第一篇博客文章
+published: 2023-09-09
+description: 这是我新 Astro 博客的第一篇文章。
+image: ./cover.jpg
+tags: [前端, 开发]
+category: 前端开发
+draft: false
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章标题。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;published&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章发布日期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pinned&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;是否将此文章置顶在文章列表顶部。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;description&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章的简短描述。显示在首页上。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;image&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章封面图片路径。&amp;lt;br/&amp;gt;1. 以 &lt;code&gt;http://&lt;/code&gt; 或 &lt;code&gt;https://&lt;/code&gt; 开头：使用网络图片&amp;lt;br/&amp;gt;2. 以 &lt;code&gt;/&lt;/code&gt; 开头：&lt;code&gt;public&lt;/code&gt; 目录中的图片&amp;lt;br/&amp;gt;3. 不带任何前缀：相对于 markdown 文件的路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章标签。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章分类。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;licenseName&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章内容的许可证名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章作者。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sourceLink&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章内容的来源链接或参考。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;draft&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;如果这篇文章仍是草稿，则不会显示。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;slug&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;自定义文章 URL 路径。如果不设置，将使用文件名作为 URL。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;文章文件的放置位置&lt;/h2&gt;
+&lt;p&gt;您的文章文件应放置在 &lt;code&gt;src/content/posts/&lt;/code&gt; 目录中。您也可以创建子目录来更好地组织您的文章和资源。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;src/content/posts/
+├── post-1.md
+└── post-2/
+    ├── cover.png
+    └── index.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;自定义文章 URL (Slug)&lt;/h2&gt;
+&lt;h3&gt;什么是 Slug？&lt;/h3&gt;
+&lt;p&gt;Slug 是文章 URL 路径的自定义部分。如果不设置 slug，系统将使用文件名作为 URL。&lt;/p&gt;
+&lt;h3&gt;Slug 使用示例&lt;/h3&gt;
+&lt;h4&gt;示例 1：使用文件名作为 URL&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: 我的第一篇博客文章
+published: 2023-09-09
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;
+URL：&lt;code&gt;/posts/my-first-blog-post&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;示例 2：自定义 Slug&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: 我的第一篇博客文章
+published: 2023-09-09
+slug: hello-world
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;
+URL：&lt;code&gt;/posts/hello-world&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;示例 3：中文标题使用英文 Slug&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: 如何使用 Firefly 博客主题
+published: 2023-09-09
+slug: how-to-use-firefly-blog-theme
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;文件：&lt;code&gt;src/content/posts/firefly-guide.md&lt;/code&gt;
+URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Slug 使用建议&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;使用英文和连字符&lt;/strong&gt;：&lt;code&gt;my-awesome-post&lt;/code&gt; 而不是 &lt;code&gt;my awesome post&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持简洁&lt;/strong&gt;：避免过长的 slug&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;具有描述性&lt;/strong&gt;：让 URL 能够反映文章内容&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;避免特殊字符&lt;/strong&gt;：只使用字母、数字和连字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持一致性&lt;/strong&gt;：在整个博客中使用相似的命名模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;注意事项&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Slug 一旦设置并发布，建议不要随意更改，以免影响 SEO 和已存在的链接&lt;/li&gt;
+&lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
+&lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;文章命名与分类建议&lt;/h2&gt;
+&lt;p&gt;如果你想让整站文章看起来更统一，可以尽量按下面的方式来写。&lt;/p&gt;
+&lt;h3&gt;命名建议&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;标题尽量短一点，优先让读者一眼看懂内容&lt;/li&gt;
+&lt;li&gt;教程类文章可以用“主题 + 入门 / 笔记 / 指南 / 速览”这类结构&lt;/li&gt;
+&lt;li&gt;项目介绍类文章可以直接用项目名作为标题，再补一个“项目介绍”&lt;/li&gt;
+&lt;li&gt;同一系列文章尽量保持命名风格一致，比如 &lt;code&gt;itPlace&lt;/code&gt; 系列就统一成“语言名 + 入门 / 实战 / 笔记”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;分类建议&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;计算机科学&lt;/code&gt;：编程语言、算法、图形学、开发笔记&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;博客指南&lt;/code&gt;：主题使用、写作说明、站点配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;文章示例&lt;/code&gt;：演示型内容、语法展示、功能样例&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;项目介绍&lt;/code&gt;：实际项目、产品介绍、项目说明&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;前端开发&lt;/code&gt;：前端记录、框架实践、页面搭建&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;标签建议&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;标签尽量少而准，控制在 3 到 5 个左右&lt;/li&gt;
+&lt;li&gt;优先用领域标签，比如 &lt;code&gt;Python&lt;/code&gt;、&lt;code&gt;Markdown&lt;/code&gt;、&lt;code&gt;C++&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;再补一两个用途标签，比如 &lt;code&gt;入门&lt;/code&gt;、&lt;code&gt;实战&lt;/code&gt;、&lt;code&gt;项目介绍&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;避免同义重复，比如同时写 &lt;code&gt;编程&lt;/code&gt;、&lt;code&gt;开发&lt;/code&gt;、&lt;code&gt;代码&lt;/code&gt; 但内容其实差不多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;这套站点里比较适合的写法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;itPlace&lt;/code&gt; 系列：标题统一成“语言名 + 入门 / 实战 / 笔记”&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt;：标题直接用项目名，分类放 &lt;code&gt;项目介绍&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WindHolm&lt;/code&gt; 主题相关：分类放 &lt;code&gt;博客指南&lt;/code&gt; 或 &lt;code&gt;文章示例&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;示例文章：尽量保持轻一点，别写得像正式文档&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>Know-Do-Bridge 项目介绍</title><link>https://windholm.dpdns.org/posts/zhixingqiao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/zhixingqiao/</guid><description>Know-Do-Bridge 是一个把知识学习和实际行动连接起来的项目，强调从记录、拆解到执行的完整闭环。</description><pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Know-Do-Bridge 项目介绍&lt;/h1&gt;
+&lt;p&gt;如果只看名字，&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 就已经把它想做的事情说得很清楚了: 把 &lt;code&gt;Know&lt;/code&gt; 和 &lt;code&gt;Do&lt;/code&gt; 之间那段容易断掉的路，尽量接起来。&lt;/p&gt;
+&lt;p&gt;这不是一个只负责“存内容”的项目，它更像一个把学习、拆解、执行和复盘串起来的工具。你可以把它当成知识记录器，也可以把它当成任务推进器，或者是一个把想法落地的中间站。&lt;/p&gt;
+&lt;h2&gt;项目定位&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 想解决的，不是“学了什么”，而是“学完之后怎么做”。&lt;/p&gt;
+&lt;p&gt;很多时候，问题并不在于信息不够，而在于信息太散:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知道很多概念，但没有整理成可执行的步骤&lt;/li&gt;
+&lt;li&gt;想法很多，但缺少推进节奏&lt;/li&gt;
+&lt;li&gt;做完以后没有复盘，经验很快就散了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个项目做的事情，就是把这些容易断开的环节重新连起来。&lt;/p&gt;
+&lt;h2&gt;它适合什么场景&lt;/h2&gt;
+&lt;p&gt;这个项目适合几类很典型的使用场景:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;个人学习笔记&lt;/li&gt;
+&lt;li&gt;知识卡片整理&lt;/li&gt;
+&lt;li&gt;小项目拆解和推进&lt;/li&gt;
+&lt;li&gt;任务记录与复盘&lt;/li&gt;
+&lt;li&gt;团队协作中的过程沉淀&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你经常会遇到“知道了，但没做下去”“做了，但没留下来”的情况，那它的定位就会很有用。&lt;/p&gt;
+&lt;h2&gt;核心思路&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 的思路其实很简单: 不追求把内容堆得很满，而是让每一步都能往下走。&lt;/p&gt;
+&lt;p&gt;它强调的不是一次性写完，而是持续推进:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;先把知识记下来&lt;/li&gt;
+&lt;li&gt;再把知识拆成能执行的动作&lt;/li&gt;
+&lt;li&gt;执行之后留下结果&lt;/li&gt;
+&lt;li&gt;最后把结果变成下一轮输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样一来，学习就不只是“看过”，而是变成了可以重复利用的过程。&lt;/p&gt;
+&lt;h2&gt;你可以把它理解成什么&lt;/h2&gt;
+&lt;p&gt;如果说传统笔记工具更偏向“收纳”，那 &lt;code&gt;Know-Do-Bridge&lt;/code&gt; 更偏向“转化”。&lt;/p&gt;
+&lt;p&gt;它更像一座桥:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;左边是知识输入&lt;/li&gt;
+&lt;li&gt;中间是理解、拆解和行动&lt;/li&gt;
+&lt;li&gt;右边是结果、反馈和复盘&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这也是它名字里最重要的意思: 不是把内容放在那儿，而是让内容真的能走到行动里。&lt;/p&gt;
+&lt;h2&gt;设计上的重点&lt;/h2&gt;
+&lt;p&gt;从产品角度看，这类项目最重要的不是花哨，而是顺手。&lt;/p&gt;
+&lt;p&gt;比较关键的体验点一般会是这些:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入门槛低，记录不费劲&lt;/li&gt;
+&lt;li&gt;结构清楚，方便后续整理&lt;/li&gt;
+&lt;li&gt;能从“想法”自然走到“执行”&lt;/li&gt;
+&lt;li&gt;支持回看，方便复盘和持续迭代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果这些基础体验做好了，项目就会很适合长期使用。&lt;/p&gt;
+&lt;h2&gt;为什么这个项目有意义&lt;/h2&gt;
+&lt;p&gt;很多人都不缺信息，缺的是把信息变成行动的机制。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 有价值的地方，不只是“记住了什么”，而是它在尝试回答另一个更实际的问题:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;怎么让知识真的产生作用。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这也是它最像“产品”的地方。它不是单纯展示功能，而是在帮人解决一个长期存在的过程问题。&lt;/p&gt;
+&lt;h2&gt;项目链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/WindHolm2233/Know-Do-Bridge&quot;&gt;Know-Do-Bridge&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;结尾&lt;/h2&gt;
+&lt;p&gt;如果你愿意把知识真正变成行动，&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 就是那段连接两者的路。&lt;/p&gt;
+&lt;p&gt;它不一定要一开始就很复杂，但只要方向对了，它就能慢慢长成一个很顺手的工具。&lt;/p&gt;
+</content:encoded></item><item><title>计算机图形学学习整理</title><link>https://windholm.dpdns.org/posts/introduction-cg/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/introduction-cg/</guid><description>按 GAMES101 的主线整理计算机图形学入门知识，重点放在坐标变换、光栅化、着色和光线追踪。</description><pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;计算机图形学学习整理&lt;/h1&gt;
+&lt;p&gt;这篇笔记按 GAMES101 的思路来写，目标很简单：先弄清楚图形学在干什么，再把几条最核心的公式串起来。&lt;/p&gt;
+&lt;p&gt;图形学本质上是在做一件事：把三维空间里的物体，经过一系列变换和计算，变成屏幕上的二维像素。&lt;/p&gt;
+&lt;h2&gt;1. 图形学流水线 &lt;a href=&quot;https://docs.vulkan.org/guide/latest/&quot;&gt;Vulkan&lt;/a&gt; &lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/direct3d12/direct3d-12-graphics&quot;&gt;Direct3D 12&lt;/a&gt; &lt;a href=&quot;https://developer.apple.com/metal/&quot;&gt;Metal&lt;/a&gt; &lt;a href=&quot;https://www.khronos.org/opengl/&quot;&gt;OpenGL&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个典型的渲染流程可以拆成几步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;模型空间中的顶点进入管线&lt;/li&gt;
+&lt;li&gt;经过模型、观察、投影变换&lt;/li&gt;
+&lt;li&gt;进入光栅化阶段，变成片元&lt;/li&gt;
+&lt;li&gt;片元经过插值、深度测试和着色&lt;/li&gt;
+&lt;li&gt;写入帧缓冲，显示到屏幕&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最常见的坐标变化链路可以写成：&lt;/p&gt;
+&lt;p&gt;$$
+p_{clip} = M_{proj} M_{view} M_{model} p_{obj}
+$$&lt;/p&gt;
+&lt;p&gt;这里：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$p_{obj}$ 是模型坐标系下的点&lt;/li&gt;
+&lt;li&gt;$M_{model}$ 是模型变换&lt;/li&gt;
+&lt;li&gt;$M_{view}$ 是观察变换&lt;/li&gt;
+&lt;li&gt;$M_{proj}$ 是投影变换&lt;/li&gt;
+&lt;li&gt;$p_{clip}$ 是裁剪空间坐标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2. 齐次坐标和矩阵变换 &lt;a href=&quot;https://www.khronos.org/opengl/&quot;&gt;OpenGL&lt;/a&gt; &lt;a href=&quot;https://docs.vulkan.org/guide/latest/&quot;&gt;Vulkan&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;为了把平移、旋转、缩放统一到一个框架里，图形学里通常用齐次坐标：&lt;/p&gt;
+&lt;p&gt;$$
+(x, y, z) \rightarrow (x, y, z, 1)
+$$&lt;/p&gt;
+&lt;p&gt;这样，平移也能写成矩阵乘法。对一个点做仿射变换时，统一用 $4 \times 4$ 矩阵表示会更方便。&lt;/p&gt;
+&lt;h3&gt;常见变换&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;平移：改变物体位置&lt;/li&gt;
+&lt;li&gt;缩放：改变物体大小&lt;/li&gt;
+&lt;li&gt;旋转：改变物体朝向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果把变换写成矩阵，组合多个操作时只要连乘即可。注意矩阵乘法不满足交换律，所以顺序不能乱。&lt;/p&gt;
+&lt;h2&gt;3. 观察与投影 &lt;a href=&quot;https://www.khronos.org/opengl/&quot;&gt;OpenGL&lt;/a&gt; &lt;a href=&quot;https://docs.vulkan.org/guide/latest/&quot;&gt;Vulkan&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;观察变换的作用，是把世界坐标转到相机坐标。可以理解成把相机放在原点，统一看场景。&lt;/p&gt;
+&lt;p&gt;投影分两类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;正交投影：平行线保持平行&lt;/li&gt;
+&lt;li&gt;透视投影：远处物体看起来更小，更符合真实视觉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;透视投影的关键是透视除法：&lt;/p&gt;
+&lt;p&gt;$$
+x_{ndc} = \frac{x_{clip}}{w_{clip}}, \quad
+y_{ndc} = \frac{y_{clip}}{w_{clip}}, \quad
+z_{ndc} = \frac{z_{clip}}{w_{clip}}
+$$&lt;/p&gt;
+&lt;p&gt;这里的 $w$ 很重要，它决定了“近大远小”的效果。&lt;/p&gt;
+&lt;h2&gt;4. 光栅化 &lt;a href=&quot;https://microsoft.github.io/DirectX-Specs/d3d/MeshShader.html&quot;&gt;Mesh Shader&lt;/a&gt; &lt;a href=&quot;https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-19-deferred-shading-tabula-rasa&quot;&gt;Deferred Rendering&lt;/a&gt; &lt;a href=&quot;https://developer.nvidia.com/blog/ray-traced-reflections-in-wolfenstein-youngblood/&quot;&gt;Forward+&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;光栅化就是把三角形覆盖到哪些像素上这件事算出来。三角形是图形学里最常用的基本图元，因为它稳定、简单，也方便插值。&lt;/p&gt;
+&lt;p&gt;判断一个像素是否在三角形内，常见方法是用重心坐标。对三角形顶点 $A,B,C$，任一点 $P$ 可以表示为：&lt;/p&gt;
+&lt;p&gt;$$
+P = \alpha A + \beta B + \gamma C
+$$&lt;/p&gt;
+&lt;p&gt;并且满足：&lt;/p&gt;
+&lt;p&gt;$$
+\alpha + \beta + \gamma = 1
+$$&lt;/p&gt;
+&lt;p&gt;如果 $\alpha,\beta,\gamma$ 都在 $[0,1]$ 内，点通常就在三角形内部。&lt;/p&gt;
+&lt;h3&gt;属性插值&lt;/h3&gt;
+&lt;p&gt;光栅化不只是判断覆盖，还要把顶点属性插到片元上，比如颜色、法线、纹理坐标。&lt;/p&gt;
+&lt;p&gt;线性插值可以写成：&lt;/p&gt;
+&lt;p&gt;$$
+v = \alpha v_A + \beta v_B + \gamma v_C
+$$&lt;/p&gt;
+&lt;p&gt;如果考虑透视校正，常用的是：&lt;/p&gt;
+&lt;p&gt;$$
+\frac{1}{w} = \alpha \frac{1}{w_A} + \beta \frac{1}{w_B} + \gamma \frac{1}{w_C}
+$$&lt;/p&gt;
+&lt;p&gt;然后再对属性做除法修正。这个步骤很关键，不然纹理会拉伸得不对。&lt;/p&gt;
+&lt;h2&gt;5. 深度测试 &lt;a href=&quot;https://developer.nvidia.com/gpugems/gpugems/part-ii-lighting-and-shadows/chapter-12-omnidirectional-shadow-mapping&quot;&gt;Shadow Mapping&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;屏幕上一个像素可能被多个三角形覆盖，这时要决定谁在前面。最常见的方法是 Z-Buffer。&lt;/p&gt;
+&lt;p&gt;思路很直接：记录每个像素当前最小的深度值，只保留更靠近相机的片元。&lt;/p&gt;
+&lt;p&gt;深度值越小，通常表示越靠近相机。这样就能解决遮挡关系。&lt;/p&gt;
+&lt;h2&gt;6. 着色 &lt;a href=&quot;https://developer.nvidia.com/rendering-technologies/mdl-sdk&quot;&gt;PBR&lt;/a&gt; &lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/direct3d12/pipelines-and-shaders-with-directx-12&quot;&gt;Compute Shader&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;着色关心的是“这个点应该显示成什么颜色”。GAMES101 里最重要的一个起点，是局部光照模型。&lt;/p&gt;
+&lt;h3&gt;Phong 光照模型&lt;/h3&gt;
+&lt;p&gt;经典的 Phong 模型通常写成：&lt;/p&gt;
+&lt;p&gt;$$
+I = I_a k_a + I_l k_d \max(0, \mathbf{n}\cdot\mathbf{l}) + I_l k_s \max(0, \mathbf{r}\cdot\mathbf{v})^p
+$$&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$I_a$ 是环境光&lt;/li&gt;
+&lt;li&gt;$I_l$ 是入射光强&lt;/li&gt;
+&lt;li&gt;$k_a, k_d, k_s$ 分别是环境、漫反射和高光系数&lt;/li&gt;
+&lt;li&gt;$\mathbf{n}$ 是法线&lt;/li&gt;
+&lt;li&gt;$\mathbf{l}$ 是光照方向&lt;/li&gt;
+&lt;li&gt;$\mathbf{r}$ 是反射方向&lt;/li&gt;
+&lt;li&gt;$\mathbf{v}$ 是视线方向&lt;/li&gt;
+&lt;li&gt;$p$ 控制高光大小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;漫反射&lt;/h3&gt;
+&lt;p&gt;漫反射和入射角有关，常见写法是：&lt;/p&gt;
+&lt;p&gt;$$
+I_d = k_d I_l \max(0, \mathbf{n}\cdot\mathbf{l})
+$$&lt;/p&gt;
+&lt;p&gt;这个公式可以直接理解成：角度越正，对表面的照亮越强。&lt;/p&gt;
+&lt;h3&gt;插值着色&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Flat Shading：一个三角形一个颜色，最快，但比较硬&lt;/li&gt;
+&lt;li&gt;Gouraud Shading：在顶点算光照，再插值颜色&lt;/li&gt;
+&lt;li&gt;Phong Shading：插值法线，再逐像素算光照，效果最好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;7. 纹理映射 &lt;a href=&quot;https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html&quot;&gt;glTF 2.0&lt;/a&gt; &lt;a href=&quot;https://developer.nvidia.com/rendering-technologies/mdl-sdk&quot;&gt;PBR&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;纹理映射的作用，是把二维图片贴到三维物体表面上。每个顶点除了位置，还会带一个纹理坐标 $(u,v)$。&lt;/p&gt;
+&lt;p&gt;取样时，常见做法是：&lt;/p&gt;
+&lt;p&gt;$$
+color = T(u,v)
+$$&lt;/p&gt;
+&lt;p&gt;其中 $T$ 是纹理图。真正工程里，最近邻、双线性过滤都会影响最终效果。&lt;/p&gt;
+&lt;h2&gt;8. 抗锯齿 &lt;a href=&quot;https://developer.nvidia.com/blog/understanding-the-need-for-adaptive-temporal-antialiasing/&quot;&gt;TAA&lt;/a&gt; &lt;a href=&quot;https://developer.nvidia.com/rtx/dlss/get-started&quot;&gt;Super Resolution&lt;/a&gt; &lt;a href=&quot;https://developer.nvidia.com/rtx/dlss/get-started&quot;&gt;Temporal Reconstruction&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;锯齿本质上是采样不足。屏幕是离散像素，但几何图元是连续的，所以边缘容易出现不平滑。&lt;/p&gt;
+&lt;p&gt;解决思路通常是超采样：&lt;/p&gt;
+&lt;p&gt;$$
+I_{pixel} = \frac{1}{N}\sum_{i=1}^{N} I_i
+$$&lt;/p&gt;
+&lt;p&gt;也就是对一个像素内多个采样点求平均。样本越多，边缘越平滑，但成本也越高。&lt;/p&gt;
+&lt;h2&gt;9. 光线追踪 &lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/direct3d12/direct3d-12-raytracing-hlsl-shaders&quot;&gt;Hardware Ray Tracing / DXR&lt;/a&gt; &lt;a href=&quot;https://developer.nvidia.com/blog/effectively-integrating-rtx-ray-tracing-real-time-rendering-engine/&quot;&gt;Hybrid Rendering&lt;/a&gt; &lt;a href=&quot;https://developer.nvidia.com/image-processing&quot;&gt;Denoising&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;光栅化擅长实时渲染，光线追踪更擅长模拟真实光照。&lt;/p&gt;
+&lt;p&gt;一条光线通常写成：&lt;/p&gt;
+&lt;p&gt;$$
+r(t) = o + t\mathbf{d}
+$$&lt;/p&gt;
+&lt;p&gt;其中 $o$ 是起点，$\mathbf{d}$ 是方向，$t \ge 0$。&lt;/p&gt;
+&lt;h3&gt;球体求交&lt;/h3&gt;
+&lt;p&gt;如果球心是 $c$，半径是 $R$，则满足：&lt;/p&gt;
+&lt;p&gt;$$
+|r(t) - c|^2 = R^2
+$$&lt;/p&gt;
+&lt;p&gt;展开后会得到一个二次方程，解出最小的正根，就是最近交点。&lt;/p&gt;
+&lt;p&gt;光线追踪的优点是反射、折射、阴影都更自然；缺点是计算量大，所以真实项目里通常要配合加速结构。&lt;/p&gt;
+&lt;h2&gt;10. 加速结构 &lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/api/d3d12/ne-d3d12-d3d12_raytracing_acceleration_structure_type&quot;&gt;BLAS / TLAS&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;如果场景里有很多三角形，逐个求交太慢。常见做法是加 BVH 这类空间划分结构，先快速排除不可能命中的区域，再做精确求交。&lt;/p&gt;
+&lt;p&gt;这样可以把“先扫一遍全部物体”变成“先找候选，再精算”，性能会好很多。&lt;/p&gt;
+&lt;h2&gt;11. 目前主流技术&lt;/h2&gt;
+&lt;p&gt;如果把 GAMES101 里的内容放到今天的工程里看，主流技术大致可以这样对照。下面每一项都放了一个可直接打开的学习入口。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;技术&lt;/th&gt;
+&lt;th&gt;学习网站&lt;/th&gt;
+&lt;th&gt;一句话说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Vulkan&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://docs.vulkan.org/guide/latest/&quot;&gt;Khronos Vulkan Guide&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;现代低层图形和计算 API。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Direct3D 12&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/direct3d12/direct3d-12-graphics&quot;&gt;Microsoft Learn: Direct3D 12 graphics&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Windows 平台的主力图形 API。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Metal&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.apple.com/metal/&quot;&gt;Apple Metal Overview&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Apple 平台的图形与计算 API。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OpenGL&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.khronos.org/opengl/&quot;&gt;Khronos OpenGL&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;教学、旧项目和原型验证常用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;glTF 2.0&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html&quot;&gt;glTF 2.0 Specification&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;运行时资产交付格式。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PBR&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/rendering-technologies/mdl-sdk&quot;&gt;NVIDIA MDL SDK&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;物理材质和 BSDF 体系。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HDR / Tone Mapping&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/high-dynamic-range-display-development&quot;&gt;NVIDIA HDR Display Development&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;把高动态范围结果映射到屏幕。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Compute Shader&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/direct3d12/pipelines-and-shaders-with-directx-12&quot;&gt;Direct3D 12 Pipelines and Shaders&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;适合后处理、粒子和通用 GPU 计算。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mesh Shader&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://microsoft.github.io/DirectX-Specs/d3d/MeshShader.html&quot;&gt;DirectX-Specs: Mesh Shader&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;新一代几何提交和剔除方案。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Deferred Rendering&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-19-deferred-shading-tabula-rasa&quot;&gt;GPU Gems 3: Deferred Shading in Tabula Rasa&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;经典的 G-buffer 路线。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Forward+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/blog/ray-traced-reflections-in-wolfenstein-youngblood/&quot;&gt;How Wolfenstein Youngblood Integrated Ray Tracing for Next-Generation Visuals&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;常见于多光源场景。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Shadow Mapping&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/gpugems/gpugems/part-ii-lighting-and-shadows/chapter-12-omnidirectional-shadow-mapping&quot;&gt;GPU Gems 2: Omnidirectional Shadow Mapping&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;最基础的实时阴影方案。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SSAO&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/rendering-technologies/horizon-based-ambient-occlusion-plus&quot;&gt;NVIDIA HBAO+&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;屏幕空间环境光遮蔽。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TAA&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/blog/understanding-the-need-for-adaptive-temporal-antialiasing/&quot;&gt;NVIDIA Adaptive Temporal Antialiasing&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;时间域抗锯齿。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hardware Ray Tracing / DXR&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/direct3d12/direct3d-12-raytracing-hlsl-shaders&quot;&gt;Microsoft Learn: Direct3D 12 Raytracing HLSL Shaders&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;DXR 的着色器入口。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BLAS / TLAS&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/windows/win32/api/d3d12/ne-d3d12-d3d12_raytracing_acceleration_structure_type&quot;&gt;Microsoft Learn: D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;理解底层和顶层加速结构。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hybrid Rendering&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/blog/effectively-integrating-rtx-ray-tracing-real-time-rendering-engine/&quot;&gt;NVIDIA: Effectively Integrating RTX Ray Tracing into a Real-Time Rendering Engine&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;光栅和光追混合使用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Super Resolution&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/rtx/dlss/get-started&quot;&gt;NVIDIA DLSS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;典型的超分辨率方案。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Temporal Reconstruction&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/rtx/dlss/get-started&quot;&gt;NVIDIA DLSS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;复用历史帧重建细节。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Denoising&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://developer.nvidia.com/image-processing&quot;&gt;NVIDIA Image Processing Technologies for Rendering&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;传统降噪和 AI 降噪。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;12. 小结&lt;/h2&gt;
+&lt;p&gt;GAMES101 最重要的不是把每个公式背下来，而是把整条管线串起来。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变换负责把点送到正确的位置&lt;/li&gt;
+&lt;li&gt;光栅化负责把三角形变成像素&lt;/li&gt;
+&lt;li&gt;着色负责决定像素的颜色&lt;/li&gt;
+&lt;li&gt;光线追踪负责更真实地模拟光&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;把这几步理解清楚，后面学 OpenGL、Vulkan、PBR、Ray Tracing，都会顺很多。&lt;/p&gt;
+</content:encoded></item><item><title>VS Code + CMake + vcpkg 配置笔记</title><link>https://windholm.dpdns.org/posts/config/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/config/</guid><description>记录 Windows 下搭建 VS Code、CMake 和 vcpkg 开发环境的过程和踩坑经验。</description><pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;配置笔记&lt;/h2&gt;
+&lt;p&gt;这篇文章不是那种一步到位的官方教程，更像我自己搭环境时留下来的笔记。重点很简单: 在 Windows 下把 VS Code、CMake 和 vcpkg 这套组合跑通，少踩一些我踩过的坑。&lt;/p&gt;
+&lt;h2&gt;先搞清楚三件事&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;vcpkg&lt;/strong&gt;: 负责把第三方库装好，省去手动配置依赖。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CMake&lt;/strong&gt;: 负责组织工程和生成构建规则。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VS Code&lt;/strong&gt;: 负责写代码和看日志，顺手就好。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. 先把工具装好&lt;/h3&gt;
+&lt;p&gt;把 vcpkg 放到一个稳定的路径里，再记住 &lt;code&gt;scripts/buildsystems/vcpkg.cmake&lt;/code&gt; 的位置。这个文件后面会经常用到，路径错了，后面就会一直报错。&lt;/p&gt;
+&lt;h3&gt;2. 路径写法别犯懒&lt;/h3&gt;
+&lt;p&gt;我第一次配置时最容易出问题的地方，就是在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里直接写了 Windows 反斜杠路径。结果 CMake 把它当成转义字符处理，直接报错。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;写路径时尽量用 &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果非要用 &lt;code&gt;\&lt;/code&gt;，就记得转义成 &lt;code&gt;\\&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;看到 &lt;code&gt;Invalid character escape&lt;/code&gt;，先回头查路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. VS Code 里也要确认一下&lt;/h3&gt;
+&lt;p&gt;有时候问题不在代码，而在配置文件还指向旧路径。这个时候先别急着怀疑 CMake，先检查 VS Code 和扩展里是不是还留着老参数。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;修改全局配置&lt;/strong&gt;：在 VS Code 的 &lt;code&gt;settings.json&lt;/code&gt; 中配置 &lt;code&gt;cmake.configureSettings&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;强制指定工具链&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&quot;cmake.configureSettings&quot;: {
+    &quot;CMAKE_TOOLCHAIN_FILE&quot;: &quot;安装路径/vcpkg/scripts/buildsystems/vcpkg.cmake&quot;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;理解逻辑&lt;/strong&gt;：VS Code CMake Tools 插件在执行命令时，会通过命令行参数 &lt;code&gt;-DCMAKE_TOOLCHAIN_FILE=...&lt;/code&gt; 传入路径。命令行参数的优先级&lt;strong&gt;高于&lt;/strong&gt;脚本内部的 &lt;code&gt;set&lt;/code&gt; 指令。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;第四步：彻底清理缓存 (The &quot;Hard Reset&quot;)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;操作&lt;/strong&gt;：手动删除工程目录下的 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;原因&lt;/strong&gt;：CMake 在第一次配置失败后，会将错误的路径信息永久记录在 &lt;code&gt;CMakeCache.txt&lt;/code&gt; 中。&lt;strong&gt;如果不删除该文件，无论你怎么改设置，CMake 都会读取旧的缓存数据。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;3. 最终正确的工作流示意图&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;VS Code&lt;/strong&gt; 发起构建指令。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CMake&lt;/strong&gt; 接收到 &lt;code&gt;CMAKE_TOOLCHAIN_FILE&lt;/code&gt; 路径。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;vcpkg&lt;/strong&gt; 介入，自动在 &lt;code&gt;vcpkg所处的路径&lt;/code&gt; 中寻找项目所需的头文件和库。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;编译器 (MSVC)&lt;/strong&gt; 最终完成代码编译。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3&gt;🌟 个人经验教训总结&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;路径习惯&lt;/strong&gt;：Windows 开发中，配置文件里的路径一律写成 &lt;code&gt;/&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缓存意识&lt;/strong&gt;：改了配置不生效，先删 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解耦配置&lt;/strong&gt;：尽量不要在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里写死绝对路径，通过 IDE 的设置或命令行传入，这样项目更易于移植。&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded></item><item><title>从 C 语言到 Java</title><link>https://windholm.dpdns.org/posts/itplace-java/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-java/</guid><description>用更自然的方式讲 C 语言和 Java 的入门路径，重点放在理解思路和实际编码感受上。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从 C 语言到 Java&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;如果你刚开始学编程，我会更建议先碰一碰 C，再去看 Java。C 语言会把很多底层概念直接摊开给你看，比如变量、函数、内存和程序入口；而 Java 会在这个基础上，带你进入更清晰的面向对象世界。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;为什么这么安排？&lt;/strong&gt;&lt;/p&gt;
@@ -1175,501 +1786,6 @@ public class StudentManager {
 &lt;li&gt;Java：Oracle官方文档，书籍《Head First Java》，在线：Coursera “Java Programming”。&lt;/li&gt;
 &lt;li&gt;工具：VS Code（插件支持C/Java），LeetCode练习算法。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>WindHolm 一款清新美观的 Astro 博客主题模板</title><link>https://windholm.dpdns.org/posts/firefly/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/firefly/</guid><description>WindHolm 是一款基于 Astro 的个人博客主题，强调清爽视觉、现代布局和高可定制性。</description><pubDate>Thu, 06 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🌟 项目概述&lt;/h2&gt;
-&lt;p&gt;WindHolm 是一款基于 Astro 的个人博客主题，主打清爽视觉、现代化布局和高可定制性，适合技术博客与内容创作场景。&lt;/p&gt;
-&lt;h2&gt;🔗 在线资源&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;在线预览: &lt;a href=&quot;https://demo-firefly.netlify.app/&quot;&gt;Firefly - Demo site&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;我的博客: &lt;a href=&quot;https://blog.cuteleaf.cn/&quot;&gt;https://blog.cuteleaf.cn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;使用文档: &lt;a href=&quot;https://docs-firefly.cuteleaf.cn/&quot;&gt;https://docs-firefly.cuteleaf.cn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;开源地址: https://github.com/CuteLeaf/Firefly&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;::github{repo=&quot;CuteLeaf/Firefly&quot;}&lt;/p&gt;
-&lt;p&gt;&amp;lt;img src=&quot;/assets/images/firefly.png&quot; /&amp;gt;&lt;/p&gt;
-&lt;h2&gt;🚀 技术架构&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;静态站点生成&lt;/strong&gt;: 基于 Astro ，提供极快的加载速度和优秀的 SEO 优化&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TypeScript 支持&lt;/strong&gt;: 完整的类型安全，提升开发体验和代码质量&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;响应式设计&lt;/strong&gt;: 使用 Tailwind CSS 构建，完美适配桌面端和移动端&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;组件化开发&lt;/strong&gt;: 支持 Astro、Svelte 组件，灵活可扩展&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;🎨 界面与主题模块&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;主题色彩系统&lt;/strong&gt;: 0-360度色相调节、主题色固定、三种默认模式&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;背景壁纸系统&lt;/strong&gt;: Banner/覆盖双模式、响应式图片、图片定位、打字机效果&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;看板娘系统&lt;/strong&gt;: Spine/Live2D双引擎、交互功能、动画配置&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;字体系统&lt;/strong&gt;: 多字体支持、预加载优化、字体回退&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;🧭 导航与布局模块&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;导航栏配置&lt;/strong&gt;: 多级菜单、图标支持、预设/自定义链接&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;侧边栏系统&lt;/strong&gt;: 模块化组件、布局控制、响应式行为&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;📢 内容展示模块&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;公告系统&lt;/strong&gt;: 内容配置、交互功能、显示控制&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;友链系统&lt;/strong&gt;: 权重排序、启用控制、标签分类&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;广告系统&lt;/strong&gt;: 多种广告类型、配置选项、广告位管理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;目录大纲&lt;/strong&gt;：移动端和桌面端均支持目录大纲，方便快速浏览&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;🎛️ 高级配置模块&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;特效系统&lt;/strong&gt;: 樱花特效、动画参数、循环控制&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;统计系统&lt;/strong&gt;: 文章访问量统计、独立开关控制&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;开发工具&lt;/strong&gt;: 代码高亮、主题支持、插件支持&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;许可证系统&lt;/strong&gt;: 许可证显示、链接配置、开关控制&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SEO优化&lt;/strong&gt;: OpenGraph、站点信息、关键词、语言设置&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;⚙️ 配置系统详解&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;模块化配置&lt;/strong&gt;: 每个功能模块都有独立的配置文件，便于管理和维护&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;站点配置&lt;/strong&gt;：网站基础信息、主题色彩、图标、语言设置&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;用户资料配置&lt;/strong&gt;：头像、姓名、简介、社交链接&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;功能配置&lt;/strong&gt;：评论系统、公告、许可证、页脚、统计&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;样式配置&lt;/strong&gt;：代码高亮、樱花特效、字体管理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;布局配置&lt;/strong&gt;：侧边栏、导航栏组件管理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;组件配置&lt;/strong&gt;：音乐播放器、看板娘、广告、友链&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;页脚HTML&lt;/strong&gt;：自定义HTML内容注入&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;📖 配置说明&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;📚 &lt;strong&gt;详细配置文档&lt;/strong&gt;: 查看 &lt;a href=&quot;https://docs-firefly.cuteleaf.cn/&quot;&gt;Firefly使用文档&lt;/a&gt; 获取完整的配置指南&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;配置文件结构&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;src/
-├── config/
-│   ├── index.ts              # 配置索引文件
-│   ├── siteConfig.ts         # 站点基础配置
-│   ├── profileConfig.ts      # 用户资料配置
-│   ├── commentConfig.ts      # 评论系统配置
-│   ├── announcementConfig.ts # 公告配置
-│   ├── licenseConfig.ts      # 许可证配置
-│   ├── footerConfig.ts       # 页脚配置
-│   ├── FooterConfig.html     # 页脚HTML内容
-│   ├── expressiveCodeConfig.ts # 代码高亮配置
-│   ├── sakuraConfig.ts       # 樱花特效配置
-│   ├── fontConfig.ts         # 字体配置
-│   ├── sidebarConfig.ts      # 侧边栏布局配置
-│   ├── navBarConfig.ts       # 导航栏配置
-│   ├── musicConfig.ts        # 音乐播放器配置
-│   ├── pioConfig.ts          # 看板娘配置
-│   ├── adConfig.ts           # 广告配置
-│   └── friendsConfig.ts      # 友链配置
-&lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>WindHolm 使用指南</title><link>https://windholm.dpdns.org/posts/guide/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/guide/</guid><description>介绍 WindHolm 的基本用法、文章写法和常见配置思路。</description><pubDate>Thu, 06 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这个模板基于 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建。这里先把最常用的用法放在前面，剩下的细节可以再去看 &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro 文档&lt;/a&gt;。&lt;/p&gt;
-&lt;h2&gt;文章的 Frontmatter&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 我的第一篇博客文章
-published: 2023-09-09
-description: 这是我新 Astro 博客的第一篇文章。
-image: ./cover.jpg
-tags: [前端, 开发]
-category: 前端开发
-draft: false
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;属性&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章标题。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;published&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章发布日期。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;pinned&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;是否将此文章置顶在文章列表顶部。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;description&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章的简短描述。显示在首页上。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;image&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章封面图片路径。&amp;lt;br/&amp;gt;1. 以 &lt;code&gt;http://&lt;/code&gt; 或 &lt;code&gt;https://&lt;/code&gt; 开头：使用网络图片&amp;lt;br/&amp;gt;2. 以 &lt;code&gt;/&lt;/code&gt; 开头：&lt;code&gt;public&lt;/code&gt; 目录中的图片&amp;lt;br/&amp;gt;3. 不带任何前缀：相对于 markdown 文件的路径&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章标签。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章分类。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;licenseName&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章内容的许可证名称。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章作者。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;sourceLink&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章内容的来源链接或参考。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;draft&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;如果这篇文章仍是草稿，则不会显示。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;slug&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;自定义文章 URL 路径。如果不设置，将使用文件名作为 URL。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;文章文件的放置位置&lt;/h2&gt;
-&lt;p&gt;您的文章文件应放置在 &lt;code&gt;src/content/posts/&lt;/code&gt; 目录中。您也可以创建子目录来更好地组织您的文章和资源。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;src/content/posts/
-├── post-1.md
-└── post-2/
-    ├── cover.png
-    └── index.md
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;自定义文章 URL (Slug)&lt;/h2&gt;
-&lt;h3&gt;什么是 Slug？&lt;/h3&gt;
-&lt;p&gt;Slug 是文章 URL 路径的自定义部分。如果不设置 slug，系统将使用文件名作为 URL。&lt;/p&gt;
-&lt;h3&gt;Slug 使用示例&lt;/h3&gt;
-&lt;h4&gt;示例 1：使用文件名作为 URL&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 我的第一篇博客文章
-published: 2023-09-09
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;
-URL：&lt;code&gt;/posts/my-first-blog-post&lt;/code&gt;&lt;/p&gt;
-&lt;h4&gt;示例 2：自定义 Slug&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 我的第一篇博客文章
-published: 2023-09-09
-slug: hello-world
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;
-URL：&lt;code&gt;/posts/hello-world&lt;/code&gt;&lt;/p&gt;
-&lt;h4&gt;示例 3：中文标题使用英文 Slug&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 如何使用 Firefly 博客主题
-published: 2023-09-09
-slug: how-to-use-firefly-blog-theme
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;文件：&lt;code&gt;src/content/posts/firefly-guide.md&lt;/code&gt;
-URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Slug 使用建议&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;使用英文和连字符&lt;/strong&gt;：&lt;code&gt;my-awesome-post&lt;/code&gt; 而不是 &lt;code&gt;my awesome post&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保持简洁&lt;/strong&gt;：避免过长的 slug&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;具有描述性&lt;/strong&gt;：让 URL 能够反映文章内容&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;避免特殊字符&lt;/strong&gt;：只使用字母、数字和连字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保持一致性&lt;/strong&gt;：在整个博客中使用相似的命名模式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;注意事项&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Slug 一旦设置并发布，建议不要随意更改，以免影响 SEO 和已存在的链接&lt;/li&gt;
-&lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
-&lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;文章命名与分类建议&lt;/h2&gt;
-&lt;p&gt;如果你想让整站文章看起来更统一，可以尽量按下面的方式来写。&lt;/p&gt;
-&lt;h3&gt;命名建议&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;标题尽量短一点，优先让读者一眼看懂内容&lt;/li&gt;
-&lt;li&gt;教程类文章可以用“主题 + 入门 / 笔记 / 指南 / 速览”这类结构&lt;/li&gt;
-&lt;li&gt;项目介绍类文章可以直接用项目名作为标题，再补一个“项目介绍”&lt;/li&gt;
-&lt;li&gt;同一系列文章尽量保持命名风格一致，比如 &lt;code&gt;itPlace&lt;/code&gt; 系列就统一成“语言名 + 入门 / 实战 / 笔记”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;分类建议&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;计算机科学&lt;/code&gt;：编程语言、算法、图形学、开发笔记&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;博客指南&lt;/code&gt;：主题使用、写作说明、站点配置&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;文章示例&lt;/code&gt;：演示型内容、语法展示、功能样例&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;项目介绍&lt;/code&gt;：实际项目、产品介绍、项目说明&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;前端开发&lt;/code&gt;：前端记录、框架实践、页面搭建&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;标签建议&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;标签尽量少而准，控制在 3 到 5 个左右&lt;/li&gt;
-&lt;li&gt;优先用领域标签，比如 &lt;code&gt;Python&lt;/code&gt;、&lt;code&gt;Markdown&lt;/code&gt;、&lt;code&gt;C++&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;再补一两个用途标签，比如 &lt;code&gt;入门&lt;/code&gt;、&lt;code&gt;实战&lt;/code&gt;、&lt;code&gt;项目介绍&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;避免同义重复，比如同时写 &lt;code&gt;编程&lt;/code&gt;、&lt;code&gt;开发&lt;/code&gt;、&lt;code&gt;代码&lt;/code&gt; 但内容其实差不多&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;这套站点里比较适合的写法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;itPlace&lt;/code&gt; 系列：标题统一成“语言名 + 入门 / 实战 / 笔记”&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt;：标题直接用项目名，分类放 &lt;code&gt;项目介绍&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;WindHolm&lt;/code&gt; 主题相关：分类放 &lt;code&gt;博客指南&lt;/code&gt; 或 &lt;code&gt;文章示例&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;示例文章：尽量保持轻一点，别写得像正式文档&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded></item><item><title>Know-Do-Bridge 项目介绍</title><link>https://windholm.dpdns.org/posts/zhixingqiao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/zhixingqiao/</guid><description>Know-Do-Bridge 是一个把知识学习和实际行动连接起来的项目，强调从记录、拆解到执行的完整闭环。</description><pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Know-Do-Bridge 项目介绍&lt;/h1&gt;
-&lt;p&gt;如果只看名字，&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 就已经把它想做的事情说得很清楚了: 把 &lt;code&gt;Know&lt;/code&gt; 和 &lt;code&gt;Do&lt;/code&gt; 之间那段容易断掉的路，尽量接起来。&lt;/p&gt;
-&lt;p&gt;这不是一个只负责“存内容”的项目，它更像一个把学习、拆解、执行和复盘串起来的工具。你可以把它当成知识记录器，也可以把它当成任务推进器，或者是一个把想法落地的中间站。&lt;/p&gt;
-&lt;h2&gt;项目定位&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 想解决的，不是“学了什么”，而是“学完之后怎么做”。&lt;/p&gt;
-&lt;p&gt;很多时候，问题并不在于信息不够，而在于信息太散:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;知道很多概念，但没有整理成可执行的步骤&lt;/li&gt;
-&lt;li&gt;想法很多，但缺少推进节奏&lt;/li&gt;
-&lt;li&gt;做完以后没有复盘，经验很快就散了&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这个项目做的事情，就是把这些容易断开的环节重新连起来。&lt;/p&gt;
-&lt;h2&gt;它适合什么场景&lt;/h2&gt;
-&lt;p&gt;这个项目适合几类很典型的使用场景:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;个人学习笔记&lt;/li&gt;
-&lt;li&gt;知识卡片整理&lt;/li&gt;
-&lt;li&gt;小项目拆解和推进&lt;/li&gt;
-&lt;li&gt;任务记录与复盘&lt;/li&gt;
-&lt;li&gt;团队协作中的过程沉淀&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果你经常会遇到“知道了，但没做下去”“做了，但没留下来”的情况，那它的定位就会很有用。&lt;/p&gt;
-&lt;h2&gt;核心思路&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 的思路其实很简单: 不追求把内容堆得很满，而是让每一步都能往下走。&lt;/p&gt;
-&lt;p&gt;它强调的不是一次性写完，而是持续推进:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;先把知识记下来&lt;/li&gt;
-&lt;li&gt;再把知识拆成能执行的动作&lt;/li&gt;
-&lt;li&gt;执行之后留下结果&lt;/li&gt;
-&lt;li&gt;最后把结果变成下一轮输入&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这样一来，学习就不只是“看过”，而是变成了可以重复利用的过程。&lt;/p&gt;
-&lt;h2&gt;你可以把它理解成什么&lt;/h2&gt;
-&lt;p&gt;如果说传统笔记工具更偏向“收纳”，那 &lt;code&gt;Know-Do-Bridge&lt;/code&gt; 更偏向“转化”。&lt;/p&gt;
-&lt;p&gt;它更像一座桥:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;左边是知识输入&lt;/li&gt;
-&lt;li&gt;中间是理解、拆解和行动&lt;/li&gt;
-&lt;li&gt;右边是结果、反馈和复盘&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这也是它名字里最重要的意思: 不是把内容放在那儿，而是让内容真的能走到行动里。&lt;/p&gt;
-&lt;h2&gt;设计上的重点&lt;/h2&gt;
-&lt;p&gt;从产品角度看，这类项目最重要的不是花哨，而是顺手。&lt;/p&gt;
-&lt;p&gt;比较关键的体验点一般会是这些:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;进入门槛低，记录不费劲&lt;/li&gt;
-&lt;li&gt;结构清楚，方便后续整理&lt;/li&gt;
-&lt;li&gt;能从“想法”自然走到“执行”&lt;/li&gt;
-&lt;li&gt;支持回看，方便复盘和持续迭代&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果这些基础体验做好了，项目就会很适合长期使用。&lt;/p&gt;
-&lt;h2&gt;为什么这个项目有意义&lt;/h2&gt;
-&lt;p&gt;很多人都不缺信息，缺的是把信息变成行动的机制。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 有价值的地方，不只是“记住了什么”，而是它在尝试回答另一个更实际的问题:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;怎么让知识真的产生作用。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这也是它最像“产品”的地方。它不是单纯展示功能，而是在帮人解决一个长期存在的过程问题。&lt;/p&gt;
-&lt;h2&gt;项目链接&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/WindHolm2233/Know-Do-Bridge&quot;&gt;Know-Do-Bridge&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;结尾&lt;/h2&gt;
-&lt;p&gt;如果你愿意把知识真正变成行动，&lt;code&gt;Know-Do-Bridge&lt;/code&gt; 就是那段连接两者的路。&lt;/p&gt;
-&lt;p&gt;它不一定要一开始就很复杂，但只要方向对了，它就能慢慢长成一个很顺手的工具。&lt;/p&gt;
-</content:encoded></item><item><title>计算机图形学学习概论</title><link>https://windholm.dpdns.org/posts/introduction-cg/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/introduction-cg/</guid><description>一篇面向入门者的计算机图形学学习概论，覆盖流水线、光栅化、变换和渲染基础。</description><pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;计算机图形学学习指南&lt;/h1&gt;
-&lt;p&gt;计算机图形学关注的是如何用计算机表示、生成、处理并显示图形。它和数字图像处理不同：前者更强调从几何模型出发“生成图像”，后者更关注对已有像素做编辑和增强。&lt;/p&gt;
-&lt;p&gt;这篇文章把入门内容拆成四个部分：流水线、光栅化、几何变换，以及三维渲染的基础思路。先建立整体框架，再去看细节会更容易进入状态。&lt;/p&gt;
-&lt;h2&gt;一、图形系统与可编程流水线&lt;/h2&gt;
-&lt;h3&gt;核心概述&lt;/h3&gt;
-&lt;p&gt;图形学的核心任务，是把抽象的几何数据转换成屏幕上的像素结果。这个过程通常会经历顶点处理、图元装配、光栅化、片元处理和逐像素操作，最后写入帧缓冲区。&lt;/p&gt;
-&lt;h3&gt;技术深度&lt;/h3&gt;
-&lt;p&gt;这一领域建立在 &lt;strong&gt;图形流水线（Graphics Pipeline）&lt;/strong&gt; 之上。它是一个高度并行的阶段式流程，数据通常从顶点开始，依次经过：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;顶点处理（Vertex Processing）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;图元装配（Primitive Assembly）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;光栅化（Rasterization）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;片元处理（Fragment Processing）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;逐像素操作（Per-Pixel Operations）
-最终写入帧缓冲区（Framebuffer）形成颜色值。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;硬件进化&lt;/strong&gt;：早期图形卡主要依赖固定功能管线，很多工作都由 CPU 完成。现代 GPU 则拥有大量并行核心，可以同时处理大量顶点和片元。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;编程范式&lt;/strong&gt;：可编程流水线和 GLSL 已经成为主流。开发者可以自定义：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;顶点着色器（Vertex Shader）：负责坐标变换、皮肤动画等。&lt;/li&gt;
-&lt;li&gt;片元着色器（Fragment Shader）：负责逐像素颜色、光照计算。
-这让渲染流程从“固定流程”变成了“可编排流程”，也让 Vulkan、DirectX 12、Metal 这类现代 API 有了更接近硬件的控制能力。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;实践建议&lt;/h3&gt;
-&lt;p&gt;入门第一步，建议先用 GLFW 加上 GLAD 搭建最小环境，加载着色器程序并绘制一个静态彩色三角形。这个练习虽然简单，却能帮你快速认识几个关键对象：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;VAO（Vertex Array Object）：绑定顶点属性配置&lt;/li&gt;
-&lt;li&gt;VBO（Vertex Buffer Object）：存储顶点数据&lt;/li&gt;
-&lt;li&gt;Shader Program：链接顶点与片元着色器
-当三角形成功渲染出来后，再尝试加入旋转、缩放和颜色动画，你会更直观地理解流水线是怎么工作的。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;二、光栅化与裁剪：离散化的艺术&lt;/h2&gt;
-&lt;h3&gt;核心概述&lt;/h3&gt;
-&lt;p&gt;光栅化是图形流水线的核心环节，主要解决如何将连续的数学几何图元（直线、圆、多边形）离散化为离散的屏幕像素，并处理超出视口（Viewport）或窗口范围的部分。这是从“向量世界”到“像素世界”的桥梁。&lt;/p&gt;
-&lt;h3&gt;经典算法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Bresenham 直线算法&lt;/strong&gt;（1965年提出）：精髓在于利用整数误差判别（DDA的整数优化版），彻底避开浮点运算与除法，适用于早期无FPU的硬件。算法只用加减和位移，效率极高。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;中点画圆算法&lt;/strong&gt;：利用圆的八分对称性，仅需计算1/8圆弧，通过误差项决定像素选择。同样避免浮点运算。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;扫描线填充&lt;/strong&gt;：针对多边形，使用活性边表（AET）维护当前扫描线与边的交点，按x坐标排序填充像素。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;裁剪算法&lt;/strong&gt;：Cohen-Sutherland（编码裁剪，适合直线）、Sutherland-Hodgman（逐边裁剪多边形）、Liang-Barsky（参数化裁剪）等。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;现代主流&lt;/h3&gt;
-&lt;p&gt;现代GPU已将光栅化完全硬件化：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用重心坐标（Barycentric Coordinates）并行计算片元属性插值。&lt;/li&gt;
-&lt;li&gt;抗锯齿技术：MSAA（多重采样，在边缘子像素采样）、FXAA/TAA（后处理平滑）、SMAA（形态学抗锯齿）极大改善锯齿现象。&lt;/li&gt;
-&lt;li&gt;超采样与DLSS（AI驱动）进一步提升画质与性能平衡。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;实践建议&lt;/h3&gt;
-&lt;p&gt;强烈建议动手实现一个纯C语言的软件渲染器（Software Rasterizer）。步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;分配一个内存数组模拟帧缓冲（如unsigned char frame[height][width][3]）。&lt;/li&gt;
-&lt;li&gt;手动实现Bresenham DrawLine和扫描线填充。&lt;/li&gt;
-&lt;li&gt;将缓冲区写入BMP文件（BMP格式简单，无压缩）。
-这能让你在脱离任何图形API的情况下，彻底理解“像素是如何被点亮”的底层逻辑。完成后，你会对GPU的硬件加速产生深刻敬意。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;三、几何变换与三维观察：图形学的数学核心&lt;/h2&gt;
-&lt;h3&gt;核心概述&lt;/h3&gt;
-&lt;p&gt;这是图形学中最硬核、最数学化的部分。物体需要在多个坐标系之间转换：模型坐标 → 世界坐标 → 观察（视图）坐标 → 裁剪坐标 → 标准化设备坐标（NDC） → 屏幕坐标，最终实现从三维空间到二维屏幕的投影。&lt;/p&gt;
-&lt;h3&gt;数学工具&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;齐次坐标&lt;/strong&gt;：将三维坐标(x,y,z)扩展为(x,y,z,1)，使得平移也能用矩阵乘法表示，所有变换（平移、旋转、缩放、错切）统一为4×4矩阵运算。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;透视投影矩阵&lt;/strong&gt;：将视锥体（Frustum）映射为立方体（NDC），通过除以w分量实现“近大远小”。正交投影则用于2D或等距视图。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;视图矩阵&lt;/strong&gt;：通过LookAt（眼位、目标、上方向）构建，实质是世界到观察坐标的逆变换。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;现代实践&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;四元数（Quaternions）&lt;/strong&gt;：比欧拉角优越，避免“万向节死锁”（Gimbal Lock），支持平滑球面线性插值（Slerp），是Unity/Unreal等引擎旋转的标准方式。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;逆深度缓冲&lt;/strong&gt;：传统Z-Buffer在近处精度高、远处低；逆Z（1-z）+浮点缓冲反转分布，提升大规模开放世界（如飞行模拟）的远景精度。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;双四元数、矩阵分解&lt;/strong&gt;等进一步优化复杂动画。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;实践建议&lt;/h3&gt;
-&lt;p&gt;实现一个交互式3D场景：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;用矩阵堆栈实现立方体自转（旋转矩阵随时间变化）。&lt;/li&gt;
-&lt;li&gt;加入WASD+鼠标控制相机（视图矩阵实时更新）。&lt;/li&gt;
-&lt;li&gt;添加透视投影观察立方体远近变化。
-当你能自由穿梭在自己构建的3D空间、观察物体随视角变形时，你会真正感受到线性代数在图形学中的魔力。这也是后续所有高级渲染（如阴影、反射）的基石。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;四、三维造型：构建数字世界的骨架&lt;/h2&gt;
-&lt;h3&gt;核心概述&lt;/h3&gt;
-&lt;p&gt;三维造型研究如何在计算机中高效定义和表示复杂的几何体，包括顶点、边、面、法线、UV等属性。&lt;/p&gt;
-&lt;h3&gt;建模方式&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;多边形网格（Mesh）&lt;/strong&gt;：最流行、硬件最友好的方式。三角形网格为主，利用**索引缓冲区（EBO/IBO）**共享顶点，显著减少显存与带宽占用。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;参数曲线/曲面&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;Bezier：通过控制点与Bernstein基函数插值，易懂但C1连续性差。&lt;/li&gt;
-&lt;li&gt;B样条：局部控制，支持更高阶连续。&lt;/li&gt;
-&lt;li&gt;NURBS（非均匀有理B样条）：工业标准（汽车、航空CAD），支持精确圆锥曲线。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;其他表示&lt;/strong&gt;：隐式表面（SDF）、体素、体积网格等用于特殊场景。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;现代进阶&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;曲面细分着色器（Tessellation Shader）&lt;/strong&gt;：在GPU运行时根据视角距离动态增加三角形细节（LOD）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;网格着色器（Mesh Shader）&lt;/strong&gt;：NVIDIA RTX引入，取代传统顶点流水线，可自定义图元生成，支持更高效的剔除与LOD。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;纳米网格（Nanite）&lt;/strong&gt;：Unreal Engine 5的虚拟化微多边形技术，突破传统网格限制。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;实践建议&lt;/h3&gt;
-&lt;p&gt;从简单开始：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;手动构建立方体网格（8顶点+36索引）。&lt;/li&gt;
-&lt;li&gt;使用Assimp库加载经典.obj（Stanford Bunny）或.fbx模型。&lt;/li&gt;
-&lt;li&gt;渲染时绑定法线、UV坐标。
-当你成功加载并渲染一个复杂角色模型（如游戏角色），你便从“画三角形”迈向了“构建数字世界”的阶段。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;五、真实感渲染：赋予灵魂的画笔&lt;/h2&gt;
-&lt;h3&gt;核心概述&lt;/h3&gt;
-&lt;p&gt;真实感渲染旨在模拟真实世界光照、材质与遮挡关系，使画面从“卡通”跨越到“照片级”现实主义。这是图形学的终极追求。&lt;/p&gt;
-&lt;h3&gt;关键技术&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;消隐&lt;/strong&gt;：Z-Buffer（深度缓冲）逐像素比较深度解决可见性；画家算法（排序后绘制）用于透明物体。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;局部光照&lt;/strong&gt;：Phong/Blinn-Phong模型（环境光 + 漫反射 + 镜面高光）是经典方案，计算简单实时性好。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;全局光照基础&lt;/strong&gt;：光线追踪（Ray Tracing）通过递归模拟光线反射、折射、漫反射，提供阴影、反射、折射、焦散等真实效果。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;现代渲染趋势&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;PBR（Physically Based Rendering）&lt;/strong&gt;：工业标准，基于微表面理论（GGX BRDF），使用金属度/粗糙度工作流，统一离线与实时渲染。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;高级贴图&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;法线贴图（Normal Mapping）：伪造表面凹凸。&lt;/li&gt;
-&lt;li&gt;环境贴图（Cube Map/IBL）：图像基光照实现真实反射。&lt;/li&gt;
-&lt;li&gt;PBR贴图集（Albedo、Metallic、Roughness、AO、Height）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;实时光追&lt;/strong&gt;：NVIDIA RTX硬件加速（BVH+光线核心），支持实时路径追踪、去噪（DLSS）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;光栅化+光追混合&lt;/strong&gt;：主流游戏方案（如《赛博朋克2077》）。&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded></item><item><title>VS Code + CMake + vcpkg 配置笔记</title><link>https://windholm.dpdns.org/posts/config/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/config/</guid><description>记录 Windows 下搭建 VS Code、CMake 和 vcpkg 开发环境的过程和踩坑经验。</description><pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;配置笔记&lt;/h2&gt;
-&lt;p&gt;这篇文章不是那种一步到位的官方教程，更像我自己搭环境时留下来的笔记。重点很简单: 在 Windows 下把 VS Code、CMake 和 vcpkg 这套组合跑通，少踩一些我踩过的坑。&lt;/p&gt;
-&lt;h2&gt;先搞清楚三件事&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;vcpkg&lt;/strong&gt;: 负责把第三方库装好，省去手动配置依赖。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CMake&lt;/strong&gt;: 负责组织工程和生成构建规则。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;VS Code&lt;/strong&gt;: 负责写代码和看日志，顺手就好。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;1. 先把工具装好&lt;/h3&gt;
-&lt;p&gt;把 vcpkg 放到一个稳定的路径里，再记住 &lt;code&gt;scripts/buildsystems/vcpkg.cmake&lt;/code&gt; 的位置。这个文件后面会经常用到，路径错了，后面就会一直报错。&lt;/p&gt;
-&lt;h3&gt;2. 路径写法别犯懒&lt;/h3&gt;
-&lt;p&gt;我第一次配置时最容易出问题的地方，就是在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里直接写了 Windows 反斜杠路径。结果 CMake 把它当成转义字符处理，直接报错。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;写路径时尽量用 &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如果非要用 &lt;code&gt;\&lt;/code&gt;，就记得转义成 &lt;code&gt;\\&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;看到 &lt;code&gt;Invalid character escape&lt;/code&gt;，先回头查路径&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;3. VS Code 里也要确认一下&lt;/h3&gt;
-&lt;p&gt;有时候问题不在代码，而在配置文件还指向旧路径。这个时候先别急着怀疑 CMake，先检查 VS Code 和扩展里是不是还留着老参数。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;修改全局配置&lt;/strong&gt;：在 VS Code 的 &lt;code&gt;settings.json&lt;/code&gt; 中配置 &lt;code&gt;cmake.configureSettings&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;强制指定工具链&lt;/strong&gt;：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;&quot;cmake.configureSettings&quot;: {
-    &quot;CMAKE_TOOLCHAIN_FILE&quot;: &quot;安装路径/vcpkg/scripts/buildsystems/vcpkg.cmake&quot;
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;理解逻辑&lt;/strong&gt;：VS Code CMake Tools 插件在执行命令时，会通过命令行参数 &lt;code&gt;-DCMAKE_TOOLCHAIN_FILE=...&lt;/code&gt; 传入路径。命令行参数的优先级&lt;strong&gt;高于&lt;/strong&gt;脚本内部的 &lt;code&gt;set&lt;/code&gt; 指令。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;第四步：彻底清理缓存 (The &quot;Hard Reset&quot;)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;操作&lt;/strong&gt;：手动删除工程目录下的 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;原因&lt;/strong&gt;：CMake 在第一次配置失败后，会将错误的路径信息永久记录在 &lt;code&gt;CMakeCache.txt&lt;/code&gt; 中。&lt;strong&gt;如果不删除该文件，无论你怎么改设置，CMake 都会读取旧的缓存数据。&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3&gt;3. 最终正确的工作流示意图&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;VS Code&lt;/strong&gt; 发起构建指令。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CMake&lt;/strong&gt; 接收到 &lt;code&gt;CMAKE_TOOLCHAIN_FILE&lt;/code&gt; 路径。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;vcpkg&lt;/strong&gt; 介入，自动在 &lt;code&gt;vcpkg所处的路径&lt;/code&gt; 中寻找项目所需的头文件和库。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;编译器 (MSVC)&lt;/strong&gt; 最终完成代码编译。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3&gt;🌟 个人经验教训总结&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;路径习惯&lt;/strong&gt;：Windows 开发中，配置文件里的路径一律写成 &lt;code&gt;/&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;缓存意识&lt;/strong&gt;：改了配置不生效，先删 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;解耦配置&lt;/strong&gt;：尽量不要在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里写死绝对路径，通过 IDE 的设置或命令行传入，这样项目更易于移植。&lt;/li&gt;
-&lt;/ol&gt;
 </content:encoded></item><item><title>你好，WindHolm</title><link>https://windholm.dpdns.org/posts/nihao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/nihao/</guid><description>站点上线后的第一篇简单记录，留个正式的开始。</description><pubDate>Sun, 02 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;你好，WindHolm&lt;/h1&gt;
 &lt;p&gt;这是一篇很轻的开场白，主要是为了给站点留一个正式的起点。&lt;/p&gt;
 &lt;p&gt;后面我会在这里写一些搭建过程、功能记录和实际使用中的小问题。内容不一定总是很长，但会尽量写得直白一点，方便自己以后回头看。&lt;/p&gt;
