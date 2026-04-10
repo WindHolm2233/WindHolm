@@ -7,7 +7,7 @@ tags: [code, C#, OOP]
 image: /assets/images/cpp.png
 category: 计算机科学
 author: Pars, gemini
-pinned: true
+pinned: false
 ---
 # C# 入门笔记
 
