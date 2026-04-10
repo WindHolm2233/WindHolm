@@ -1,4 +1,4 @@
-import Key from "../i18nKey";
+﻿import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const zh_CN: Translation = {
@@ -79,7 +79,7 @@ export const zh_CN: Translation = {
   [Key.animeEmptyData]: "暂无数据",
   [Key.animeEmptyDescription]: "该分类下暂时没有找到相关的动漫作品",
   [Key.animeEmptySuggestion]: "试试切换到其他分类查看",
-  [Key.animeConfigDescription]: "请在 src/config/siteConfig.ts 文件中设置你的 Bangumi 用户ID",
+  [Key.animeConfigDescription]: "请在 src/config/core/siteConfig.ts 文件中设置你的 Bangumi 用户ID",
   [Key.animeRefreshNote]: "由于一些限制，可能需要F5刷新一次页面才会加载追番数据，目前还没有很好的解决方法",
   
   // 动漫信息
@@ -155,3 +155,4 @@ export const zh_CN: Translation = {
   [Key.wallpaperOverlayMode]: "全屏壁纸",
   [Key.wallpaperNoneMode]: "纯色背景",
 };
+

@@ -1,4 +1,4 @@
----
+﻿---
 title: Firefly 字体配置指南
 published: 2025-10-24
 pinned: false
@@ -24,7 +24,7 @@ Firefly 提供了一套灵活的字体管理方案，适合系统字体、Google
 
 ## 字体配置基础
 
-Firefly 的字体配置位于 `src/config/fontConfig.ts`。通过模块化配置，你可以统一管理站点字体、预加载策略和回退字体。
+Firefly 的字体配置位于 `src/config/theme/fontConfig.ts`。通过模块化配置，你可以统一管理站点字体、预加载策略和回退字体。
 
 ### 基本配置结构
 
@@ -435,3 +435,4 @@ Firefly 的字体配置系统提供了强大而灵活的字体管理能力。通
 ---
 
 > 💡 **提示**：更多 Firefly 配置信息，请参考 [Firefly 使用文档](https://docs-firefly.cuteleaf.cn/) 或访问 [GitHub 仓库](https://github.com/CuteLeaf/Firefly)。
+

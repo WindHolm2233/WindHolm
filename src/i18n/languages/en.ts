@@ -1,4 +1,4 @@
-import Key from "../i18nKey";
+﻿import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const en: Translation = {
@@ -80,7 +80,7 @@ export const en: Translation = {
   [Key.animeEmptyData]: "No data",
   [Key.animeEmptyDescription]: "No anime found in this category",
   [Key.animeEmptySuggestion]: "Try switching to other categories",
-  [Key.animeConfigDescription]: "Please set your Bangumi user ID in src/config/siteConfig.ts",
+  [Key.animeConfigDescription]: "Please set your Bangumi user ID in src/config/core/siteConfig.ts",
   [Key.animeRefreshNote]: "Due to some limitations, you may need to refresh the page once to load anime data, there is no good solution yet",
   
   // Anime Info
@@ -160,3 +160,4 @@ export const en: Translation = {
   [Key.wallpaperOverlayMode]: "Full Screen Wallpaper",
   [Key.wallpaperNoneMode]: "Solid Color Background",
 };
+

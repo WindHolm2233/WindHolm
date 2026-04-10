@@ -1,4 +1,4 @@
-import Key from "../i18nKey";
+﻿import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const ru: Translation = {
@@ -80,7 +80,7 @@ export const ru: Translation = {
   [Key.animeEmptyData]: "Нет данных",
   [Key.animeEmptyDescription]: "Аниме в этой категории не найдено",
   [Key.animeEmptySuggestion]: "Попробуйте переключиться на другие категории",
-  [Key.animeConfigDescription]: "Пожалуйста, установите ваш ID пользователя Bangumi в src/config/siteConfig.ts",
+  [Key.animeConfigDescription]: "Пожалуйста, установите ваш ID пользователя Bangumi в src/config/core/siteConfig.ts",
   [Key.animeRefreshNote]: "Из-за некоторых ограничений может потребоваться обновить страницу один раз для загрузки данных об аниме, пока нет хорошего решения",
   
   // Информация об аниме
@@ -160,4 +160,5 @@ export const ru: Translation = {
   [Key.wallpaperOverlayMode]: "Обои на весь экран",
   [Key.wallpaperNoneMode]: "Однотонный фон",
 };
+
 

@@ -1,10 +1,10 @@
----
+﻿---
 import type { CollectionEntry } from "astro:content";
 import * as path from "node:path";
 import { Icon } from "astro-icon/components";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
-import { getDir, getTagUrl } from "@/utils/url-utils";
+import { getDir, getTagUrl } from "@/utils/navigation/url-utils";
 import ImageWrapper from "@/components/misc/ImageWrapper.astro";
 import PostMetadata from "./PostMeta.astro";
 
@@ -205,3 +205,4 @@ const { remarkPluginFrontmatter } = await entry.render();
 </div>
 
 <style define:vars={{ coverWidth }}></style>
+

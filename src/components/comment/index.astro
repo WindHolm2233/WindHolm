@@ -1,6 +1,6 @@
----
+﻿---
 import type { CollectionEntry } from "astro:content";
-import { commentConfig } from "@/config/commentConfig";
+import { commentConfig } from "@/config/integrations/commentConfig";
 import { i18n } from "@/i18n/translation";
 import Key from "@/i18n/i18nKey";
 import Twikoo from "./Twikoo.astro";
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const { post, customPath } = Astro.props;
-const { id, data, slug } = post;
+const { slug } = post;
 
 // 根据页面类型确定路径
 const path =
@@ -23,6 +23,8 @@ const url = `${Astro.site?.href}${path}`;
 
 // 强制commentService类型为string，避免类型不兼容警告
 let commentService: string = commentConfig?.type || "none";
+const commentTitle =
+  post.collection === "posts" ? post.data.title : slug;
 ---
 
 {
@@ -49,7 +51,7 @@ let commentService: string = commentConfig?.type || "none";
         {commentService === "twikoo" && <Twikoo path={path} />}
         {commentService === "waline" && <Waline path={path} />}
         {commentService === "giscus" && <Giscus />}
-        {commentService === "disqus" && <Disqus identifier={slug} url={url} title={post.data.title} />}
+        {commentService === "disqus" && <Disqus identifier={slug} url={url} title={commentTitle} />}
         {commentService === "none" && (
           <div class="text-center py-8 text-[var(--content-meta)]">
             <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[var(--btn-regular-bg)] flex items-center justify-center">
@@ -64,3 +66,4 @@ let commentService: string = commentConfig?.type || "none";
     </div>
   )
 }
+

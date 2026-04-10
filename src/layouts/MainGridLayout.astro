@@ -1,4 +1,4 @@
----
+﻿---
 import BackToTop from "@components/control/BackToTop.astro";
 import Footer from "@components/layout/Footer.astro";
 import Navbar from "@components/layout/Navbar.astro";
@@ -19,8 +19,8 @@ import {
 	BANNER_HEIGHT_EXTEND,
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT,
 } from "@/constants/constants";
-import { getBackgroundImages, isHomePage } from "@/utils/layout-utils";
-import { getResponsiveSidebarConfig, generateGridClasses, generateSidebarClasses, generateMainContentClasses } from "@/utils/responsive-utils";
+import { getBackgroundImages, isHomePage } from "@/utils/layout/layout-utils";
+import { getResponsiveSidebarConfig, generateGridClasses, generateSidebarClasses, generateMainContentClasses } from "@/utils/layout/responsive-utils";
 import Layout from "./Layout.astro";
 
 interface Props {
@@ -341,4 +341,5 @@ const transparentClass = shouldEnableTransparency
 <!-- #toc needs to exist for Swup to work normally -->
 {!siteConfig.toc.enable && <div id="toc"></div>}
 </Layout>
+
 

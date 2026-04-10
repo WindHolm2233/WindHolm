@@ -1,11 +1,11 @@
-<script lang="ts">
+﻿<script lang="ts">
 import { DARK_MODE, LIGHT_MODE, SYSTEM_MODE } from "@/constants/constants";
 import Icon from "@iconify/svelte";
 import {
 	getStoredTheme,
 	setTheme,
 	applyThemeToDocument,
-} from "@/utils/setting-utils";
+} from "@/utils/theme/setting-utils";
 import type { LIGHT_DARK_MODE } from "@/types/config.ts";
 import { onMount } from 'svelte';
 import I18nKey from "@i18n/i18nKey";

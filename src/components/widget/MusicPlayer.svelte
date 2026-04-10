@@ -1,4 +1,4 @@
-<script lang="ts">
+﻿<script lang="ts">
     // 导入 Svelte 的生命周期函数和过渡效果
     
     // 导入 Icon 组件，用于显示图标
@@ -6,7 +6,7 @@
     import { onDestroy, onMount } from "svelte";
     import { slide } from "svelte/transition";
     // 从配置文件中导入音乐播放器配置
-    import { musicPlayerConfig } from "../../config/musicConfig";
+    import { musicPlayerConfig } from "../../config/integrations/musicConfig";
     // 导入国际化相关的 Key 和 i18n 实例
     import Key from "../../i18n/i18nKey";
     import { i18n } from "../../i18n/translation";
@@ -1092,3 +1092,4 @@
     }
     </style>
     {/if}
+

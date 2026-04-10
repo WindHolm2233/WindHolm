@@ -1,12 +1,12 @@
----
+﻿---
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { footerConfig, profileConfig } from "@/config";
-import { url } from "@/utils/url-utils";
+import { url } from "@/utils/navigation/url-utils";
 
 const currentYear = new Date().getFullYear();
 
-// 读取FooterConfig.html文件内容
+// 读取 FooterConfig.html 文件内容
 let customFooterHtml = "";
 if (footerConfig.enable) {
   try {
@@ -14,13 +14,14 @@ if (footerConfig.enable) {
       process.cwd(),
       "src",
       "config",
+      "layout",
       "FooterConfig.html"
     );
     customFooterHtml = fs.readFileSync(footerConfigPath, "utf-8");
     // 移除HTML注释
     customFooterHtml = customFooterHtml.replace(/<!--[\s\S]*?-->/g, "").trim();
   } catch (error) {
-    console.warn("FooterConfig.html文件读取失败:", error.message);
+    console.warn("FooterConfig.html 文件读取失败:", error.message);
   }
 }
 ---
@@ -63,3 +64,4 @@ if (footerConfig.enable) {
     ><br />
   </div>
 </div>
+

@@ -1,7 +1,7 @@
----
+﻿---
 import type { MarkdownHeading } from "astro";
-import { siteConfig } from "@/config/siteConfig";
-import { url } from "@/utils/url-utils";
+import { siteConfig } from "@/config/core/siteConfig";
+import { url } from "@/utils/navigation/url-utils";
 
 //已弃用，使用FloatingTOC.astro代替
 
@@ -349,3 +349,4 @@ const maxLevel = siteConfig.toc.depth;
     customElements.define("table-of-contents", TableOfContents);
   }
 </script>
+

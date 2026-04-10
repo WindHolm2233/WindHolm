@@ -1,10 +1,10 @@
-import { getImage } from "astro:assets";
+﻿import { getImage } from "astro:assets";
 import type { RSSFeedItem } from "@astrojs/rss";
 import rss from "@astrojs/rss";
 import type { APIContext, ImageMetadata } from "astro";
 import { parse as htmlParser } from "node-html-parser";
 import { siteConfig } from "../config";
-import { getSortedPosts } from "@/utils/content-utils";
+import { getSortedPosts } from "@/utils/content/content-utils";
 
 // Function to sanitize XML content by removing invalid characters
 function sanitizeXmlContent(content: string): string {
@@ -174,3 +174,4 @@ export async function GET(context: APIContext) {
     customData: `<language>${sanitizeXmlContent(siteConfig.lang)}</language>`,
   });
 }
+

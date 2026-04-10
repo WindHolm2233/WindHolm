@@ -1,9 +1,9 @@
----
+﻿---
 import type { GetStaticPaths } from "astro";
 import Pagination from "@/components/control/Pagination.astro";
 import PostPage from "@/components/layout/PostPage.astro";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
-import { getSortedPosts } from "@/utils/content-utils";
+import { getSortedPosts } from "@/utils/content/content-utils";
 import { siteConfig } from "@/config";
 export const getStaticPaths = (async ({ paginate }) => {
   const allBlogPosts = await getSortedPosts();
@@ -64,3 +64,4 @@ const len = page.data.length;
     return "desktop";
   }
 </script>
+

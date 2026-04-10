@@ -1,6 +1,6 @@
----
+﻿---
 import type { CollectionEntry } from "astro:content";
-import { getPostUrlBySlug } from "@utils/url-utils";
+import { getPostUrlBySlug } from "@utils/navigation/url-utils";
 import PostCard from "@/components/content/PostCard.astro";
 import { siteConfig } from "@/config";
 
@@ -130,3 +130,4 @@ type PostEntry = CollectionEntry<"posts">;
   // 立即执行一次（处理页面刷新）
   setTimeout(initLayout, 0);
 </script>
+

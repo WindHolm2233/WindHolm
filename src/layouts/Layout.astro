@@ -1,4 +1,4 @@
----
+﻿---
 import ConfigCarrier from "@components/layout/ConfigCarrier.astro";
 import FontManager from "@components/interactive/FontManager.astro";
 import MusicPlayer from "@components/widget/MusicPlayer.svelte";
@@ -14,8 +14,8 @@ import {
 } from "@/constants/constants";
 import { defaultFavicons } from "@/constants/icon";
 import type { Favicon } from "@/types/config";
-import { url } from "@/utils/url-utils";
-import { getDefaultBackground, isHomePage } from "@/utils/layout-utils";
+import { url } from "@/utils/navigation/url-utils";
+import { getDefaultBackground, isHomePage } from "@/utils/layout/layout-utils";
 
 import "katex/dist/katex.css";
 import "@/styles/navbar-unified.css";
@@ -400,8 +400,8 @@ const bannerOffset = `${BANNER_HEIGHT_EXTEND / 2}vh`;
 </style>
 
 <script>
-import {getHue, getStoredTheme, setHue, setTheme} from "@/utils/setting-utils";
-import {pathsEqual, url} from "@/utils/url-utils";
+import {getHue, getStoredTheme, setHue, setTheme} from "@/utils/theme/setting-utils";
+import {pathsEqual, url} from "@/utils/navigation/url-utils";
 import {
 	BANNER_HEIGHT,
 	BANNER_HEIGHT_HOME,
@@ -823,7 +823,7 @@ if (document.readyState === 'loading') {
 }
 
 // Initialize wallpaper mode
-import { initWallpaperMode, initThemeListener } from '@/utils/setting-utils';
+import { initWallpaperMode, initThemeListener } from '@/utils/theme/setting-utils';
 if (document.readyState === 'loading') {
 	document.addEventListener('DOMContentLoaded', () => {
 		initWallpaperMode();
@@ -835,3 +835,4 @@ if (document.readyState === 'loading') {
 }
 
 </script>
+

@@ -1,6 +1,6 @@
----
+﻿---
 import type { MarkdownHeading } from "astro";
-import { widgetManager } from "@/utils/widget-manager";
+import { widgetManager } from "@/utils/layout/widget-manager";
 import Announcement from "@/components/widget/Announcement.astro";
 import Categories from "@/components/widget/Categories.astro";
 import Profile from "@/components/content/Profile.astro";
@@ -176,3 +176,4 @@ function renderComponent(component: any, index: number, _components: any[]) {
   // 初始化侧边栏管理器
   new SidebarManager();
 </script>
+

@@ -1,10 +1,10 @@
----
+﻿---
 import { Icon } from "astro-icon/components";
 import { siteConfig, navBarConfig } from "@/config";
 import { LinkPresets } from "@/constants/link-presets";
 import { LinkPreset, type NavBarLink } from "@/types/config";
-import { url } from "@/utils/url-utils";
-import { isHomePage } from "@/utils/layout-utils";
+import { url } from "@/utils/navigation/url-utils";
+import { isHomePage } from "@/utils/layout/layout-utils";
 import LightDarkSwitch from "@/components/interactive/LightDarkSwitch.svelte";
 import LayoutSwitchButton from "@/components/interactive/LayoutSwitchButton.svelte";
 import Search from "@/components/interactive/Search.svelte";
@@ -243,3 +243,4 @@ if (document.readyState === 'loading') {
     loadPagefind();
 }
 </script>}
+

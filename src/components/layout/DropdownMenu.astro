@@ -1,8 +1,8 @@
----
+﻿---
 import { Icon } from "astro-icon/components";
 import { LinkPresets } from "@/constants/link-presets";
 import { LinkPreset, type NavBarLink } from "@/types/config";
-import { url } from "@/utils/url-utils";
+import { url } from "@/utils/navigation/url-utils";
 
 interface Props {
 	link: NavBarLink;
@@ -198,3 +198,4 @@ const getLinkHref = (item: NavBarLink) =>
 		menu.classList.remove('opacity-100', 'visible', 'pointer-events-auto', 'translate-y-0');
 	}
 </script>
+

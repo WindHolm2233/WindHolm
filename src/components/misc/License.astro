@@ -1,10 +1,10 @@
----
+﻿---
 import { Icon } from "astro-icon/components";
-import { licenseConfig } from "@/config/licenseConfig";
-import { profileConfig } from "@/config/profileConfig";
+import { licenseConfig } from "@/config/features/licenseConfig";
+import { profileConfig } from "@/config/core/profileConfig";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
-import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import { formatDateToYYYYMMDD } from "@/utils/content/date-utils";
 
 interface Props {
   title: string;
@@ -68,3 +68,4 @@ const postUrl = sourceLink || decodeURIComponent(Astro.url.toString());
     class="transition text-[15rem] absolute pointer-events-none right-6 top-1/2 -translate-y-1/2 text-black/5 dark:text-white/5"
   />
 </div>
+

@@ -1,11 +1,11 @@
-<script lang="ts">
+﻿<script lang="ts">
 import { onMount } from 'svelte';
 import Icon from "@iconify/svelte";
 import { WALLPAPER_BANNER, WALLPAPER_OVERLAY, WALLPAPER_NONE } from "@constants/constants";
 import {
 	getStoredWallpaperMode,
 	setWallpaperMode,
-} from "@utils/setting-utils";
+} from "@utils/theme/setting-utils";
 import type { WALLPAPER_MODE } from "@/types/config";
 import { siteConfig } from "@/config";
 import I18nKey from "@i18n/i18nKey";
@@ -63,3 +63,4 @@ function switchWallpaperMode(newMode: WALLPAPER_MODE) {
 		</div>
 	</div>
 </div>
+

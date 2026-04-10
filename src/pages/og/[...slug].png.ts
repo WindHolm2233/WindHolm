@@ -1,12 +1,12 @@
-import type { CollectionEntry } from "astro:content";
+﻿import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import * as fs from "node:fs";
 import type { APIContext, GetStaticPaths } from "astro";
 import satori from "satori";
 import sharp from "sharp";
 
-import { profileConfig } from "../../config/profileConfig";
-import { siteConfig } from "../../config/siteConfig";
+import { profileConfig } from "../../config/core/profileConfig";
+import { siteConfig } from "../../config/core/siteConfig";
 
 type Weight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
@@ -341,3 +341,4 @@ export async function GET({
     },
   });
 }
+

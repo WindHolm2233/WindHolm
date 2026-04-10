@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"module": "ESNext",
-		"moduleResolution": "Node",
+		"moduleResolution": "Bundler",
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
 		"allowSyntheticDefaultImports": true,
@@ -11,6 +11,7 @@
 		"strictNullChecks": true,
 		"allowJs": false,
 		"declaration": true,
+		"skipLibCheck": true,
 		"plugins": [
 			{
 				"name": "@astrojs/ts-plugin"
@@ -26,5 +27,5 @@
 			"@/*": ["src/*"]
 		}
 	},
-	"include": ["src/**/*"]
+	"include": [".astro/types.d.ts", "src/**/*", "astro.config.mjs"]
 }
