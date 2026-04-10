@@ -1,257 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风屿你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>XML 和 JSON 学习</title><link>https://windholm.dpdns.org/posts/itplace-xml-josn/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-xml-josn/</guid><description>用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;XML 和 JSON 入门&lt;/h1&gt;
-&lt;h2&gt;引言&lt;/h2&gt;
-&lt;p&gt;如果你第一次接触数据格式，XML 和 JSON 基本就是绕不开的两位老朋友。XML 更像“把结构写清楚”，JSON 更像“把数据写轻一点”。这篇文章不想讲得太学术，只想帮你快速知道它们各自适合干什么、长什么样、什么时候该用哪个。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么先看它们？&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;XML 适合先理解层级和标签。&lt;/li&gt;
-&lt;li&gt;JSON 适合再理解键值对和接口传输。&lt;/li&gt;
-&lt;li&gt;两者放在一起看，差异会更直观。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;准备&lt;/strong&gt;：一个文本编辑器就够了，VS Code、记事本、在线校验器都可以。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;：边看边改示例，理解会比单纯背概念快很多。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第一部分：XML入门&lt;/h2&gt;
-&lt;p&gt;XML是自描述的标记语言，用标签定义数据。核心规则：标签配对、嵌套、属性。&lt;/p&gt;
-&lt;h3&gt;1.1 第一个XML：简单文档&lt;/h3&gt;
-&lt;p&gt;基本结构：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/code&gt;：声明。&lt;/li&gt;
-&lt;li&gt;根元素：唯一顶级标签。&lt;/li&gt;
-&lt;li&gt;关闭标签：&lt;code&gt;&amp;lt;tag&amp;gt;内容&amp;lt;/tag&amp;gt;&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例（书籍目录）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
-&amp;lt;library&amp;gt;
-    &amp;lt;book id=&quot;1&quot;&amp;gt;
-        &amp;lt;title&amp;gt;Hello World&amp;lt;/title&amp;gt;
-        &amp;lt;author&amp;gt;John Doe&amp;lt;/author&amp;gt;
-        &amp;lt;year&amp;gt;2023&amp;lt;/year&amp;gt;
-    &amp;lt;/book&amp;gt;
-    &amp;lt;book id=&quot;2&quot;&amp;gt;
-        &amp;lt;title&amp;gt;XML Basics&amp;lt;/title&amp;gt;
-        &amp;lt;author&amp;gt;Jane Smith&amp;lt;/author&amp;gt;
-        &amp;lt;year&amp;gt;2024&amp;lt;/year&amp;gt;
-    &amp;lt;/book&amp;gt;
-&amp;lt;/library&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;验证&lt;/strong&gt;：复制到&lt;a href=&quot;https://www.xmlvalidation.com/&quot;&gt;XML Validator&lt;/a&gt;检查语法。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：添加第三本书，包含&lt;code&gt;&amp;lt;price&amp;gt;29.99&amp;lt;/price&amp;gt;&lt;/code&gt;。&lt;/p&gt;
-&lt;h3&gt;1.2 元素、属性与命名空间&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;元素：标签内容，如&lt;code&gt;&amp;lt;title&amp;gt;Text&amp;lt;/title&amp;gt;&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;属性：标签内附加，如&lt;code&gt;id=&quot;1&quot;&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;命名空间：避免冲突，用&lt;code&gt;xmlns&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例（带属性和命名空间）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
-&amp;lt;library xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&amp;gt;
-    &amp;lt;book id=&quot;1&quot; dc:creator=&quot;John Doe&quot;&amp;gt;
-        &amp;lt;title&amp;gt;Hello World&amp;lt;/title&amp;gt;
-        &amp;lt;year&amp;gt;2023&amp;lt;/year&amp;gt;
-    &amp;lt;/book&amp;gt;
-&amp;lt;/library&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;规则&lt;/strong&gt;：属性用引号；元素名区分大小写；无重叠标签。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：为书籍添加&lt;code&gt;genre=&quot;Fiction&quot;&lt;/code&gt;属性。&lt;/p&gt;
-&lt;h3&gt;1.3 DTD与XML Schema（简单验证）&lt;/h3&gt;
-&lt;p&gt;DTD（Document Type Definition）：定义结构。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE library [
-    &amp;lt;!ELEMENT library (book+)&amp;gt;
-    &amp;lt;!ELEMENT book (title, author, year)&amp;gt;
-    &amp;lt;!ELEMENT title (#PCDATA)&amp;gt;
-    &amp;lt;!ELEMENT author (#PCDATA)&amp;gt;
-    &amp;lt;!ELEMENT year (#PCDATA)&amp;gt;
-    &amp;lt;!ATTLIST book id ID #REQUIRED&amp;gt;
-]&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;置于XML前：&lt;code&gt;&amp;lt;!DOCTYPE library SYSTEM &quot;library.dtd&quot;&amp;gt;&lt;/code&gt;（需外部文件）。&lt;/p&gt;
-&lt;p&gt;XML Schema（XSD）：更强大，用XML写。
-示例片段：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&amp;gt;
-    &amp;lt;xs:element name=&quot;library&quot;&amp;gt;
-        &amp;lt;xs:complexType&amp;gt;
-            &amp;lt;xs:sequence&amp;gt;
-                &amp;lt;xs:element name=&quot;book&quot; maxOccurs=&quot;unbounded&quot;&amp;gt;
-                    &amp;lt;xs:complexType&amp;gt;
-                        &amp;lt;xs:sequence&amp;gt;
-                            &amp;lt;xs:element name=&quot;title&quot; type=&quot;xs:string&quot;/&amp;gt;
-                            &amp;lt;xs:element name=&quot;author&quot; type=&quot;xs:string&quot;/&amp;gt;
-                            &amp;lt;xs:element name=&quot;year&quot; type=&quot;xs:integer&quot;/&amp;gt;
-                        &amp;lt;/xs:sequence&amp;gt;
-                        &amp;lt;xs:attribute name=&quot;id&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&amp;gt;
-                    &amp;lt;/xs:complexType&amp;gt;
-                &amp;lt;/xs:element&amp;gt;
-            &amp;lt;/xs:sequence&amp;gt;
-        &amp;lt;/xs:complexType&amp;gt;
-    &amp;lt;/xs:element&amp;gt;
-&amp;lt;/xs:schema&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用在线工具验证你的书籍XML是否符合简单DTD。&lt;/p&gt;
-&lt;h3&gt;1.4 XPath查询&lt;/h3&gt;
-&lt;p&gt;XPath：XML的“查询语言”，选元素如CSS。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/library/book[1]/title&lt;/code&gt;：第一个书标题。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;//author&lt;/code&gt;：所有作者。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例（用浏览器DevTools或工具测试）：
-在XML中，XPath &lt;code&gt;/library/book[@id=&apos;1&apos;]/title&lt;/code&gt; 返回 &quot;Hello World&quot;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：写XPath选所有2023年书籍。&lt;/p&gt;
-&lt;h3&gt;1.5 实用项目：产品目录XML&lt;/h3&gt;
-&lt;p&gt;整合知识：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
-&amp;lt;!DOCTYPE catalog [
-    &amp;lt;!ELEMENT catalog (product+)&amp;gt;
-    &amp;lt;!ELEMENT product (name, price, description)&amp;gt;
-    &amp;lt;!ELEMENT name (#PCDATA)&amp;gt;
-    &amp;lt;!ELEMENT price (#PCDATA)&amp;gt;
-    &amp;lt;!ELEMENT description (#PCDATA)&amp;gt;
-]&amp;gt;
-&amp;lt;catalog&amp;gt;
-    &amp;lt;product id=&quot;p1&quot;&amp;gt;
-        &amp;lt;name&amp;gt;Laptop&amp;lt;/name&amp;gt;
-        &amp;lt;price&amp;gt;999.99&amp;lt;/price&amp;gt;
-        &amp;lt;description&amp;gt;High-performance laptop.&amp;lt;/description&amp;gt;
-    &amp;lt;/product&amp;gt;
-    &amp;lt;product id=&quot;p2&quot;&amp;gt;
-        &amp;lt;name&amp;gt;Mouse&amp;lt;/name&amp;gt;
-        &amp;lt;price&amp;gt;29.99&amp;lt;/price&amp;gt;
-        &amp;lt;description&amp;gt;Wireless mouse.&amp;lt;/description&amp;gt;
-    &amp;lt;/product&amp;gt;
-&amp;lt;/catalog&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加XSD验证价格为正数。用XPath查询总产品数。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;XML小结&lt;/strong&gt;：适合复杂文档，但冗长。常见错误：未闭合标签、非法字符。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第二部分：从XML过渡到JSON&lt;/h2&gt;
-&lt;p&gt;XML和JSON都结构化数据，但JSON更简洁：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;相似&lt;/strong&gt;：层次（XML元素 → JSON对象/数组）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;不同&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;XML标签 → JSON键（字符串）。&lt;/li&gt;
-&lt;li&gt;无属性/命名空间；纯键值。&lt;/li&gt;
-&lt;li&gt;JSON用&lt;code&gt;{}&lt;/code&gt;对象、&lt;code&gt;[]&lt;/code&gt;数组。&lt;/li&gt;
-&lt;li&gt;验证：XML用DTD/XSD，JSON用Schema（JSON Schema）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;迁移提示&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;XML &lt;code&gt;&amp;lt;book&amp;gt;&amp;lt;title&amp;gt;Hi&amp;lt;/title&amp;gt;&amp;lt;/book&amp;gt;&lt;/code&gt; → JSON &lt;code&gt;{&quot;book&quot;: {&quot;title&quot;: &quot;Hi&quot;}}&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;工具：在线转换器如&lt;a href=&quot;https://codebeautify.org/xmltojson&quot;&gt;XML to JSON&lt;/a&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例转换：
-XML：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;book&amp;gt;&amp;lt;title&amp;gt;Hello&amp;lt;/title&amp;gt;&amp;lt;author&amp;gt;John&amp;lt;/author&amp;gt;&amp;lt;/book&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;JSON：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;book&quot;: {
-    &quot;title&quot;: &quot;Hello&quot;,
-    &quot;author&quot;: &quot;John&quot;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;验证JSON&lt;/strong&gt;：用&lt;a href=&quot;https://jsonlint.com/&quot;&gt;JSONLint&lt;/a&gt;。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第三部分：JSON扩展（高级用法）&lt;/h2&gt;
-&lt;p&gt;JSON轻便，易解析。核心：对象（键值对）、数组、基本类型（string, number, boolean, null）。&lt;/p&gt;
-&lt;h3&gt;3.1 基本结构与嵌套&lt;/h3&gt;
-&lt;p&gt;对象：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;name&quot;: &quot;Alice&quot;,
-  &quot;age&quot;: 30,
-  &quot;hobbies&quot;: [&quot;reading&quot;, &quot;coding&quot;]
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;嵌套：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;library&quot;: {
-    &quot;books&quot;: [
-      {
-        &quot;id&quot;: 1,
-        &quot;title&quot;: &quot;Hello World&quot;,
-        &quot;author&quot;: {
-          &quot;name&quot;: &quot;John Doe&quot;,
-          &quot;email&quot;: &quot;john@example.com&quot;
-        }
-      }
-    ]
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：创建用户配置文件JSON，含地址数组。&lt;/p&gt;
-&lt;h3&gt;3.2 JSON Schema验证&lt;/h3&gt;
-&lt;p&gt;类似XML Schema：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;properties&quot;: {
-    &quot;name&quot;: {&quot;type&quot;: &quot;string&quot;},
-    &quot;age&quot;: {&quot;type&quot;: &quot;integer&quot;, &quot;minimum&quot;: 0}
-  },
-  &quot;required&quot;: [&quot;name&quot;, &quot;age&quot;]
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;用在线工具验证JSON。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：为书籍JSON写Schema，要求&lt;code&gt;year&lt;/code&gt; &amp;gt; 1900。&lt;/p&gt;
-&lt;h3&gt;3.3 JSONPath查询&lt;/h3&gt;
-&lt;p&gt;JSON的XPath类似：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;$.library.books[0].title&lt;/code&gt;：第一本书标题。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$..author.name&lt;/code&gt;：所有作者名。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例：&lt;code&gt;$.library.books[?(@.id == 1)].title&lt;/code&gt; 选ID=1的标题。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用&lt;a href=&quot;https://jsonpath.com/&quot;&gt;JSONPath Online Evaluator&lt;/a&gt;查询嵌套JSON。&lt;/p&gt;
-&lt;h3&gt;3.4 编程集成（JavaScript/Python示例）&lt;/h3&gt;
-&lt;p&gt;JSON天生编程友好。&lt;/p&gt;
-&lt;p&gt;JavaScript（解析/生成）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// 解析
-const jsonStr = &apos;{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}&apos;;
-const obj = JSON.parse(jsonStr);
-console.log(obj.name);  // Alice
-
-// 生成
-const newObj = {name: &quot;Bob&quot;, age: 25};
-const jsonStr2 = JSON.stringify(newObj, null, 2);  // 美化
-console.log(jsonStr2);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Python：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import json
-
-# 解析
-json_str = &apos;{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}&apos;
-obj = json.loads(json_str)
-print(obj[&apos;name&apos;])  # Alice
-
-# 生成
-new_obj = {&apos;name&apos;: &apos;Bob&apos;, &apos;age&apos;: 25}
-json_str2 = json.dumps(new_obj, indent=2)
-print(json_str2)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：写JS脚本从JSON文件读数据，输出作者列表。&lt;/p&gt;
-&lt;h3&gt;3.5 实用项目：API响应模拟&lt;/h3&gt;
-&lt;p&gt;模拟Web API JSON：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;status&quot;: &quot;success&quot;,
-  &quot;data&quot;: {
-    &quot;users&quot;: [
-      {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Alice&quot;,
-        &quot;posts&quot;: [
-          {&quot;title&quot;: &quot;First Post&quot;, &quot;likes&quot;: 10},
-          {&quot;title&quot;: &quot;Second Post&quot;, &quot;likes&quot;: 5}
-        ]
-      }
-    ],
-    &quot;total&quot;: 1
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr /&gt;
-&lt;p&gt;此文章由本人学习配置语言时的总结整理而来，由gork辅助优化格式。&lt;/p&gt;
-</content:encoded></item><item><title>WindHolm 一款清新美观的 Astro 博客主题模板</title><link>https://windholm.dpdns.org/posts/firefly/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/firefly/</guid><description>WindHolm 是一款基于 Astro 的个人博客主题，强调清爽视觉、现代布局和高可定制性。</description><pubDate>Thu, 06 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🌟 项目概述&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风屿你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>WindHolm 一款清新美观的 Astro 博客主题模板</title><link>https://windholm.dpdns.org/posts/firefly/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/firefly/</guid><description>WindHolm 是一款基于 Astro 的个人博客主题，强调清爽视觉、现代布局和高可定制性。</description><pubDate>Thu, 06 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🌟 项目概述&lt;/h2&gt;
 &lt;p&gt;WindHolm 是一款基于 Astro 的个人博客主题，主打清爽视觉、现代化布局和高可定制性，适合技术博客与内容创作场景。&lt;/p&gt;
 &lt;h2&gt;🔗 在线资源&lt;/h2&gt;
 &lt;ul&gt;
@@ -1401,6 +1148,259 @@ int main() {
 }
 ---
 该文章撰写素材来自平时课程时问grok的问题总结而来，由grok优化格式&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>XML 和 JSON 学习</title><link>https://windholm.dpdns.org/posts/itplace-xml-josn/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-xml-josn/</guid><description>用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;XML 和 JSON 入门&lt;/h1&gt;
+&lt;h2&gt;引言&lt;/h2&gt;
+&lt;p&gt;如果你第一次接触数据格式，XML 和 JSON 基本就是绕不开的两位老朋友。XML 更像“把结构写清楚”，JSON 更像“把数据写轻一点”。这篇文章不想讲得太学术，只想帮你快速知道它们各自适合干什么、长什么样、什么时候该用哪个。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么先看它们？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;XML 适合先理解层级和标签。&lt;/li&gt;
+&lt;li&gt;JSON 适合再理解键值对和接口传输。&lt;/li&gt;
+&lt;li&gt;两者放在一起看，差异会更直观。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;准备&lt;/strong&gt;：一个文本编辑器就够了，VS Code、记事本、在线校验器都可以。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;：边看边改示例，理解会比单纯背概念快很多。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;第一部分：XML入门&lt;/h2&gt;
+&lt;p&gt;XML是自描述的标记语言，用标签定义数据。核心规则：标签配对、嵌套、属性。&lt;/p&gt;
+&lt;h3&gt;1.1 第一个XML：简单文档&lt;/h3&gt;
+&lt;p&gt;基本结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/code&gt;：声明。&lt;/li&gt;
+&lt;li&gt;根元素：唯一顶级标签。&lt;/li&gt;
+&lt;li&gt;关闭标签：&lt;code&gt;&amp;lt;tag&amp;gt;内容&amp;lt;/tag&amp;gt;&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例（书籍目录）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;library&amp;gt;
+    &amp;lt;book id=&quot;1&quot;&amp;gt;
+        &amp;lt;title&amp;gt;Hello World&amp;lt;/title&amp;gt;
+        &amp;lt;author&amp;gt;John Doe&amp;lt;/author&amp;gt;
+        &amp;lt;year&amp;gt;2023&amp;lt;/year&amp;gt;
+    &amp;lt;/book&amp;gt;
+    &amp;lt;book id=&quot;2&quot;&amp;gt;
+        &amp;lt;title&amp;gt;XML Basics&amp;lt;/title&amp;gt;
+        &amp;lt;author&amp;gt;Jane Smith&amp;lt;/author&amp;gt;
+        &amp;lt;year&amp;gt;2024&amp;lt;/year&amp;gt;
+    &amp;lt;/book&amp;gt;
+&amp;lt;/library&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;验证&lt;/strong&gt;：复制到&lt;a href=&quot;https://www.xmlvalidation.com/&quot;&gt;XML Validator&lt;/a&gt;检查语法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：添加第三本书，包含&lt;code&gt;&amp;lt;price&amp;gt;29.99&amp;lt;/price&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;h3&gt;1.2 元素、属性与命名空间&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;元素：标签内容，如&lt;code&gt;&amp;lt;title&amp;gt;Text&amp;lt;/title&amp;gt;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;属性：标签内附加，如&lt;code&gt;id=&quot;1&quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;命名空间：避免冲突，用&lt;code&gt;xmlns&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例（带属性和命名空间）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;library xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&amp;gt;
+    &amp;lt;book id=&quot;1&quot; dc:creator=&quot;John Doe&quot;&amp;gt;
+        &amp;lt;title&amp;gt;Hello World&amp;lt;/title&amp;gt;
+        &amp;lt;year&amp;gt;2023&amp;lt;/year&amp;gt;
+    &amp;lt;/book&amp;gt;
+&amp;lt;/library&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;规则&lt;/strong&gt;：属性用引号；元素名区分大小写；无重叠标签。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：为书籍添加&lt;code&gt;genre=&quot;Fiction&quot;&lt;/code&gt;属性。&lt;/p&gt;
+&lt;h3&gt;1.3 DTD与XML Schema（简单验证）&lt;/h3&gt;
+&lt;p&gt;DTD（Document Type Definition）：定义结构。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE library [
+    &amp;lt;!ELEMENT library (book+)&amp;gt;
+    &amp;lt;!ELEMENT book (title, author, year)&amp;gt;
+    &amp;lt;!ELEMENT title (#PCDATA)&amp;gt;
+    &amp;lt;!ELEMENT author (#PCDATA)&amp;gt;
+    &amp;lt;!ELEMENT year (#PCDATA)&amp;gt;
+    &amp;lt;!ATTLIST book id ID #REQUIRED&amp;gt;
+]&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;置于XML前：&lt;code&gt;&amp;lt;!DOCTYPE library SYSTEM &quot;library.dtd&quot;&amp;gt;&lt;/code&gt;（需外部文件）。&lt;/p&gt;
+&lt;p&gt;XML Schema（XSD）：更强大，用XML写。
+示例片段：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&amp;gt;
+    &amp;lt;xs:element name=&quot;library&quot;&amp;gt;
+        &amp;lt;xs:complexType&amp;gt;
+            &amp;lt;xs:sequence&amp;gt;
+                &amp;lt;xs:element name=&quot;book&quot; maxOccurs=&quot;unbounded&quot;&amp;gt;
+                    &amp;lt;xs:complexType&amp;gt;
+                        &amp;lt;xs:sequence&amp;gt;
+                            &amp;lt;xs:element name=&quot;title&quot; type=&quot;xs:string&quot;/&amp;gt;
+                            &amp;lt;xs:element name=&quot;author&quot; type=&quot;xs:string&quot;/&amp;gt;
+                            &amp;lt;xs:element name=&quot;year&quot; type=&quot;xs:integer&quot;/&amp;gt;
+                        &amp;lt;/xs:sequence&amp;gt;
+                        &amp;lt;xs:attribute name=&quot;id&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&amp;gt;
+                    &amp;lt;/xs:complexType&amp;gt;
+                &amp;lt;/xs:element&amp;gt;
+            &amp;lt;/xs:sequence&amp;gt;
+        &amp;lt;/xs:complexType&amp;gt;
+    &amp;lt;/xs:element&amp;gt;
+&amp;lt;/xs:schema&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用在线工具验证你的书籍XML是否符合简单DTD。&lt;/p&gt;
+&lt;h3&gt;1.4 XPath查询&lt;/h3&gt;
+&lt;p&gt;XPath：XML的“查询语言”，选元素如CSS。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/library/book[1]/title&lt;/code&gt;：第一个书标题。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;//author&lt;/code&gt;：所有作者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例（用浏览器DevTools或工具测试）：
+在XML中，XPath &lt;code&gt;/library/book[@id=&apos;1&apos;]/title&lt;/code&gt; 返回 &quot;Hello World&quot;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：写XPath选所有2023年书籍。&lt;/p&gt;
+&lt;h3&gt;1.5 实用项目：产品目录XML&lt;/h3&gt;
+&lt;p&gt;整合知识：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;!DOCTYPE catalog [
+    &amp;lt;!ELEMENT catalog (product+)&amp;gt;
+    &amp;lt;!ELEMENT product (name, price, description)&amp;gt;
+    &amp;lt;!ELEMENT name (#PCDATA)&amp;gt;
+    &amp;lt;!ELEMENT price (#PCDATA)&amp;gt;
+    &amp;lt;!ELEMENT description (#PCDATA)&amp;gt;
+]&amp;gt;
+&amp;lt;catalog&amp;gt;
+    &amp;lt;product id=&quot;p1&quot;&amp;gt;
+        &amp;lt;name&amp;gt;Laptop&amp;lt;/name&amp;gt;
+        &amp;lt;price&amp;gt;999.99&amp;lt;/price&amp;gt;
+        &amp;lt;description&amp;gt;High-performance laptop.&amp;lt;/description&amp;gt;
+    &amp;lt;/product&amp;gt;
+    &amp;lt;product id=&quot;p2&quot;&amp;gt;
+        &amp;lt;name&amp;gt;Mouse&amp;lt;/name&amp;gt;
+        &amp;lt;price&amp;gt;29.99&amp;lt;/price&amp;gt;
+        &amp;lt;description&amp;gt;Wireless mouse.&amp;lt;/description&amp;gt;
+    &amp;lt;/product&amp;gt;
+&amp;lt;/catalog&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加XSD验证价格为正数。用XPath查询总产品数。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;XML小结&lt;/strong&gt;：适合复杂文档，但冗长。常见错误：未闭合标签、非法字符。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;第二部分：从XML过渡到JSON&lt;/h2&gt;
+&lt;p&gt;XML和JSON都结构化数据，但JSON更简洁：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;相似&lt;/strong&gt;：层次（XML元素 → JSON对象/数组）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不同&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;XML标签 → JSON键（字符串）。&lt;/li&gt;
+&lt;li&gt;无属性/命名空间；纯键值。&lt;/li&gt;
+&lt;li&gt;JSON用&lt;code&gt;{}&lt;/code&gt;对象、&lt;code&gt;[]&lt;/code&gt;数组。&lt;/li&gt;
+&lt;li&gt;验证：XML用DTD/XSD，JSON用Schema（JSON Schema）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;迁移提示&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;XML &lt;code&gt;&amp;lt;book&amp;gt;&amp;lt;title&amp;gt;Hi&amp;lt;/title&amp;gt;&amp;lt;/book&amp;gt;&lt;/code&gt; → JSON &lt;code&gt;{&quot;book&quot;: {&quot;title&quot;: &quot;Hi&quot;}}&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;工具：在线转换器如&lt;a href=&quot;https://codebeautify.org/xmltojson&quot;&gt;XML to JSON&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例转换：
+XML：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;book&amp;gt;&amp;lt;title&amp;gt;Hello&amp;lt;/title&amp;gt;&amp;lt;author&amp;gt;John&amp;lt;/author&amp;gt;&amp;lt;/book&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JSON：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;book&quot;: {
+    &quot;title&quot;: &quot;Hello&quot;,
+    &quot;author&quot;: &quot;John&quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;验证JSON&lt;/strong&gt;：用&lt;a href=&quot;https://jsonlint.com/&quot;&gt;JSONLint&lt;/a&gt;。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;第三部分：JSON扩展（高级用法）&lt;/h2&gt;
+&lt;p&gt;JSON轻便，易解析。核心：对象（键值对）、数组、基本类型（string, number, boolean, null）。&lt;/p&gt;
+&lt;h3&gt;3.1 基本结构与嵌套&lt;/h3&gt;
+&lt;p&gt;对象：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;name&quot;: &quot;Alice&quot;,
+  &quot;age&quot;: 30,
+  &quot;hobbies&quot;: [&quot;reading&quot;, &quot;coding&quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;嵌套：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;library&quot;: {
+    &quot;books&quot;: [
+      {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;Hello World&quot;,
+        &quot;author&quot;: {
+          &quot;name&quot;: &quot;John Doe&quot;,
+          &quot;email&quot;: &quot;john@example.com&quot;
+        }
+      }
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：创建用户配置文件JSON，含地址数组。&lt;/p&gt;
+&lt;h3&gt;3.2 JSON Schema验证&lt;/h3&gt;
+&lt;p&gt;类似XML Schema：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;name&quot;: {&quot;type&quot;: &quot;string&quot;},
+    &quot;age&quot;: {&quot;type&quot;: &quot;integer&quot;, &quot;minimum&quot;: 0}
+  },
+  &quot;required&quot;: [&quot;name&quot;, &quot;age&quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用在线工具验证JSON。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：为书籍JSON写Schema，要求&lt;code&gt;year&lt;/code&gt; &amp;gt; 1900。&lt;/p&gt;
+&lt;h3&gt;3.3 JSONPath查询&lt;/h3&gt;
+&lt;p&gt;JSON的XPath类似：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$.library.books[0].title&lt;/code&gt;：第一本书标题。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$..author.name&lt;/code&gt;：所有作者名。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;code&gt;$.library.books[?(@.id == 1)].title&lt;/code&gt; 选ID=1的标题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用&lt;a href=&quot;https://jsonpath.com/&quot;&gt;JSONPath Online Evaluator&lt;/a&gt;查询嵌套JSON。&lt;/p&gt;
+&lt;h3&gt;3.4 编程集成（JavaScript/Python示例）&lt;/h3&gt;
+&lt;p&gt;JSON天生编程友好。&lt;/p&gt;
+&lt;p&gt;JavaScript（解析/生成）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 解析
+const jsonStr = &apos;{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}&apos;;
+const obj = JSON.parse(jsonStr);
+console.log(obj.name);  // Alice
+
+// 生成
+const newObj = {name: &quot;Bob&quot;, age: 25};
+const jsonStr2 = JSON.stringify(newObj, null, 2);  // 美化
+console.log(jsonStr2);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Python：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import json
+
+# 解析
+json_str = &apos;{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}&apos;
+obj = json.loads(json_str)
+print(obj[&apos;name&apos;])  # Alice
+
+# 生成
+new_obj = {&apos;name&apos;: &apos;Bob&apos;, &apos;age&apos;: 25}
+json_str2 = json.dumps(new_obj, indent=2)
+print(json_str2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：写JS脚本从JSON文件读数据，输出作者列表。&lt;/p&gt;
+&lt;h3&gt;3.5 实用项目：API响应模拟&lt;/h3&gt;
+&lt;p&gt;模拟Web API JSON：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;status&quot;: &quot;success&quot;,
+  &quot;data&quot;: {
+    &quot;users&quot;: [
+      {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Alice&quot;,
+        &quot;posts&quot;: [
+          {&quot;title&quot;: &quot;First Post&quot;, &quot;likes&quot;: 10},
+          {&quot;title&quot;: &quot;Second Post&quot;, &quot;likes&quot;: 5}
+        ]
+      }
+    ],
+    &quot;total&quot;: 1
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;此文章由本人学习配置语言时的总结整理而来，由gork辅助优化格式。&lt;/p&gt;
 </content:encoded></item><item><title>从 C 语言到 Java</title><link>https://windholm.dpdns.org/posts/itplace-java/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-java/</guid><description>用更自然的方式讲 C 语言和 Java 的入门路径，重点放在理解思路和实际编码感受上。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从 C 语言到 Java&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;如果你刚开始学编程，我会更建议先碰一碰 C，再去看 Java。C 语言会把很多底层概念直接摊开给你看，比如变量、函数、内存和程序入口；而 Java 会在这个基础上，带你进入更清晰的面向对象世界。&lt;/p&gt;
