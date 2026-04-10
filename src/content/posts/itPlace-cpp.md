@@ -7,7 +7,7 @@ tags: [编程, C语言, C++, 快速入门, 实战]
 image: /assets/images/cpp.png
 category: 计算机科学
 author: Grok，Pars
-pinned: true
+pinned: false
 ---
 ### C++ 学习教程：从基础到实战
 
