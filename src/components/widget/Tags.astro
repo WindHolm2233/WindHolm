@@ -6,14 +6,14 @@ import { getTagList } from "@/utils/content-utils";
 import { getTagUrl } from "@/utils/url-utils";
 import ButtonTag from "@/components/control/ButtonTag.astro";
 import WidgetLayout from "./WidgetLayout.astro";
-import { widgetManager } from "@/utils/widget-manager";
+import { getComponentConfig, widgetManager } from "@/utils/widget-manager";
 
 const tags = await getTagList();
 
 const COLLAPSED_HEIGHT = "7.5rem";
 
 // 使用统一的组件管理器检查是否应该折叠
-const tagsComponent = widgetManager.config.components.find(c => c.type === "tags");
+const tagsComponent = getComponentConfig("tags");
 const isCollapsed = tagsComponent ? widgetManager.isCollapsed(tagsComponent, tags.length) : false;
 
 interface Props {

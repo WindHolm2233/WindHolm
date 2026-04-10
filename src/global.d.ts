@@ -8,6 +8,8 @@ declare global {
   interface Window {
     // Define swup type directly since @swup/astro doesn't export AstroIntegration
     swup: any;
+    iconifyLoaded?: boolean;
+    closeAnnouncement?: () => void;
     live2dModelInitialized?: boolean;
     spineModelInitialized?: boolean;
     spinePlayerInstance?: any;
@@ -20,6 +22,7 @@ declare global {
     };
 
     mobileTOCInit?: () => void;
+    semifullScrollHandler?: (() => void) | null;
   }
 }
 

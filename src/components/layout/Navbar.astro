@@ -136,13 +136,14 @@ loadButtonScript();
 
 // 为semifull模式添加滚动检测逻辑
 function initSemifullScrollDetection() {
-    const navbar = document.getElementById('navbar');
+    const navbar = document.getElementById('navbar') as HTMLElement | null;
     if (!navbar) return;
+    const navbarEl = navbar;
     
-    const transparentMode = navbar.getAttribute('data-transparent-mode');
+    const transparentMode = navbarEl.getAttribute('data-transparent-mode');
     if (transparentMode !== 'semifull') return;
     
-    const isHomePage = navbar.getAttribute('data-is-home') === 'true';
+    const isHomePage = navbarEl.getAttribute('data-is-home') === 'true';
     
     // 如果不是首页，移除滚动事件监听器并设置为半透明状态
     if (!isHomePage) {
@@ -152,12 +153,12 @@ function initSemifullScrollDetection() {
             window.semifullScrollHandler = null;
         }
         // 设置为半透明状态
-        navbar.classList.add('scrolled');
+        navbarEl.classList.add('scrolled');
         return;
     }
     
     // 移除现有的scrolled类，重置状态
-    navbar.classList.remove('scrolled');
+    navbarEl.classList.remove('scrolled');
     
     let ticking = false;
     
@@ -166,9 +167,9 @@ function initSemifullScrollDetection() {
         const threshold = 50; // 滚动阈值，可以根据需要调整
         // 使用批量DOM操作优化性能
         if (scrollTop > threshold) {
-            navbar.classList.add('scrolled');
+            navbarEl.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            navbarEl.classList.remove('scrolled');
         }
         
         ticking = false;

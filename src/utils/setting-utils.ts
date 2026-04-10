@@ -14,7 +14,7 @@ import type { LIGHT_DARK_MODE, WALLPAPER_MODE } from "@/types/config";
 declare global {
 	interface Window {
 		initSemifullScrollDetection?: () => void;
-		semifullScrollHandler?: () => void;
+		semifullScrollHandler?: (() => void) | null;
 	}
 }
 

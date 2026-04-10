@@ -5,6 +5,8 @@
 		"moduleResolution": "Node",
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
 		"baseUrl": ".",
 		"strictNullChecks": true,
 		"allowJs": false,

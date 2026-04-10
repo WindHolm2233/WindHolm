@@ -504,6 +504,7 @@ export type MusicPlayerConfig = {
   meting?: {
     // Meting API 地址
     api?: string;
+    requestTimeoutMs?: number;
 
     // 歌单配置
     playlist?: {

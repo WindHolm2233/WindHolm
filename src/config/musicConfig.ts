@@ -12,7 +12,8 @@ export const musicPlayerConfig: MusicPlayerConfig = {
   meting: {
     // Meting API 地址，默认使用 bilibili.uno 提供的免费服务
     // 你也可以使用其他 Meting API 服务或自建服务
-    api: "api.i-meto.com/meting/api?server=:netease&type=:playlist&id=:14384854724&r=:r",
+    api: "https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r",
+    requestTimeoutMs: 8000,
 
     // 歌单配置
     playlist: {
@@ -24,6 +25,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
     // 备用 API 配置（当主 API 失败时使用）
     fallbackApis: [
       "https://api.injahow.cn/bete/?server=:server&type=:type&id=:id",
+      "https://meting.owo.nz/api?server=:server&type=:type&id=:id",
       "https://api.uomg.com/api/other/163music?format=json&id=:id",
     ],
   },

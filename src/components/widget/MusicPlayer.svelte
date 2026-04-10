@@ -23,6 +23,7 @@
     let meting_server = config.meting?.playlist?.server ?? "netease";
     let meting_type = config.meting?.playlist?.type ?? "playlist";
     let fallback_apis = config.meting?.fallbackApis ?? [];
+    let meting_timeout = config.meting?.requestTimeoutMs ?? 8000;
     
     // 本地音乐配置
     let local_playlist = config.local?.playlist ?? [];
@@ -122,18 +123,129 @@
         duration: 0,
     };
     
-    let playlist: Array<{
+    type PlaylistSong = {
         id: number;
         title: string;
         artist: string;
         cover: string;
         url: string;
         duration: number;
-    }> = [];
+    };
+    let playlist: PlaylistSong[] = [];
     let currentIndex = 0;
     let audio: HTMLAudioElement;
     let progressBar: HTMLElement;
     let volumeBar: HTMLElement;
+    let metingAbortController: AbortController | null = null;
+
+    function normalizeApiUrl(template: string) {
+        const withProtocol = /^https?:\/\//i.test(template)
+            ? template
+            : `https://${template.replace(/^\/+/, "")}`;
+
+        return withProtocol
+            .replaceAll(":server", meting_server)
+            .replaceAll(":type", meting_type)
+            .replaceAll(":id", meting_id)
+            .replaceAll(":auth", "")
+            .replaceAll(":r", Date.now().toString());
+    }
+
+    function toDuration(value: unknown) {
+        const parsed = Number(value ?? 0);
+        if (!Number.isFinite(parsed) || parsed <= 0) return 0;
+        return parsed > 10000 ? Math.floor(parsed / 1000) : parsed;
+    }
+
+    function normalizeSong(song: Record<string, unknown>, index: number): PlaylistSong | null {
+        const rawUrl = song.url ?? song.src;
+        const url = typeof rawUrl === "string" ? rawUrl.trim() : "";
+        if (!url) return null;
+
+        const rawArtist = song.artist ?? song.author ?? song.ar;
+        const artist = Array.isArray(rawArtist)
+            ? rawArtist
+                .map((item) =>
+                    typeof item === "string"
+                        ? item
+                        : typeof item === "object" && item && "name" in item
+                          ? String(item.name)
+                          : "",
+                )
+                .filter(Boolean)
+                .join(" / ")
+            : String(rawArtist ?? "未知艺术家");
+
+        return {
+            id: Number(song.id ?? index + 1),
+            title: String(song.name ?? song.title ?? "未知歌曲"),
+            artist,
+            cover: String(song.pic ?? song.cover ?? song.poster ?? ""),
+            url,
+            duration: toDuration(song.duration ?? song.dt ?? song.length),
+        };
+    }
+
+    async function fetchPlaylistFromApi(apiTemplate: string) {
+        metingAbortController?.abort();
+        metingAbortController = new AbortController();
+
+        const timeoutId = window.setTimeout(() => {
+            metingAbortController?.abort();
+        }, meting_timeout);
+
+        try {
+            const res = await fetch(normalizeApiUrl(apiTemplate), {
+                signal: metingAbortController.signal,
+            });
+
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
+
+            const payload = await res.json();
+            const list = Array.isArray(payload)
+                ? payload
+                : Array.isArray(payload?.data)
+                  ? payload.data
+                  : Array.isArray(payload?.songs)
+                    ? payload.songs
+                    : [];
+
+            return list
+                .map((song, index) => normalizeSong(song as Record<string, unknown>, index))
+                .filter((song): song is PlaylistSong => Boolean(song));
+        } finally {
+            clearTimeout(timeoutId);
+        }
+    }
+
+    async function fetchMetingPlaylistOptimized() {
+        if (!meting_api || !meting_id) return;
+        isLoading = true;
+
+        const apis = [meting_api, ...fallback_apis];
+
+        for (let i = 0; i < apis.length; i++) {
+            try {
+                playlist = await fetchPlaylistFromApi(apis[i]);
+
+                if (playlist.length === 0) {
+                    throw new Error("Empty playlist");
+                }
+
+                loadSong(playlist[0]);
+                isLoading = false;
+                return;
+            } catch (e) {
+                console.warn(`API ${i + 1} failed:`, e);
+                if (i === apis.length - 1) {
+                    showErrorMessage("所有 Meting API 都不可用，请稍后重试或切换到本地歌单。");
+                    isLoading = false;
+                }
+            }
+        }
+    }
     
     async function fetchMetingPlaylist() {
         if (!meting_api || !meting_id) return;
@@ -442,7 +554,7 @@
         }
         
         if (mode === "meting") {
-            fetchMetingPlaylist().then(() => {
+            fetchMetingPlaylistOptimized().then(() => {
                 // 如果启用了自动播放，则开始播放
                 if (autoplay && playlist.length > 0) {
                     setTimeout(() => {
@@ -472,6 +584,7 @@
     });
     
     onDestroy(() => {
+        metingAbortController?.abort();
         if (audio) {
             audio.pause();
             audio.src = "";
