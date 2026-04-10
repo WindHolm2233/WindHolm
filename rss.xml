@@ -61,23 +61,28 @@
 &lt;h3&gt;配置文件结构&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;src/
 ├── config/
-│   ├── index.ts              # 配置索引文件
-│   ├── siteConfig.ts         # 站点基础配置
-│   ├── profileConfig.ts      # 用户资料配置
-│   ├── commentConfig.ts      # 评论系统配置
-│   ├── announcementConfig.ts # 公告配置
-│   ├── licenseConfig.ts      # 许可证配置
-│   ├── footerConfig.ts       # 页脚配置
-│   ├── FooterConfig.html     # 页脚HTML内容
-│   ├── expressiveCodeConfig.ts # 代码高亮配置
-│   ├── sakuraConfig.ts       # 樱花特效配置
-│   ├── fontConfig.ts         # 字体配置
-│   ├── sidebarConfig.ts      # 侧边栏布局配置
-│   ├── navBarConfig.ts       # 导航栏配置
-│   ├── musicConfig.ts        # 音乐播放器配置
-│   ├── pioConfig.ts          # 看板娘配置
-│   ├── adConfig.ts           # 广告配置
-│   └── friendsConfig.ts      # 友链配置
+│   ├── index.ts                    # 配置索引文件
+│   ├── core/
+│   │   ├── siteConfig.ts          # 站点基础配置
+│   │   └── profileConfig.ts       # 用户资料配置
+│   ├── layout/
+│   │   ├── navBarConfig.ts        # 导航栏配置
+│   │   ├── sidebarConfig.ts       # 侧边栏布局配置
+│   │   ├── footerConfig.ts        # 页脚配置
+│   │   └── FooterConfig.html      # 页脚HTML内容
+│   ├── theme/
+│   │   ├── expressiveCodeConfig.ts # 代码高亮配置
+│   │   ├── sakuraConfig.ts        # 樱花特效配置
+│   │   └── fontConfig.ts          # 字体配置
+│   ├── features/
+│   │   ├── announcementConfig.ts  # 公告配置
+│   │   ├── licenseConfig.ts       # 许可证配置
+│   │   └── adConfig.ts            # 广告配置
+│   └── integrations/
+│       ├── commentConfig.ts       # 评论系统配置
+│       ├── musicConfig.ts         # 音乐播放器配置
+│       ├── pioConfig.ts           # 看板娘配置
+│       └── friendsConfig.ts       # 友链配置
 &lt;/code&gt;&lt;/pre&gt;
 </content:encoded></item><item><title>WindHolm 使用指南</title><link>https://windholm.dpdns.org/posts/guide/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/guide/</guid><description>介绍 WindHolm 的基本用法、文章写法和常见配置思路。</description><pubDate>Thu, 06 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这个模板基于 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建。这里先把最常用的用法放在前面，剩下的细节可以再去看 &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro 文档&lt;/a&gt;。&lt;/p&gt;
 &lt;h2&gt;文章的 Frontmatter&lt;/h2&gt;
@@ -1807,7 +1812,7 @@ public class StudentManager {
 &lt;li&gt;&lt;a href=&quot;#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE&quot;&gt;最佳实践建议&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;字体配置基础&lt;/h2&gt;
-&lt;p&gt;Firefly 的字体配置位于 &lt;code&gt;src/config/fontConfig.ts&lt;/code&gt;。通过模块化配置，你可以统一管理站点字体、预加载策略和回退字体。&lt;/p&gt;
+&lt;p&gt;Firefly 的字体配置位于 &lt;code&gt;src/config/theme/fontConfig.ts&lt;/code&gt;。通过模块化配置，你可以统一管理站点字体、预加载策略和回退字体。&lt;/p&gt;
 &lt;h3&gt;基本配置结构&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;export const fontConfig = {
   enable: true,           // 启用自定义字体功能
