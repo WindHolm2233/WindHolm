@@ -1,9 +1,9 @@
 ---
-title: Python 入门：先把脚本跑起来
+title: Python 学习整理
 published: 2025-11-18
 draft: false
 description: 用更轻松的方式讲 Python 的入门思路，先建立手感，再慢慢扩展到日常脚本和小项目。
-tags: [编程, Python, 快速入门, 实战]
+tags: [ Python,code]
 category: 计算机科学
 author: Pars
 pinned: true

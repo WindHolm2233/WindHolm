@@ -1,9 +1,9 @@
 ---
-title: C# 入门笔记：先把面向对象讲明白
+title: C# 学习整理
 published: 2025-11-29
 draft: false
 description: 从更自然的角度整理 C# 的入门思路，重点放在面向对象、托管环境和日常开发体验上。
-tags: [编程, C#, 面向对象, 计算机科学]
+tags: [code, C#, OOP]
 image: /assets/images/cpp.png
 category: 计算机科学
 author: Pars, gemini

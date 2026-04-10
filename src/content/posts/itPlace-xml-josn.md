@@ -1,9 +1,9 @@
 ---
-title: XML 和 JSON 入门：先看结构，再看数据
+title: XML 和 JSON 学习
 published: 2025-11-12
 draft: false
 description: 用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。
-tags: [编程, xml, json, 快速入门]
+tags: [code, xml, json]
 category: 计算机科学
 author: Pars, gork
 pinned: true

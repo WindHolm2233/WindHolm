@@ -4,7 +4,7 @@ published: 2024-05-01
 updated: 2024-11-29
 description: 介绍 WindHolm 里常用的 Markdown 扩展写法和展示效果。
 image: ''
-tags: [演示, 示例, Markdown, Firefly]
+tags: [演示, 示例, Markdown]
 category: 文章示例
 draft: false
 ---

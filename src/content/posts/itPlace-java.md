@@ -1,13 +1,13 @@
 ---
-title: 从 C 语言到 Java：一份更顺手的入门笔记
+title: 从 C 语言到 Java
 published: 2025-11-12
 draft: false
 description: 用更自然的方式讲 C 语言和 Java 的入门路径，重点放在理解思路和实际编码感受上。
-tags: [编程, C语言, Java, 快速入门]
+tags: [code, C语言, Java]
 category: 计算机科学
 image: /assets/images/java.png
 author: Pars
-pinned: true
+pinned: false
 ---
 
 # 从 C 语言到 Java
