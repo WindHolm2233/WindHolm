@@ -123,7 +123,7 @@ else:
 &lt;h2&gt;结尾&lt;/h2&gt;
 &lt;p&gt;Python 的优势不只是“简单”，而是它很容易让你从入门走到实用。&lt;/p&gt;
 &lt;p&gt;先把脚本跑起来，再慢慢补细节，这样学起来会轻松很多。等你开始用它解决自己的小问题时，Python 才算真正变成了你的工具。&lt;/p&gt;
-</content:encoded></item><item><title>C++ 入门与实战：从基础到第一个小项目</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>把 C++ 的入门路径整理得更自然一些，重点放在理解基础、建立手感和动手实践。</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从基础到实战&lt;/h3&gt;
+</content:encoded></item><item><title>C++ 学习笔记</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>把 C++ 的入门路径整理得更自然一些，重点放在理解基础、建立手感和动手实践。</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从基础到实战&lt;/h3&gt;
 &lt;p&gt;如果你想认真学一门偏底层、但又足够灵活的语言，C++ 还是很值得碰一碰的。它既能让你看到程序到底是怎么跑起来的，也能支撑一些对性能要求比较高的场景，比如游戏、图形、工具链和实时计算。&lt;/p&gt;
 &lt;p&gt;这篇文章不会一上来就堆概念，而是按“先能跑，再理解，再写得像样”的顺序往前走。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;学习路径概述&lt;/strong&gt;：&lt;/p&gt;
