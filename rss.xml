@@ -123,420 +123,6 @@ else:
 &lt;h2&gt;结尾&lt;/h2&gt;
 &lt;p&gt;Python 的优势不只是“简单”，而是它很容易让你从入门走到实用。&lt;/p&gt;
 &lt;p&gt;先把脚本跑起来，再慢慢补细节，这样学起来会轻松很多。等你开始用它解决自己的小问题时，Python 才算真正变成了你的工具。&lt;/p&gt;
-</content:encoded></item><item><title>C++ 学习笔记</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>把 C++ 的入门路径整理得更自然一些，重点放在理解基础、建立手感和动手实践。</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从基础到实战&lt;/h3&gt;
-&lt;p&gt;如果你想认真学一门偏底层、但又足够灵活的语言，C++ 还是很值得碰一碰的。它既能让你看到程序到底是怎么跑起来的，也能支撑一些对性能要求比较高的场景，比如游戏、图形、工具链和实时计算。&lt;/p&gt;
-&lt;p&gt;这篇文章不会一上来就堆概念，而是按“先能跑，再理解，再写得像样”的顺序往前走。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;学习路径概述&lt;/strong&gt;：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;阶段&lt;/th&gt;
-&lt;th&gt;内容&lt;/th&gt;
-&lt;th&gt;目标&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1. 基础设置与语法&lt;/td&gt;
-&lt;td&gt;环境、变量、控制流&lt;/td&gt;
-&lt;td&gt;先写出能运行的程序&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2. 核心概念&lt;/td&gt;
-&lt;td&gt;指针、数组、函数&lt;/td&gt;
-&lt;td&gt;逐步理解数据怎么流动&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3. 面向对象编程 (OOP)&lt;/td&gt;
-&lt;td&gt;类、继承、多态&lt;/td&gt;
-&lt;td&gt;开始组织更大的代码&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4. 标准模板库 (STL)&lt;/td&gt;
-&lt;td&gt;容器、算法&lt;/td&gt;
-&lt;td&gt;让常见任务更省力&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5. 高级主题&lt;/td&gt;
-&lt;td&gt;异常、文件 I/O、多线程&lt;/td&gt;
-&lt;td&gt;把程序做得更稳&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;6. 游戏开发入门&lt;/td&gt;
-&lt;td&gt;SFML 库、图形/输入/物理&lt;/td&gt;
-&lt;td&gt;做出一个完整的小项目&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Tips&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;练习环境&lt;/strong&gt;：Windows 用 VS Code + MinGW，Linux/macOS 直接用 &lt;code&gt;g++&lt;/code&gt; 就行。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;资源&lt;/strong&gt;：先把一本入门书和几段视频看顺，再去刷题会更稳。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：每节都尽量留一个能直接跑的例子，先跑通，再改。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;练习建议&lt;/strong&gt;：不要只看教程，哪怕是小计算器、字符串处理这种题，也值得自己手写一遍。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h4&gt;阶段 1: 基础设置与语法&lt;/h4&gt;
-&lt;p&gt;先设置环境，确保能运行代码。&lt;/p&gt;
-&lt;h5&gt;1.1 环境安装&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;：下载 &lt;a href=&quot;https://www.mingw-w64.org/&quot;&gt;MinGW-w64&lt;/a&gt;，添加 &lt;code&gt;bin&lt;/code&gt; 到 PATH。安装 VS Code + C/C++ 扩展。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;：终端运行 &lt;code&gt;xcode-select --install&lt;/code&gt;（安装 g++）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;：&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install g++ build-essential&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;测试&lt;/strong&gt;：新建 &lt;code&gt;hello.cpp&lt;/code&gt;：&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;  // 标准输入输出库
-int main() {
-    std::cout &amp;lt;&amp;lt; &quot;Hello, C++!&quot; &amp;lt;&amp;lt; std::endl;  // 输出
-    return 0;  // 程序结束
-}
-&lt;/code&gt;&lt;/pre&gt;
-编译运行：&lt;code&gt;g++ hello.cpp -o hello &amp;amp;&amp;amp; ./hello&lt;/code&gt;。看到 &quot;Hello, C++!&quot; 即成功。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;1.2 基本语法&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;变量与类型&lt;/strong&gt;：C++ 是静态类型语言。常见类型：&lt;code&gt;int&lt;/code&gt; (整数)、&lt;code&gt;double&lt;/code&gt; (浮点)、&lt;code&gt;char&lt;/code&gt; (字符)、&lt;code&gt;bool&lt;/code&gt; (真假)、&lt;code&gt;std::string&lt;/code&gt; (字符串)。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;string&amp;gt;  // 字符串库
-int main() {
-    int age = 25;  // 声明并初始化
-    double pi = 3.14159;
-    std::string name = &quot;Alice&quot;;
-    bool is_student = true;
-
-    std::cout &amp;lt;&amp;lt; &quot;Name: &quot; &amp;lt;&amp;lt; name &amp;lt;&amp;lt; &quot;, Age: &quot; &amp;lt;&amp;lt; age &amp;lt;&amp;lt; std::endl;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;输入输出&lt;/strong&gt;：用 &lt;code&gt;std::cin&lt;/code&gt; 输入。&lt;pre&gt;&lt;code&gt;int main() {
-    int num;
-    std::cout &amp;lt;&amp;lt; &quot;Enter a number: &quot;;
-    std::cin &amp;gt;&amp;gt; num;
-    std::cout &amp;lt;&amp;lt; &quot;You entered: &quot; &amp;lt;&amp;lt; num &amp;lt;&amp;lt; std::endl;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;控制流&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;if-else&lt;/strong&gt;：&lt;pre&gt;&lt;code&gt;if (age &amp;gt;= 18) {
-    std::cout &amp;lt;&amp;lt; &quot;Adult&quot; &amp;lt;&amp;lt; std::endl;
-} else {
-    std::cout &amp;lt;&amp;lt; &quot;Minor&quot; &amp;lt;&amp;lt; std::endl;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;循环&lt;/strong&gt;：for、while。&lt;pre&gt;&lt;code&gt;for (int i = 0; i &amp;lt; 5; ++i) {  // ++i 是自增
-    std::cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &quot; &quot;;
-}  // 输出: 0 1 2 3 4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;switch&lt;/strong&gt;：多分支。&lt;pre&gt;&lt;code&gt;switch (day) {
-    case 1: std::cout &amp;lt;&amp;lt; &quot;Monday&quot;; break;
-    default: std::cout &amp;lt;&amp;lt; &quot;Other&quot;; break;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;写程序计算两个数的和、差。&lt;/li&gt;
-&lt;li&gt;用循环打印 1-100 的偶数。&lt;/li&gt;
-&lt;li&gt;输入成绩，输出等级 (A:90+ 等)。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h4&gt;阶段 2: 核心概念&lt;/h4&gt;
-&lt;p&gt;掌握内存和函数，为 OOP 铺路。&lt;/p&gt;
-&lt;h5&gt;2.1 数组与字符串&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;：固定大小集合。&lt;code&gt;int arr[5] = {1,2,3,4,5};&lt;/code&gt;。访问：&lt;code&gt;arr[0]&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
-int main() {
-    int scores[3] = {85, 92, 78};
-    for (int i = 0; i &amp;lt; 3; ++i) {
-        std::cout &amp;lt;&amp;lt; scores[i] &amp;lt;&amp;lt; &quot; &quot;;
-    }
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;动态数组&lt;/strong&gt;：用 &lt;code&gt;new&lt;/code&gt; 分配（稍后详解指针）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;字符串&lt;/strong&gt;：&lt;code&gt;std::string&lt;/code&gt; 支持操作如 &lt;code&gt;+=&lt;/code&gt;、&lt;code&gt;length()&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;std::string text = &quot;Hello&quot;;
-text += &quot; World!&quot;;
-std::cout &amp;lt;&amp;lt; text.length();  // 11
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;2.2 函数&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;定义：&lt;code&gt;返回类型 函数名(参数) { 代码; return 值; }&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
-int add(int a, int b) {  // 参数
-    return a + b;
-}
-int main() {
-    int sum = add(3, 4);
-    std::cout &amp;lt;&amp;lt; sum;  // 7
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;默认参数&lt;/strong&gt;：&lt;code&gt;int multiply(int x, int y = 1) { return x * y; }&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;重载&lt;/strong&gt;：同名不同参数。&lt;pre&gt;&lt;code&gt;void print(int x) { std::cout &amp;lt;&amp;lt; x; }
-void print(double x) { std::cout &amp;lt;&amp;lt; x * 2; }  // 调用时自动匹配
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;2.3 指针与引用&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;指针&lt;/strong&gt;：存储地址。&lt;code&gt;int* p = &amp;amp;var;&lt;/code&gt;（&amp;amp; 取地址）。&lt;pre&gt;&lt;code&gt;int main() {
-    int x = 10;
-    int* ptr = &amp;amp;x;  // ptr 指向 x
-    std::cout &amp;lt;&amp;lt; *ptr;  // 解引用: 10
-    *ptr = 20;  // 修改 x 为 20
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;引用&lt;/strong&gt;：别名。&lt;code&gt;int&amp;amp; ref = x; ref = 30;&lt;/code&gt;（x 变 30）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;动态内存&lt;/strong&gt;：&lt;code&gt;int* arr = new int[5];&lt;/code&gt; 用完 &lt;code&gt;delete[] arr;&lt;/code&gt;（避免内存泄漏）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;写函数交换两个数（用指针）。&lt;/li&gt;
-&lt;li&gt;用数组计算平均分。&lt;/li&gt;
-&lt;li&gt;动态分配字符串数组，存储用户输入。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h4&gt;阶段 3: 面向对象编程 (OOP)&lt;/h4&gt;
-&lt;p&gt;C++ 的核心：类和对象。游戏中用于角色、场景等。&lt;/p&gt;
-&lt;h5&gt;3.1 类与对象&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;类定义&lt;/strong&gt;：封装数据和方法。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;string&amp;gt;
-class Person {  // 类
-private:  // 私有：只能类内访问
-    std::string name;
-    int age;
-public:  // 公有：外部访问
-    Person(std::string n, int a) : name(n), age(a) {}  // 构造函数
-    void display() { std::cout &amp;lt;&amp;lt; name &amp;lt;&amp;lt; &quot; is &quot; &amp;lt;&amp;lt; age &amp;lt;&amp;lt; std::endl; }
-    ~Person() {}  // 析构函数（清理资源）
-};
-int main() {
-    Person p(&quot;Bob&quot;, 30);  // 对象
-    p.display();
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;访问控制&lt;/strong&gt;：private（数据隐藏）、protected（继承可见）、public。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;3.2 继承与多态&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;继承&lt;/strong&gt;：子类扩展父类。&lt;code&gt;class Student : public Person { ... };&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;class Student : public Person {
-private:
-    std::string major;
-public:
-    Student(std::string n, int a, std::string m) : Person(n, a), major(m) {}
-    void study() { std::cout &amp;lt;&amp;lt; &quot;Studying &quot; &amp;lt;&amp;lt; major &amp;lt;&amp;lt; std::endl; }
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;多态&lt;/strong&gt;：虚函数实现动态绑定。&lt;pre&gt;&lt;code&gt;class Animal {
-public:
-    virtual void sound() { std::cout &amp;lt;&amp;lt; &quot;Generic sound&quot; &amp;lt;&amp;lt; std::endl; }  // 虚函数
-    virtual ~Animal() {}  // 虚析构
-};
-class Dog : public Animal {
-public:
-    void sound() override { std::cout &amp;lt;&amp;lt; &quot;Woof!&quot; &amp;lt;&amp;lt; std::endl; }  // 重写
-};
-int main() {
-    Animal* pet = new Dog();  // 基类指针指向子类
-    pet-&amp;gt;sound();  // 多态: Woof!
-    delete pet;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;3.3 其他 OOP 特性&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;友元&lt;/strong&gt;：允许外部访问私有。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;运算符重载&lt;/strong&gt;：如 &lt;code&gt;+&lt;/code&gt; for 自定义类型。&lt;pre&gt;&lt;code&gt;class Vector {
-public:
-    int x, y;
-    Vector(int a=0, int b=0) : x(a), y(b) {}
-    Vector operator+(const Vector&amp;amp; other) { return Vector(x + other.x, y + other.y); }
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;创建 &lt;code&gt;Shape&lt;/code&gt; 基类，派生 &lt;code&gt;Circle&lt;/code&gt;、&lt;code&gt;Rectangle&lt;/code&gt;，计算面积（多态）。&lt;/li&gt;
-&lt;li&gt;继承 &lt;code&gt;Vehicle&lt;/code&gt;，实现 &lt;code&gt;Car&lt;/code&gt; 的加速方法。&lt;/li&gt;
-&lt;li&gt;用类管理银行账户（存款、取款）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h4&gt;阶段 4: 标准模板库 (STL)&lt;/h4&gt;
-&lt;p&gt;STL 提供现成容器和算法，游戏中用于管理敌人列表、路径查找。&lt;/p&gt;
-&lt;h5&gt;4.1 容器&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;vector&lt;/strong&gt;：动态数组。&lt;pre&gt;&lt;code&gt;#include &amp;lt;vector&amp;gt;
-std::vector&amp;lt;int&amp;gt; nums = {1,2,3};
-nums.push_back(4);  // 添加
-for (int n : nums) { std::cout &amp;lt;&amp;lt; n &amp;lt;&amp;lt; &quot; &quot;; }  // 范围 for
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;map&lt;/strong&gt;：键值对（字典）。&lt;code&gt;std::map&amp;lt;std::string, int&amp;gt; scores; scores[&quot;Alice&quot;] = 90;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;set&lt;/strong&gt;：有序唯一集合。&lt;code&gt;std::set&amp;lt;int&amp;gt; unique{1,2,2};&lt;/code&gt;（自动去重）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;4.2 算法&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;&lt;/code&gt;&lt;pre&gt;&lt;code&gt;std::sort(nums.begin(), nums.end());  // 排序
-auto it = std::find(nums.begin(), nums.end(), 3);  // 查找
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;用 vector 存储学生成绩，排序输出。&lt;/li&gt;
-&lt;li&gt;用 map 实现单词计数器。&lt;/li&gt;
-&lt;li&gt;用 set 去除数组重复元素。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h4&gt;阶段 5: 高级主题&lt;/h4&gt;
-&lt;p&gt;为游戏添加鲁棒性和并发。&lt;/p&gt;
-&lt;h5&gt;5.1 异常处理&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;try { ... } catch (const std::exception&amp;amp; e) { std::cout &amp;lt;&amp;lt; e.what(); }&lt;/code&gt;&lt;pre&gt;&lt;code&gt;try {
-    int x = std::stoi(&quot;abc&quot;);  // 转换失败抛异常
-} catch (const std::invalid_argument&amp;amp; e) {
-    std::cout &amp;lt;&amp;lt; &quot;Invalid input: &quot; &amp;lt;&amp;lt; e.what() &amp;lt;&amp;lt; std::endl;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;5.2 文件 I/O&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#include &amp;lt;fstream&amp;gt;&lt;/code&gt;&lt;pre&gt;&lt;code&gt;std::ofstream file(&quot;data.txt&quot;);
-file &amp;lt;&amp;lt; &quot;Score: 100&quot; &amp;lt;&amp;lt; std::endl;
-file.close();
-
-std::ifstream infile(&quot;data.txt&quot;);
-std::string line;
-while (std::getline(infile, line)) {
-    std::cout &amp;lt;&amp;lt; line &amp;lt;&amp;lt; std::endl;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;5.3 多线程&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#include &amp;lt;thread&amp;gt;&lt;/code&gt;、&lt;code&gt;#include &amp;lt;mutex&amp;gt;&lt;/code&gt;&lt;pre&gt;&lt;code&gt;void task() { std::cout &amp;lt;&amp;lt; &quot;Thread running&quot; &amp;lt;&amp;lt; std::endl; }
-int main() {
-    std::thread t(task);  // 新线程
-    t.join();  // 等待结束
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-游戏中用于后台加载资源。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h4&gt;阶段 6: 开发入门&lt;/h4&gt;
-&lt;p&gt;现在用 SFML 库开发游戏。SFML 是简单快速的多媒体库，支持 2D 图形、音频、输入。&lt;/p&gt;
-&lt;h5&gt;6.1 安装 SFML&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;下载 &lt;a href=&quot;https://www.sfml-dev.org/download.php&quot;&gt;SFML&lt;/a&gt;（匹配你的系统）。&lt;/li&gt;
-&lt;li&gt;Windows：链接库到项目（VS Code: tasks.json 添加 &lt;code&gt;-lsfml-graphics -lsfml-window -lsfml-system&lt;/code&gt;）。&lt;/li&gt;
-&lt;li&gt;编译：&lt;code&gt;g++ main.cpp -o game -lsfml-graphics -lsfml-window -lsfml-system&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;6.2 基本窗口与事件&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;SFML/Graphics.hpp&amp;gt;
-int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), &quot;My Game&quot;);  // 创建窗口
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) window.close();  // 关闭事件
-        }
-        window.clear(sf::Color::Black);  // 清屏
-        window.display();  // 刷新
-    }
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;运行：黑窗口，可关闭。&lt;/p&gt;
-&lt;h5&gt;6.3 图形与精灵&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;加载图片：&lt;code&gt;sf::Texture texture; texture.loadFromFile(&quot;sprite.png&quot;); sf::Sprite sprite(texture);&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;// 在循环中
-sf::CircleShape shape(50);  // 圆形
-shape.setFillColor(sf::Color::Red);
-window.draw(shape);  // 绘制
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5&gt;6.4 输入与物理&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;键盘：&lt;code&gt;if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) { sprite.move(-5, 0); }&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;简单物理：用时间步（&lt;code&gt;sf::Clock&lt;/code&gt;）更新位置、碰撞（&lt;code&gt;getGlobalBounds().intersects&lt;/code&gt;）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5&gt;6.5 完整示例：Pong 游戏&lt;/h5&gt;
-&lt;p&gt;实现简单 Pong（球、两个拍子、得分）。完整代码：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;SFML/Graphics.hpp&amp;gt;
-#include &amp;lt;iostream&amp;gt;
-
-int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), &quot;Pong&quot;);
-    sf::RectangleShape paddle1({10, 100}), paddle2({10, 100});  // 拍子
-    paddle1.setPosition(10, 250); paddle2.setPosition(780, 250);
-    sf::CircleShape ball(10); ball.setPosition(400, 300);  // 球
-    sf::Vector2f ballVel(-5, 3);  // 速度
-    int score1 = 0, score2 = 0;
-
-    sf::Font font; font.loadFromFile(&quot;arial.ttf&quot;);  // 需要字体文件，或用系统字体
-    sf::Text scoreText; scoreText.setFont(font); scoreText.setCharacterSize(24);
-
-    sf::Clock clock;
-    while (window.isOpen()) {
-        sf::Time dt = clock.restart();  // 时间步
-        float deltaTime = dt.asSeconds();
-
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) window.close();
-        }
-
-        // 输入
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) paddle1.move(0, -300 * deltaTime);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) paddle1.move(0, 300 * deltaTime);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) paddle2.move(0, -300 * deltaTime);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) paddle2.move(0, 300 * deltaTime);
-
-        // 更新球
-        ball.move(ballVel * deltaTime * 60);  // 假设 60 FPS
-        // 墙壁反弹
-        if (ball.getPosition().y &amp;lt; 0 || ball.getPosition().y &amp;gt; 590) ballVel.y = -ballVel.y;
-        // 拍子碰撞
-        if (ball.getGlobalBounds().intersects(paddle1.getGlobalBounds()) ||
-            ball.getGlobalBounds().intersects(paddle2.getGlobalBounds())) {
-            ballVel.x = -ballVel.x;
-        }
-        // 得分
-        if (ball.getPosition().x &amp;lt; 0) { score2++; ball.setPosition(400, 300); ballVel.x = 5; }
-        if (ball.getPosition().x &amp;gt; 790) { score1++; ball.setPosition(400, 300); ballVel.x = -5; }
-
-        // 绘制
-        window.clear();
-        window.draw(paddle1); window.draw(paddle2); window.draw(ball);
-        scoreText.setString(&quot;Score: &quot; + std::to_string(score1) + &quot; - &quot; + std::to_string(score2));
-        window.draw(scoreText);
-        window.display();
-    }
-    return 0;
-}
----
-该文章撰写素材来自平时课程时问grok的问题总结而来，由grok优化格式&lt;/code&gt;&lt;/pre&gt;
 </content:encoded></item><item><title>XML 和 JSON 学习</title><link>https://windholm.dpdns.org/posts/itplace-xml-josn/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-xml-josn/</guid><description>用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;XML 和 JSON 入门&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;如果你第一次接触数据格式，XML 和 JSON 基本就是绕不开的两位老朋友。XML 更像“把结构写清楚”，JSON 更像“把数据写轻一点”。这篇文章不想讲得太学术，只想帮你快速知道它们各自适合干什么、长什么样、什么时候该用哪个。&lt;/p&gt;
@@ -1401,6 +987,420 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;缓存意识&lt;/strong&gt;：改了配置不生效，先删 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;解耦配置&lt;/strong&gt;：尽量不要在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里写死绝对路径，通过 IDE 的设置或命令行传入，这样项目更易于移植。&lt;/li&gt;
 &lt;/ol&gt;
+</content:encoded></item><item><title>C++ 学习笔记</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>把 C++ 的入门路径整理得更自然一些，重点放在理解基础、建立手感和动手实践。</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从基础到实战&lt;/h3&gt;
+&lt;p&gt;如果你想认真学一门偏底层、但又足够灵活的语言，C++ 还是很值得碰一碰的。它既能让你看到程序到底是怎么跑起来的，也能支撑一些对性能要求比较高的场景，比如游戏、图形、工具链和实时计算。&lt;/p&gt;
+&lt;p&gt;这篇文章不会一上来就堆概念，而是按“先能跑，再理解，再写得像样”的顺序往前走。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;学习路径概述&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;阶段&lt;/th&gt;
+&lt;th&gt;内容&lt;/th&gt;
+&lt;th&gt;目标&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1. 基础设置与语法&lt;/td&gt;
+&lt;td&gt;环境、变量、控制流&lt;/td&gt;
+&lt;td&gt;先写出能运行的程序&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2. 核心概念&lt;/td&gt;
+&lt;td&gt;指针、数组、函数&lt;/td&gt;
+&lt;td&gt;逐步理解数据怎么流动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3. 面向对象编程 (OOP)&lt;/td&gt;
+&lt;td&gt;类、继承、多态&lt;/td&gt;
+&lt;td&gt;开始组织更大的代码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4. 标准模板库 (STL)&lt;/td&gt;
+&lt;td&gt;容器、算法&lt;/td&gt;
+&lt;td&gt;让常见任务更省力&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5. 高级主题&lt;/td&gt;
+&lt;td&gt;异常、文件 I/O、多线程&lt;/td&gt;
+&lt;td&gt;把程序做得更稳&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6. 游戏开发入门&lt;/td&gt;
+&lt;td&gt;SFML 库、图形/输入/物理&lt;/td&gt;
+&lt;td&gt;做出一个完整的小项目&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Tips&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;练习环境&lt;/strong&gt;：Windows 用 VS Code + MinGW，Linux/macOS 直接用 &lt;code&gt;g++&lt;/code&gt; 就行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源&lt;/strong&gt;：先把一本入门书和几段视频看顺，再去刷题会更稳。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：每节都尽量留一个能直接跑的例子，先跑通，再改。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;练习建议&lt;/strong&gt;：不要只看教程，哪怕是小计算器、字符串处理这种题，也值得自己手写一遍。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4&gt;阶段 1: 基础设置与语法&lt;/h4&gt;
+&lt;p&gt;先设置环境，确保能运行代码。&lt;/p&gt;
+&lt;h5&gt;1.1 环境安装&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;：下载 &lt;a href=&quot;https://www.mingw-w64.org/&quot;&gt;MinGW-w64&lt;/a&gt;，添加 &lt;code&gt;bin&lt;/code&gt; 到 PATH。安装 VS Code + C/C++ 扩展。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;：终端运行 &lt;code&gt;xcode-select --install&lt;/code&gt;（安装 g++）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;：&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install g++ build-essential&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;测试&lt;/strong&gt;：新建 &lt;code&gt;hello.cpp&lt;/code&gt;：&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;  // 标准输入输出库
+int main() {
+    std::cout &amp;lt;&amp;lt; &quot;Hello, C++!&quot; &amp;lt;&amp;lt; std::endl;  // 输出
+    return 0;  // 程序结束
+}
+&lt;/code&gt;&lt;/pre&gt;
+编译运行：&lt;code&gt;g++ hello.cpp -o hello &amp;amp;&amp;amp; ./hello&lt;/code&gt;。看到 &quot;Hello, C++!&quot; 即成功。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;1.2 基本语法&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;变量与类型&lt;/strong&gt;：C++ 是静态类型语言。常见类型：&lt;code&gt;int&lt;/code&gt; (整数)、&lt;code&gt;double&lt;/code&gt; (浮点)、&lt;code&gt;char&lt;/code&gt; (字符)、&lt;code&gt;bool&lt;/code&gt; (真假)、&lt;code&gt;std::string&lt;/code&gt; (字符串)。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;  // 字符串库
+int main() {
+    int age = 25;  // 声明并初始化
+    double pi = 3.14159;
+    std::string name = &quot;Alice&quot;;
+    bool is_student = true;
+
+    std::cout &amp;lt;&amp;lt; &quot;Name: &quot; &amp;lt;&amp;lt; name &amp;lt;&amp;lt; &quot;, Age: &quot; &amp;lt;&amp;lt; age &amp;lt;&amp;lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;输入输出&lt;/strong&gt;：用 &lt;code&gt;std::cin&lt;/code&gt; 输入。&lt;pre&gt;&lt;code&gt;int main() {
+    int num;
+    std::cout &amp;lt;&amp;lt; &quot;Enter a number: &quot;;
+    std::cin &amp;gt;&amp;gt; num;
+    std::cout &amp;lt;&amp;lt; &quot;You entered: &quot; &amp;lt;&amp;lt; num &amp;lt;&amp;lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;控制流&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;if-else&lt;/strong&gt;：&lt;pre&gt;&lt;code&gt;if (age &amp;gt;= 18) {
+    std::cout &amp;lt;&amp;lt; &quot;Adult&quot; &amp;lt;&amp;lt; std::endl;
+} else {
+    std::cout &amp;lt;&amp;lt; &quot;Minor&quot; &amp;lt;&amp;lt; std::endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;循环&lt;/strong&gt;：for、while。&lt;pre&gt;&lt;code&gt;for (int i = 0; i &amp;lt; 5; ++i) {  // ++i 是自增
+    std::cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &quot; &quot;;
+}  // 输出: 0 1 2 3 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;switch&lt;/strong&gt;：多分支。&lt;pre&gt;&lt;code&gt;switch (day) {
+    case 1: std::cout &amp;lt;&amp;lt; &quot;Monday&quot;; break;
+    default: std::cout &amp;lt;&amp;lt; &quot;Other&quot;; break;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;写程序计算两个数的和、差。&lt;/li&gt;
+&lt;li&gt;用循环打印 1-100 的偶数。&lt;/li&gt;
+&lt;li&gt;输入成绩，输出等级 (A:90+ 等)。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h4&gt;阶段 2: 核心概念&lt;/h4&gt;
+&lt;p&gt;掌握内存和函数，为 OOP 铺路。&lt;/p&gt;
+&lt;h5&gt;2.1 数组与字符串&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;：固定大小集合。&lt;code&gt;int arr[5] = {1,2,3,4,5};&lt;/code&gt;。访问：&lt;code&gt;arr[0]&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+int main() {
+    int scores[3] = {85, 92, 78};
+    for (int i = 0; i &amp;lt; 3; ++i) {
+        std::cout &amp;lt;&amp;lt; scores[i] &amp;lt;&amp;lt; &quot; &quot;;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态数组&lt;/strong&gt;：用 &lt;code&gt;new&lt;/code&gt; 分配（稍后详解指针）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;字符串&lt;/strong&gt;：&lt;code&gt;std::string&lt;/code&gt; 支持操作如 &lt;code&gt;+=&lt;/code&gt;、&lt;code&gt;length()&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;std::string text = &quot;Hello&quot;;
+text += &quot; World!&quot;;
+std::cout &amp;lt;&amp;lt; text.length();  // 11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;2.2 函数&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;定义：&lt;code&gt;返回类型 函数名(参数) { 代码; return 值; }&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+int add(int a, int b) {  // 参数
+    return a + b;
+}
+int main() {
+    int sum = add(3, 4);
+    std::cout &amp;lt;&amp;lt; sum;  // 7
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;默认参数&lt;/strong&gt;：&lt;code&gt;int multiply(int x, int y = 1) { return x * y; }&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;重载&lt;/strong&gt;：同名不同参数。&lt;pre&gt;&lt;code&gt;void print(int x) { std::cout &amp;lt;&amp;lt; x; }
+void print(double x) { std::cout &amp;lt;&amp;lt; x * 2; }  // 调用时自动匹配
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;2.3 指针与引用&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;指针&lt;/strong&gt;：存储地址。&lt;code&gt;int* p = &amp;amp;var;&lt;/code&gt;（&amp;amp; 取地址）。&lt;pre&gt;&lt;code&gt;int main() {
+    int x = 10;
+    int* ptr = &amp;amp;x;  // ptr 指向 x
+    std::cout &amp;lt;&amp;lt; *ptr;  // 解引用: 10
+    *ptr = 20;  // 修改 x 为 20
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;引用&lt;/strong&gt;：别名。&lt;code&gt;int&amp;amp; ref = x; ref = 30;&lt;/code&gt;（x 变 30）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态内存&lt;/strong&gt;：&lt;code&gt;int* arr = new int[5];&lt;/code&gt; 用完 &lt;code&gt;delete[] arr;&lt;/code&gt;（避免内存泄漏）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;写函数交换两个数（用指针）。&lt;/li&gt;
+&lt;li&gt;用数组计算平均分。&lt;/li&gt;
+&lt;li&gt;动态分配字符串数组，存储用户输入。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h4&gt;阶段 3: 面向对象编程 (OOP)&lt;/h4&gt;
+&lt;p&gt;C++ 的核心：类和对象。游戏中用于角色、场景等。&lt;/p&gt;
+&lt;h5&gt;3.1 类与对象&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;类定义&lt;/strong&gt;：封装数据和方法。&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+class Person {  // 类
+private:  // 私有：只能类内访问
+    std::string name;
+    int age;
+public:  // 公有：外部访问
+    Person(std::string n, int a) : name(n), age(a) {}  // 构造函数
+    void display() { std::cout &amp;lt;&amp;lt; name &amp;lt;&amp;lt; &quot; is &quot; &amp;lt;&amp;lt; age &amp;lt;&amp;lt; std::endl; }
+    ~Person() {}  // 析构函数（清理资源）
+};
+int main() {
+    Person p(&quot;Bob&quot;, 30);  // 对象
+    p.display();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;访问控制&lt;/strong&gt;：private（数据隐藏）、protected（继承可见）、public。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;3.2 继承与多态&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;继承&lt;/strong&gt;：子类扩展父类。&lt;code&gt;class Student : public Person { ... };&lt;/code&gt;。&lt;pre&gt;&lt;code&gt;class Student : public Person {
+private:
+    std::string major;
+public:
+    Student(std::string n, int a, std::string m) : Person(n, a), major(m) {}
+    void study() { std::cout &amp;lt;&amp;lt; &quot;Studying &quot; &amp;lt;&amp;lt; major &amp;lt;&amp;lt; std::endl; }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多态&lt;/strong&gt;：虚函数实现动态绑定。&lt;pre&gt;&lt;code&gt;class Animal {
+public:
+    virtual void sound() { std::cout &amp;lt;&amp;lt; &quot;Generic sound&quot; &amp;lt;&amp;lt; std::endl; }  // 虚函数
+    virtual ~Animal() {}  // 虚析构
+};
+class Dog : public Animal {
+public:
+    void sound() override { std::cout &amp;lt;&amp;lt; &quot;Woof!&quot; &amp;lt;&amp;lt; std::endl; }  // 重写
+};
+int main() {
+    Animal* pet = new Dog();  // 基类指针指向子类
+    pet-&amp;gt;sound();  // 多态: Woof!
+    delete pet;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;3.3 其他 OOP 特性&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;友元&lt;/strong&gt;：允许外部访问私有。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;运算符重载&lt;/strong&gt;：如 &lt;code&gt;+&lt;/code&gt; for 自定义类型。&lt;pre&gt;&lt;code&gt;class Vector {
+public:
+    int x, y;
+    Vector(int a=0, int b=0) : x(a), y(b) {}
+    Vector operator+(const Vector&amp;amp; other) { return Vector(x + other.x, y + other.y); }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建 &lt;code&gt;Shape&lt;/code&gt; 基类，派生 &lt;code&gt;Circle&lt;/code&gt;、&lt;code&gt;Rectangle&lt;/code&gt;，计算面积（多态）。&lt;/li&gt;
+&lt;li&gt;继承 &lt;code&gt;Vehicle&lt;/code&gt;，实现 &lt;code&gt;Car&lt;/code&gt; 的加速方法。&lt;/li&gt;
+&lt;li&gt;用类管理银行账户（存款、取款）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h4&gt;阶段 4: 标准模板库 (STL)&lt;/h4&gt;
+&lt;p&gt;STL 提供现成容器和算法，游戏中用于管理敌人列表、路径查找。&lt;/p&gt;
+&lt;h5&gt;4.1 容器&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;vector&lt;/strong&gt;：动态数组。&lt;pre&gt;&lt;code&gt;#include &amp;lt;vector&amp;gt;
+std::vector&amp;lt;int&amp;gt; nums = {1,2,3};
+nums.push_back(4);  // 添加
+for (int n : nums) { std::cout &amp;lt;&amp;lt; n &amp;lt;&amp;lt; &quot; &quot;; }  // 范围 for
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;map&lt;/strong&gt;：键值对（字典）。&lt;code&gt;std::map&amp;lt;std::string, int&amp;gt; scores; scores[&quot;Alice&quot;] = 90;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;set&lt;/strong&gt;：有序唯一集合。&lt;code&gt;std::set&amp;lt;int&amp;gt; unique{1,2,2};&lt;/code&gt;（自动去重）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;4.2 算法&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;&lt;/code&gt;&lt;pre&gt;&lt;code&gt;std::sort(nums.begin(), nums.end());  // 排序
+auto it = std::find(nums.begin(), nums.end(), 3);  // 查找
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用 vector 存储学生成绩，排序输出。&lt;/li&gt;
+&lt;li&gt;用 map 实现单词计数器。&lt;/li&gt;
+&lt;li&gt;用 set 去除数组重复元素。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h4&gt;阶段 5: 高级主题&lt;/h4&gt;
+&lt;p&gt;为游戏添加鲁棒性和并发。&lt;/p&gt;
+&lt;h5&gt;5.1 异常处理&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;try { ... } catch (const std::exception&amp;amp; e) { std::cout &amp;lt;&amp;lt; e.what(); }&lt;/code&gt;&lt;pre&gt;&lt;code&gt;try {
+    int x = std::stoi(&quot;abc&quot;);  // 转换失败抛异常
+} catch (const std::invalid_argument&amp;amp; e) {
+    std::cout &amp;lt;&amp;lt; &quot;Invalid input: &quot; &amp;lt;&amp;lt; e.what() &amp;lt;&amp;lt; std::endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;5.2 文件 I/O&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#include &amp;lt;fstream&amp;gt;&lt;/code&gt;&lt;pre&gt;&lt;code&gt;std::ofstream file(&quot;data.txt&quot;);
+file &amp;lt;&amp;lt; &quot;Score: 100&quot; &amp;lt;&amp;lt; std::endl;
+file.close();
+
+std::ifstream infile(&quot;data.txt&quot;);
+std::string line;
+while (std::getline(infile, line)) {
+    std::cout &amp;lt;&amp;lt; line &amp;lt;&amp;lt; std::endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;5.3 多线程&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#include &amp;lt;thread&amp;gt;&lt;/code&gt;、&lt;code&gt;#include &amp;lt;mutex&amp;gt;&lt;/code&gt;&lt;pre&gt;&lt;code&gt;void task() { std::cout &amp;lt;&amp;lt; &quot;Thread running&quot; &amp;lt;&amp;lt; std::endl; }
+int main() {
+    std::thread t(task);  // 新线程
+    t.join();  // 等待结束
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+游戏中用于后台加载资源。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4&gt;阶段 6: 开发入门&lt;/h4&gt;
+&lt;p&gt;现在用 SFML 库开发游戏。SFML 是简单快速的多媒体库，支持 2D 图形、音频、输入。&lt;/p&gt;
+&lt;h5&gt;6.1 安装 SFML&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;下载 &lt;a href=&quot;https://www.sfml-dev.org/download.php&quot;&gt;SFML&lt;/a&gt;（匹配你的系统）。&lt;/li&gt;
+&lt;li&gt;Windows：链接库到项目（VS Code: tasks.json 添加 &lt;code&gt;-lsfml-graphics -lsfml-window -lsfml-system&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;编译：&lt;code&gt;g++ main.cpp -o game -lsfml-graphics -lsfml-window -lsfml-system&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;6.2 基本窗口与事件&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;SFML/Graphics.hpp&amp;gt;
+int main() {
+    sf::RenderWindow window(sf::VideoMode(800, 600), &quot;My Game&quot;);  // 创建窗口
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) window.close();  // 关闭事件
+        }
+        window.clear(sf::Color::Black);  // 清屏
+        window.display();  // 刷新
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行：黑窗口，可关闭。&lt;/p&gt;
+&lt;h5&gt;6.3 图形与精灵&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;加载图片：&lt;code&gt;sf::Texture texture; texture.loadFromFile(&quot;sprite.png&quot;); sf::Sprite sprite(texture);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;// 在循环中
+sf::CircleShape shape(50);  // 圆形
+shape.setFillColor(sf::Color::Red);
+window.draw(shape);  // 绘制
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;6.4 输入与物理&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;键盘：&lt;code&gt;if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) { sprite.move(-5, 0); }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;简单物理：用时间步（&lt;code&gt;sf::Clock&lt;/code&gt;）更新位置、碰撞（&lt;code&gt;getGlobalBounds().intersects&lt;/code&gt;）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;6.5 完整示例：Pong 游戏&lt;/h5&gt;
+&lt;p&gt;实现简单 Pong（球、两个拍子、得分）。完整代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;SFML/Graphics.hpp&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+
+int main() {
+    sf::RenderWindow window(sf::VideoMode(800, 600), &quot;Pong&quot;);
+    sf::RectangleShape paddle1({10, 100}), paddle2({10, 100});  // 拍子
+    paddle1.setPosition(10, 250); paddle2.setPosition(780, 250);
+    sf::CircleShape ball(10); ball.setPosition(400, 300);  // 球
+    sf::Vector2f ballVel(-5, 3);  // 速度
+    int score1 = 0, score2 = 0;
+
+    sf::Font font; font.loadFromFile(&quot;arial.ttf&quot;);  // 需要字体文件，或用系统字体
+    sf::Text scoreText; scoreText.setFont(font); scoreText.setCharacterSize(24);
+
+    sf::Clock clock;
+    while (window.isOpen()) {
+        sf::Time dt = clock.restart();  // 时间步
+        float deltaTime = dt.asSeconds();
+
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) window.close();
+        }
+
+        // 输入
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) paddle1.move(0, -300 * deltaTime);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) paddle1.move(0, 300 * deltaTime);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) paddle2.move(0, -300 * deltaTime);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) paddle2.move(0, 300 * deltaTime);
+
+        // 更新球
+        ball.move(ballVel * deltaTime * 60);  // 假设 60 FPS
+        // 墙壁反弹
+        if (ball.getPosition().y &amp;lt; 0 || ball.getPosition().y &amp;gt; 590) ballVel.y = -ballVel.y;
+        // 拍子碰撞
+        if (ball.getGlobalBounds().intersects(paddle1.getGlobalBounds()) ||
+            ball.getGlobalBounds().intersects(paddle2.getGlobalBounds())) {
+            ballVel.x = -ballVel.x;
+        }
+        // 得分
+        if (ball.getPosition().x &amp;lt; 0) { score2++; ball.setPosition(400, 300); ballVel.x = 5; }
+        if (ball.getPosition().x &amp;gt; 790) { score1++; ball.setPosition(400, 300); ballVel.x = -5; }
+
+        // 绘制
+        window.clear();
+        window.draw(paddle1); window.draw(paddle2); window.draw(ball);
+        scoreText.setString(&quot;Score: &quot; + std::to_string(score1) + &quot; - &quot; + std::to_string(score2));
+        window.draw(scoreText);
+        window.display();
+    }
+    return 0;
+}
+---
+该文章撰写素材来自平时课程时问grok的问题总结而来，由grok优化格式&lt;/code&gt;&lt;/pre&gt;
 </content:encoded></item><item><title>从 C 语言到 Java</title><link>https://windholm.dpdns.org/posts/itplace-java/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-java/</guid><description>用更自然的方式讲 C 语言和 Java 的入门路径，重点放在理解思路和实际编码感受上。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从 C 语言到 Java&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;如果你刚开始学编程，我会更建议先碰一碰 C，再去看 Java。C 语言会把很多底层概念直接摊开给你看，比如变量、函数、内存和程序入口；而 Java 会在这个基础上，带你进入更清晰的面向对象世界。&lt;/p&gt;
