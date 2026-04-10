@@ -677,22 +677,22 @@ if (document.readyState === 'loading') {
 <li>我的博客: <a href="https://blog.cuteleaf.cn/">https://blog.cuteleaf.cn</a></li>
 <li>使用文档: <a href="https://docs-firefly.cuteleaf.cn/">https://docs-firefly.cuteleaf.cn</a></li>
 <li>开源地址: <a href="https://github.com/CuteLeaf/Firefly">https://github.com/CuteLeaf/Firefly</a></li>
-</ul><a id="GCf1duaj-card" class="card-github fetch-waiting no-styling" href="https://github.com/CuteLeaf/Firefly" target="_blank" repo="CuteLeaf/Firefly"><div class="gc-titlebar"><div class="gc-titlebar-left"><div class="gc-owner"><div id="GCf1duaj-avatar" class="gc-avatar"></div><div class="gc-user">CuteLeaf</div></div><div class="gc-divider">/</div><div class="gc-repo">Firefly</div></div><div class="github-logo"></div></div><div id="GCf1duaj-description" class="gc-description">Waiting for api.github.com...</div><div class="gc-infobar"><div id="GCf1duaj-stars" class="gc-stars">00K</div><div id="GCf1duaj-forks" class="gc-forks">0K</div><div id="GCf1duaj-license" class="gc-license">0K</div><span id="GCf1duaj-language" class="gc-language">Waiting...</span></div><script id="GCf1duaj-script" type="text/javascript" defer>
+</ul><a id="GCevw3cv-card" class="card-github fetch-waiting no-styling" href="https://github.com/CuteLeaf/Firefly" target="_blank" repo="CuteLeaf/Firefly"><div class="gc-titlebar"><div class="gc-titlebar-left"><div class="gc-owner"><div id="GCevw3cv-avatar" class="gc-avatar"></div><div class="gc-user">CuteLeaf</div></div><div class="gc-divider">/</div><div class="gc-repo">Firefly</div></div><div class="github-logo"></div></div><div id="GCevw3cv-description" class="gc-description">Waiting for api.github.com...</div><div class="gc-infobar"><div id="GCevw3cv-stars" class="gc-stars">00K</div><div id="GCevw3cv-forks" class="gc-forks">0K</div><div id="GCevw3cv-license" class="gc-license">0K</div><span id="GCevw3cv-language" class="gc-language">Waiting...</span></div><script id="GCevw3cv-script" type="text/javascript" defer>
       fetch('https://api.github.com/repos/CuteLeaf/Firefly', { referrerPolicy: "no-referrer" }).then(response => response.json()).then(data => {
-        document.getElementById('GCf1duaj-description').innerText = data.description?.replace(/:[a-zA-Z0-9_]+:/g, '') || "Description not set";
-        document.getElementById('GCf1duaj-language').innerText = data.language;
-        document.getElementById('GCf1duaj-forks').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll(" ", '');
-        document.getElementById('GCf1duaj-stars').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll(" ", '');
-        const avatarEl = document.getElementById('GCf1duaj-avatar');
+        document.getElementById('GCevw3cv-description').innerText = data.description?.replace(/:[a-zA-Z0-9_]+:/g, '') || "Description not set";
+        document.getElementById('GCevw3cv-language').innerText = data.language;
+        document.getElementById('GCevw3cv-forks').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll(" ", '');
+        document.getElementById('GCevw3cv-stars').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll(" ", '');
+        const avatarEl = document.getElementById('GCevw3cv-avatar');
         avatarEl.style.backgroundImage = 'url(' + data.owner.avatar_url + ')';
         avatarEl.style.backgroundColor = 'transparent';
-        document.getElementById('GCf1duaj-license').innerText = data.license?.spdx_id || "no-license";
-        document.getElementById('GCf1duaj-card').classList.remove("fetch-waiting");
-        console.log("[GITHUB-CARD] Loaded card for CuteLeaf/Firefly | GCf1duaj.")
+        document.getElementById('GCevw3cv-license').innerText = data.license?.spdx_id || "no-license";
+        document.getElementById('GCevw3cv-card').classList.remove("fetch-waiting");
+        console.log("[GITHUB-CARD] Loaded card for CuteLeaf/Firefly | GCevw3cv.")
       }).catch(err => {
-        const c = document.getElementById('GCf1duaj-card');
+        const c = document.getElementById('GCevw3cv-card');
         c?.classList.add("fetch-error");
-        console.warn("[GITHUB-CARD] (Error) Loading card for CuteLeaf/Firefly | GCf1duaj.")
+        console.warn("[GITHUB-CARD] (Error) Loading card for CuteLeaf/Firefly | GCevw3cv.")
       })
     </script></a><img src="/assets/images/firefly.png"></section>
 <section><h2 id="-技术架构">🚀 技术架构<a class="anchor" href="#-技术架构"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><ul>

@@ -1,83 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风屿你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>Python 学习整理</title><link>https://windholm.dpdns.org/posts/itplace-python/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-python/</guid><description>用更轻松的方式讲 Python 的入门思路，先建立手感，再慢慢扩展到日常脚本和小项目。</description><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Python 入门：先把脚本跑起来&lt;/h1&gt;
-&lt;h2&gt;引言&lt;/h2&gt;
-&lt;p&gt;如果你想找一门上手快、读起来也比较顺的语言，Python 很适合先接触一下。它的语法不算复杂，很多时候你可以先写出来、跑起来，再慢慢理解背后的东西。&lt;/p&gt;
-&lt;p&gt;我更喜欢把 Python 当成“先做事，再补概念”的语言。它可以是你的第一门编程语言，也可以是你在写脚本、做数据处理、自动化小工具时最顺手的选择。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么先学 Python？&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;语法短，容易把注意力放在逻辑上。&lt;/li&gt;
-&lt;li&gt;适合写小工具、自动化脚本和简单项目。&lt;/li&gt;
-&lt;li&gt;很多常见任务都能很快看到结果。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;准备&lt;/strong&gt;：装好 Python 和一个编辑器就行，VS Code、PyCharm 都可以。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;：不要一开始就追求“学完”，先学会写几个能跑的小脚本更重要。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第一步：先写一个能跑的程序&lt;/h2&gt;
-&lt;p&gt;Python 最常见的起点，就是一行 &lt;code&gt;print()&lt;/code&gt;。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;print(&quot;Hello, Python!&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;看起来很简单，但它能帮你先建立两个直觉:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;程序是从上到下执行的&lt;/li&gt;
-&lt;li&gt;输出结果是最直接的反馈&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果你已经能把这段代码跑出来，下一步就可以开始看变量和数据类型了。&lt;/p&gt;
-&lt;h2&gt;第二步：变量不用想太复杂&lt;/h2&gt;
-&lt;p&gt;Python 里定义变量很直接，不需要先声明类型。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;name = &quot;WindHolm&quot;
-year = 2025
-is_ready = True
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这类写法的好处是，你可以很快把注意力放在“这个值有什么用”，而不是先纠结语法细节。&lt;/p&gt;
-&lt;h2&gt;第三步：常用的数据结构先认识几个&lt;/h2&gt;
-&lt;p&gt;学 Python 时，下面这几种东西会经常用到:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;list&lt;/code&gt;：适合放一组有顺序的数据&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dict&lt;/code&gt;：适合做键值映射&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;tuple&lt;/code&gt;：适合存不想被改动的数据&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;set&lt;/code&gt;：适合去重和快速判断&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;items = [&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;]
-user = {&quot;name&quot;: &quot;Pars&quot;, &quot;role&quot;: &quot;author&quot;}
-tags = {&quot;python&quot;, &quot;markdown&quot;, &quot;blog&quot;}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;先不用把它们想得太抽象。你只要记住: &lt;code&gt;list&lt;/code&gt; 管顺序，&lt;code&gt;dict&lt;/code&gt; 管关系，&lt;code&gt;set&lt;/code&gt; 管去重，通常就够开始写东西了。&lt;/p&gt;
-&lt;h2&gt;第四步：把逻辑写清楚&lt;/h2&gt;
-&lt;p&gt;Python 的控制流也很直白，&lt;code&gt;if&lt;/code&gt;、&lt;code&gt;for&lt;/code&gt;、&lt;code&gt;while&lt;/code&gt; 基本就够覆盖大多数入门场景。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;score = 86
-
-if score &amp;gt;= 60:
-    print(&quot;通过&quot;)
-else:
-    print(&quot;继续加油&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;for item in items:
-    print(item)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;写这类代码时，最重要的不是花样，而是把流程表达清楚。&lt;/p&gt;
-&lt;h2&gt;第五步：开始做一点真正有用的事&lt;/h2&gt;
-&lt;p&gt;Python 真正好用的地方，在于你很快就能把它用到实际问题上。&lt;/p&gt;
-&lt;p&gt;比如:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;批量改文件名&lt;/li&gt;
-&lt;li&gt;简单的数据整理&lt;/li&gt;
-&lt;li&gt;爬取页面内容&lt;/li&gt;
-&lt;li&gt;自动化处理重复操作&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这些事情不一定复杂，但很容易让你感受到“代码真的能帮我省时间”。&lt;/p&gt;
-&lt;h2&gt;小项目建议&lt;/h2&gt;
-&lt;p&gt;如果你刚开始学 Python，我会建议从下面这些小东西做起:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;命令行计算器&lt;/li&gt;
-&lt;li&gt;简单的待办事项清单&lt;/li&gt;
-&lt;li&gt;批量重命名脚本&lt;/li&gt;
-&lt;li&gt;文本统计工具&lt;/li&gt;
-&lt;li&gt;一个小型文件整理器&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这些项目不大，但很适合把语法、逻辑和实际使用连起来。&lt;/p&gt;
-&lt;h2&gt;结尾&lt;/h2&gt;
-&lt;p&gt;Python 的优势不只是“简单”，而是它很容易让你从入门走到实用。&lt;/p&gt;
-&lt;p&gt;先把脚本跑起来，再慢慢补细节，这样学起来会轻松很多。等你开始用它解决自己的小问题时，Python 才算真正变成了你的工具。&lt;/p&gt;
-</content:encoded></item><item><title>XML 和 JSON 学习</title><link>https://windholm.dpdns.org/posts/itplace-xml-josn/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-xml-josn/</guid><description>用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;XML 和 JSON 入门&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>WindHolm - 海风屿你</title><description>WindHolm 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><link>https://windholm.dpdns.org/</link><language>zh_CN</language><item><title>XML 和 JSON 学习</title><link>https://windholm.dpdns.org/posts/itplace-xml-josn/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-xml-josn/</guid><description>用比较轻松的方式讲清 XML 和 JSON 的区别、用途和基本写法。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;XML 和 JSON 入门&lt;/h1&gt;
 &lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;如果你第一次接触数据格式，XML 和 JSON 基本就是绕不开的两位老朋友。XML 更像“把结构写清楚”，JSON 更像“把数据写轻一点”。这篇文章不想讲得太学术，只想帮你快速知道它们各自适合干什么、长什么样、什么时候该用哪个。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;为什么先看它们？&lt;/strong&gt;&lt;/p&gt;
@@ -987,6 +908,85 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;p&gt;文章涉及实际应用部分知识由Gemini提供，感谢gemini在我疯狂压力下仍然愿意理解我&lt;/p&gt;
+</content:encoded></item><item><title>Python 学习整理</title><link>https://windholm.dpdns.org/posts/itplace-python/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-python/</guid><description>用更轻松的方式讲 Python 的入门思路，先建立手感，再慢慢扩展到日常脚本和小项目。</description><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Python 入门：先把脚本跑起来&lt;/h1&gt;
+&lt;h2&gt;引言&lt;/h2&gt;
+&lt;p&gt;如果你想找一门上手快、读起来也比较顺的语言，Python 很适合先接触一下。它的语法不算复杂，很多时候你可以先写出来、跑起来，再慢慢理解背后的东西。&lt;/p&gt;
+&lt;p&gt;我更喜欢把 Python 当成“先做事，再补概念”的语言。它可以是你的第一门编程语言，也可以是你在写脚本、做数据处理、自动化小工具时最顺手的选择。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么先学 Python？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;语法短，容易把注意力放在逻辑上。&lt;/li&gt;
+&lt;li&gt;适合写小工具、自动化脚本和简单项目。&lt;/li&gt;
+&lt;li&gt;很多常见任务都能很快看到结果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;准备&lt;/strong&gt;：装好 Python 和一个编辑器就行，VS Code、PyCharm 都可以。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;：不要一开始就追求“学完”，先学会写几个能跑的小脚本更重要。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;第一步：先写一个能跑的程序&lt;/h2&gt;
+&lt;p&gt;Python 最常见的起点，就是一行 &lt;code&gt;print()&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;print(&quot;Hello, Python!&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看起来很简单，但它能帮你先建立两个直觉:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;程序是从上到下执行的&lt;/li&gt;
+&lt;li&gt;输出结果是最直接的反馈&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你已经能把这段代码跑出来，下一步就可以开始看变量和数据类型了。&lt;/p&gt;
+&lt;h2&gt;第二步：变量不用想太复杂&lt;/h2&gt;
+&lt;p&gt;Python 里定义变量很直接，不需要先声明类型。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;name = &quot;WindHolm&quot;
+year = 2025
+is_ready = True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这类写法的好处是，你可以很快把注意力放在“这个值有什么用”，而不是先纠结语法细节。&lt;/p&gt;
+&lt;h2&gt;第三步：常用的数据结构先认识几个&lt;/h2&gt;
+&lt;p&gt;学 Python 时，下面这几种东西会经常用到:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;list&lt;/code&gt;：适合放一组有顺序的数据&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dict&lt;/code&gt;：适合做键值映射&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tuple&lt;/code&gt;：适合存不想被改动的数据&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set&lt;/code&gt;：适合去重和快速判断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;items = [&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;]
+user = {&quot;name&quot;: &quot;Pars&quot;, &quot;role&quot;: &quot;author&quot;}
+tags = {&quot;python&quot;, &quot;markdown&quot;, &quot;blog&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;先不用把它们想得太抽象。你只要记住: &lt;code&gt;list&lt;/code&gt; 管顺序，&lt;code&gt;dict&lt;/code&gt; 管关系，&lt;code&gt;set&lt;/code&gt; 管去重，通常就够开始写东西了。&lt;/p&gt;
+&lt;h2&gt;第四步：把逻辑写清楚&lt;/h2&gt;
+&lt;p&gt;Python 的控制流也很直白，&lt;code&gt;if&lt;/code&gt;、&lt;code&gt;for&lt;/code&gt;、&lt;code&gt;while&lt;/code&gt; 基本就够覆盖大多数入门场景。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;score = 86
+
+if score &amp;gt;= 60:
+    print(&quot;通过&quot;)
+else:
+    print(&quot;继续加油&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;for item in items:
+    print(item)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写这类代码时，最重要的不是花样，而是把流程表达清楚。&lt;/p&gt;
+&lt;h2&gt;第五步：开始做一点真正有用的事&lt;/h2&gt;
+&lt;p&gt;Python 真正好用的地方，在于你很快就能把它用到实际问题上。&lt;/p&gt;
+&lt;p&gt;比如:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;批量改文件名&lt;/li&gt;
+&lt;li&gt;简单的数据整理&lt;/li&gt;
+&lt;li&gt;爬取页面内容&lt;/li&gt;
+&lt;li&gt;自动化处理重复操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些事情不一定复杂，但很容易让你感受到“代码真的能帮我省时间”。&lt;/p&gt;
+&lt;h2&gt;小项目建议&lt;/h2&gt;
+&lt;p&gt;如果你刚开始学 Python，我会建议从下面这些小东西做起:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;命令行计算器&lt;/li&gt;
+&lt;li&gt;简单的待办事项清单&lt;/li&gt;
+&lt;li&gt;批量重命名脚本&lt;/li&gt;
+&lt;li&gt;文本统计工具&lt;/li&gt;
+&lt;li&gt;一个小型文件整理器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些项目不大，但很适合把语法、逻辑和实际使用连起来。&lt;/p&gt;
+&lt;h2&gt;结尾&lt;/h2&gt;
+&lt;p&gt;Python 的优势不只是“简单”，而是它很容易让你从入门走到实用。&lt;/p&gt;
+&lt;p&gt;先把脚本跑起来，再慢慢补细节，这样学起来会轻松很多。等你开始用它解决自己的小问题时，Python 才算真正变成了你的工具。&lt;/p&gt;
 </content:encoded></item><item><title>C++ 学习笔记</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>把 C++ 的入门路径整理得更自然一些，重点放在理解基础、建立手感和动手实践。</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从基础到实战&lt;/h3&gt;
 &lt;p&gt;如果你想认真学一门偏底层、但又足够灵活的语言，C++ 还是很值得碰一碰的。它既能让你看到程序到底是怎么跑起来的，也能支撑一些对性能要求比较高的场景，比如游戏、图形、工具链和实时计算。&lt;/p&gt;
 &lt;p&gt;这篇文章不会一上来就堆概念，而是按“先能跑，再理解，再写得像样”的顺序往前走。&lt;/p&gt;
