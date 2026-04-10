@@ -69,7 +69,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
     animation: {
       // 封面旋转动画
       coverRotation: {
-        enable: true, // 启用封面旋转
+        enable: false, // 启用封面旋转
         speed: 3, // 旋转速度（秒/圈）
         pauseOnHover: true, // 鼠标悬停时暂停旋转
       },
