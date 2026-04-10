@@ -1,5 +1,5 @@
 ---
-title: C++ 入门与实战：从基础到第一个小项目
+title: C++ 学习笔记
 published: 2025-11-14
 draft: false
 description: 把 C++ 的入门路径整理得更自然一些，重点放在理解基础、建立手感和动手实践。
