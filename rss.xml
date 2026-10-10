@@ -237,7 +237,7 @@ URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;WindHolm&lt;/code&gt; 主题相关：分类放 &lt;code&gt;博客指南&lt;/code&gt; 或 &lt;code&gt;文章示例&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;示例文章：尽量保持轻一点，别写得像正式文档&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>C++ 学习笔记</title><link>https://windholm.dpdns.org/posts/parallax-mapping-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/parallax-mapping-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>日后修改</description><pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;视差映射&lt;/h1&gt;
+</content:encoded></item><item><title>视差映射</title><link>https://windholm.dpdns.org/posts/parallax-mapping-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/parallax-mapping-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>日后修改</description><pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;视差映射&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本文是一次 Unity 实现记录，重点放在实际写 Shader 时遇到的步骤和问题。&lt;/p&gt;
 &lt;/blockquote&gt;
