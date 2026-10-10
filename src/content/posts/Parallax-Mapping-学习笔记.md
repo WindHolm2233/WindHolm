@@ -1,5 +1,5 @@
 ---
-title: C++ 学习笔记
+title: 视差映射
 published: 2026-10-10
 draft: false
 description: 日后修改
