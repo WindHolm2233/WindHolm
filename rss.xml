@@ -237,6 +237,144 @@ URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;WindHolm&lt;/code&gt; 主题相关：分类放 &lt;code&gt;博客指南&lt;/code&gt; 或 &lt;code&gt;文章示例&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;示例文章：尽量保持轻一点，别写得像正式文档&lt;/li&gt;
 &lt;/ul&gt;
+</content:encoded></item><item><title>C++ 学习笔记</title><link>https://windholm.dpdns.org/posts/parallax-mapping-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/parallax-mapping-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>日后修改</description><pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;视差映射&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文是一次 Unity 实现记录，重点放在实际写 Shader 时遇到的步骤和问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;视差映射和法线映射经常一起使用，但两者解决的问题并不完全相同。法线贴图主要改变光照计算中的法线方向，视差映射则改变纹理的采样位置。它们都没有真正改变模型表面，却能让一个平面看起来更有细节。单独使用法线贴图时，砖块的轮廓不会随着视角移动；加入视差之后，这种变化会明显一些。&lt;/p&gt;
+&lt;p&gt;视差映射与位移映射技术密切相关。位移映射会根据纹理中存储的高度信息移动顶点，因此需要一个包含大量三角形的模型。视差映射则不需要增加顶点：它只改变片元使用的纹理坐标，即使一个平面只有两个三角形，也能模拟砖墙、木板或地面的凹凸感。&lt;/p&gt;
+&lt;h2&gt;原理&lt;/h2&gt;
+&lt;p&gt;包含每个纹素高度值的纹理称为高度图。假设片元在平面上的纹理坐标为点 &lt;code&gt;A&lt;/code&gt;，从片元指向观察者的方向为 &lt;code&gt;V&lt;/code&gt;。如果平面真的发生了位移，观察者应该看到高度表面上的点 &lt;code&gt;B&lt;/code&gt;；但实际平面仍然是平的，所以我们只能从 &lt;code&gt;A&lt;/code&gt; 出发计算 &lt;code&gt;V&lt;/code&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：高度图示例（建议插入砖墙或木板的灰度高度图）】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：高度图应用到平面后的真实位移效果】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;视差映射要做的事情其实很直接：把 &lt;code&gt;A&lt;/code&gt; 的纹理坐标挪到一个更接近 &lt;code&gt;B&lt;/code&gt; 的位置，后面的漫反射和法线采样都使用这个新坐标。最简单的做法是读取 &lt;code&gt;A&lt;/code&gt; 处的深度，用它缩放视线方向，再取平面内的两个分量作为偏移量。深度值越大，坐标移动得越远。&lt;/p&gt;
+&lt;p&gt;这种方法在大多数情况下都有效，但当高度在表面上快速变化时，估计的交点可能远离真实表面。另一个问题是，当平面旋转后，世界空间中的 &lt;code&gt;x&lt;/code&gt; 和 &lt;code&gt;y&lt;/code&gt; 不再与纹理方向一致。因此，我们把视线方向变换到切线空间。在切线空间中，向量的 &lt;code&gt;x&lt;/code&gt;、&lt;code&gt;y&lt;/code&gt; 分量始终分别沿着切线和副切线方向，可以直接作为纹理坐标偏移。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：视差映射几何示意图，标出 A、B、V 和 P】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：陡峭高度变化导致基本视差映射失真的示意图】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Unity 中的基本实现&lt;/h2&gt;
+&lt;p&gt;在 Unity 中，网格需要提供顶点位置、法线、纹理坐标和切线。副切线可以由法线和切线叉乘得到：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;float3 nWS = UnityObjectToWorldNormal(v.normal);
+float3 tWS = UnityObjectToWorldDir(v.tangent.xyz);
+float3 bWS = cross(nWS, tWS) * v.tangent.w;
+float3 viewWS = _WorldSpaceCameraPos - positionWS;
+float3 viewTS = float3(dot(viewWS, tWS), dot(viewWS, bWS), dot(viewWS, nWS));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里的 &lt;code&gt;viewTS&lt;/code&gt; 就是切线空间中的片元到视图方向。视差映射应当在片元着色器中完成，因为三角形表面上每个片元的位移都可能不同。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;float2 ParallaxMapping(float2 uv, float3 viewTS)
+{
+    viewTS = normalize(viewTS);
+    float depth = tex2D(_ParallaxMap, uv).r;
+    float2 p = viewTS.xy / max(viewTS.z, 0.05) * (depth * _Parallax);
+    return uv - p;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;_Parallax&lt;/code&gt; 是控制视差强度的参数。&lt;code&gt;viewTS.z&lt;/code&gt; 越接近零，说明观察方向越平行于表面，偏移会越大，这正是斜视角下深度感增强的原因。不过，过大的偏移也会带来明显伪影。有些实现会省略除以 &lt;code&gt;viewTS.z&lt;/code&gt; 的步骤，这种方法称为带偏移限制的视差映射，斜视角更稳定，但深度感较弱。&lt;/p&gt;
+&lt;p&gt;得到新的纹理坐标后，应使用它采样漫反射和法线贴图：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;float2 uv = ParallaxMapping(i.uv, i.viewTS);
+clip(1.0 - step(1.0, max(uv.x, uv.y)));
+clip(step(0.0, min(uv.x, uv.y)));
+float4 albedo = tex2D(_MainTex, uv);
+float3 normalTS = UnpackNormal(tex2D(_BumpMap, uv));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;偏移后的坐标可能超出 &lt;code&gt;[0, 1]&lt;/code&gt;。对墙面或地面这类平面，可以丢弃越界片元，避免纹理环绕产生边缘伪影。这个技巧并不适用于所有模型，生产项目也可以使用 Clamp 或边缘渐隐。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：法线映射与视差映射叠加后的效果对比】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：平面边缘越界伪影，以及丢弃越界片元后的修复效果】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;高度图与深度图&lt;/h2&gt;
+&lt;p&gt;实际项目中经常使用深度图，而不是直接使用高度图。深度图可以看作反转后的高度图：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;float depth = 1.0 - tex2D(_HeightMap, uv).r;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在平面上伪造“向内凹陷”通常比伪造“向外凸起”更自然。无论使用高度图还是深度图，漫反射、法线和深度纹理都应该来自同一材质，否则光照方向会与视差产生的轮廓不一致。&lt;/p&gt;
+&lt;h2&gt;陡峭视差映射&lt;/h2&gt;
+&lt;p&gt;基本视差映射只进行一次深度采样，因此在陡峭的高度变化处容易出错。陡峭视差映射把深度范围分成多个层，从顶部向下移动纹理坐标，直到找到第一次穿过表面的位置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;float2 SteepParallax(float2 uv, float3 viewTS)
+{
+    viewTS = normalize(viewTS);
+    const float layers = 16.0;
+    float layerDepth = 1.0 / layers;
+    float currentDepth = 0.0;
+    float2 deltaUV = viewTS.xy * _Parallax / layers;
+    float2 currentUV = uv;
+    float mapDepth = tex2D(_ParallaxMap, currentUV).r;
+
+    [loop]
+    while (currentDepth &amp;lt; mapDepth)
+    {
+        currentUV -= deltaUV;
+        mapDepth = tex2D(_ParallaxMap, currentUV).r;
+        currentDepth += layerDepth;
+    }
+    return currentUV;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：陡峭视差映射的分层采样和交点示意图】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;采样层数越多，结果越准确，但片元着色器的开销也越大。正视表面时位移很小，可以少采样；斜视表面时则需要更多采样：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;float facing = saturate(dot(float3(0, 0, 1), normalize(viewTS)));
+float layers = lerp(32.0, 8.0, facing);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：不同观察角度下自适应采样层数的效果】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;视差遮蔽映射&lt;/h2&gt;
+&lt;p&gt;陡峭视差映射返回第一次穿过表面的那一层，因此可能看到明显的分层。视差遮蔽映射会取得碰撞前后的两层，并在它们之间进行线性插值，从而得到更接近真实交点的纹理坐标：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;float2 previousUV = currentUV + deltaUV;
+float afterDepth = mapDepth - currentDepth;
+float beforeDepth = tex2D(_ParallaxMap, previousUV).r - currentDepth + layerDepth;
+float weight = afterDepth / (afterDepth - beforeDepth);
+return lerp(currentUV, previousUV, saturate(weight));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：视差遮蔽映射在碰撞前后两层之间进行线性插值的示意图】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【图示占位：基本视差、陡峭视差与 POM 的效果对比】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;视差遮蔽映射通常是质量和性能之间较好的折中方案。它比单次视差映射更准确，也比单纯增加大量层数更有效率；不过，在极端斜视角或高度变化非常剧烈的区域，仍可能出现轻微伪影和锯齿。&lt;/p&gt;
+&lt;h2&gt;Unity ShaderLab 完整骨架&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Shader &quot;Custom/Parallax&quot;
+{
+    Properties
+    {
+        _MainTex (&quot;Albedo&quot;, 2D) = &quot;white&quot; {}
+        _BumpMap (&quot;Normal Map&quot;, 2D) = &quot;bump&quot; {}
+        _ParallaxMap (&quot;Depth Map&quot;, 2D) = &quot;black&quot; {}
+        _Parallax (&quot;Height Scale&quot;, Range(0, 0.2)) = 0.05
+    }
+    SubShader
+    {
+        Tags { &quot;RenderType&quot;=&quot;Opaque&quot; }
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #include &quot;UnityCG.cginc&quot;
+            // 在这里放置顶点结构、TBN 计算、Parallax 函数和光照代码
+            ENDCG
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果使用 URP，应改用 &lt;code&gt;Core.hlsl&lt;/code&gt; 和 &lt;code&gt;Lighting.hlsl&lt;/code&gt;，并使用 &lt;code&gt;TransformObjectToWorld&lt;/code&gt;、&lt;code&gt;TransformWorldToHClip&lt;/code&gt;、&lt;code&gt;GetWorldSpaceViewDir&lt;/code&gt; 等 URP 函数；视差映射本身的计算过程不变。&lt;/p&gt;
+&lt;h2&gt;适用场景&lt;/h2&gt;
+&lt;p&gt;从实际效果看，视差映射更适合墙面、地面这类大平面。相机离得较远，或者观察方向接近表面法线时，基本版本已经够用；相机贴近材质并且经常斜着看时，单次采样就容易露出问题。增加层数确实能改善结果，但每个片元都要多做几次纹理读取，所以不能只追求层数。&lt;/p&gt;
+&lt;p&gt;它不会改变真实几何轮廓、阴影或碰撞体；如果需要这些效果，应使用真实位移、细分曲面或视差与几何方案结合。边缘裁剪适用于规则平面，但对于复杂模型可能造成不连续，这一点在实际项目中需要单独处理。&lt;/p&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;p&gt;这次实现下来，三种方法的差别比较清楚：基本版本最快，但在斜视角下最容易失真；分层版本改善了高度变化大的区域，却会出现一层一层的痕迹；POM 再做一次插值，效果通常更自然，不过代价也最高。实际使用时，可以先用基本版本确认纹理、切线和深度图都正确，再根据画面需求换成分层版本或 POM。&lt;/p&gt;
+&lt;p&gt;原文：&lt;a href=&quot;https://learnopengl.com/Advanced-Lighting/Parallax-Mapping&quot;&gt;LearnOpenGL — Parallax Mapping&lt;/a&gt;&lt;/p&gt;
 </content:encoded></item><item><title>途择项目文档</title><link>https://windholm.dpdns.org/posts/zhixingqiao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/zhixingqiao/</guid><description>途择是一款面向初高中、大学及已升学学生的校园成长交流平台，强调同阶段匹配、真实经验分享与互助答疑。</description><pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;途择项目文档&lt;/h1&gt;
 &lt;h2&gt;项目信息&lt;/h2&gt;
 &lt;ul&gt;
@@ -565,185 +703,6 @@ $$&lt;/p&gt;
 &lt;li&gt;光线追踪负责更真实地模拟光&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;把这几步理解清楚，后面学 OpenGL、Vulkan、PBR、Ray Tracing，都会顺很多。&lt;/p&gt;
-</content:encoded></item><item><title>VS Code + CMake + vcpkg 配置笔记</title><link>https://windholm.dpdns.org/posts/config/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/config/</guid><description>记录 Windows 下搭建 VS Code、CMake 和 vcpkg 开发环境的过程和踩坑经验。</description><pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;配置笔记&lt;/h2&gt;
-&lt;p&gt;这篇文章不是那种一步到位的官方教程，更像我自己搭环境时留下来的笔记。重点很简单: 在 Windows 下把 VS Code、CMake 和 vcpkg 这套组合跑通，少踩一些我踩过的坑。&lt;/p&gt;
-&lt;h2&gt;先搞清楚三件事&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;vcpkg&lt;/strong&gt;: 负责把第三方库装好，省去手动配置依赖。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CMake&lt;/strong&gt;: 负责组织工程和生成构建规则。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;VS Code&lt;/strong&gt;: 负责写代码和看日志，顺手就好。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;1. 先把工具装好&lt;/h3&gt;
-&lt;p&gt;把 vcpkg 放到一个稳定的路径里，再记住 &lt;code&gt;scripts/buildsystems/vcpkg.cmake&lt;/code&gt; 的位置。这个文件后面会经常用到，路径错了，后面就会一直报错。&lt;/p&gt;
-&lt;h3&gt;2. 路径写法别犯懒&lt;/h3&gt;
-&lt;p&gt;我第一次配置时最容易出问题的地方，就是在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里直接写了 Windows 反斜杠路径。结果 CMake 把它当成转义字符处理，直接报错。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;写路径时尽量用 &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如果非要用 &lt;code&gt;\&lt;/code&gt;，就记得转义成 &lt;code&gt;\\&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;看到 &lt;code&gt;Invalid character escape&lt;/code&gt;，先回头查路径&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;3. VS Code 里也要确认一下&lt;/h3&gt;
-&lt;p&gt;有时候问题不在代码，而在配置文件还指向旧路径。这个时候先别急着怀疑 CMake，先检查 VS Code 和扩展里是不是还留着老参数。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;修改全局配置&lt;/strong&gt;：在 VS Code 的 &lt;code&gt;settings.json&lt;/code&gt; 中配置 &lt;code&gt;cmake.configureSettings&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;强制指定工具链&lt;/strong&gt;：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;&quot;cmake.configureSettings&quot;: {
-    &quot;CMAKE_TOOLCHAIN_FILE&quot;: &quot;安装路径/vcpkg/scripts/buildsystems/vcpkg.cmake&quot;
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;理解逻辑&lt;/strong&gt;：VS Code CMake Tools 插件在执行命令时，会通过命令行参数 &lt;code&gt;-DCMAKE_TOOLCHAIN_FILE=...&lt;/code&gt; 传入路径。命令行参数的优先级&lt;strong&gt;高于&lt;/strong&gt;脚本内部的 &lt;code&gt;set&lt;/code&gt; 指令。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;第四步：彻底清理缓存 (The &quot;Hard Reset&quot;)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;操作&lt;/strong&gt;：手动删除工程目录下的 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;原因&lt;/strong&gt;：CMake 在第一次配置失败后，会将错误的路径信息永久记录在 &lt;code&gt;CMakeCache.txt&lt;/code&gt; 中。&lt;strong&gt;如果不删除该文件，无论你怎么改设置，CMake 都会读取旧的缓存数据。&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3&gt;3. 最终正确的工作流示意图&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;VS Code&lt;/strong&gt; 发起构建指令。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CMake&lt;/strong&gt; 接收到 &lt;code&gt;CMAKE_TOOLCHAIN_FILE&lt;/code&gt; 路径。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;vcpkg&lt;/strong&gt; 介入，自动在 &lt;code&gt;vcpkg所处的路径&lt;/code&gt; 中寻找项目所需的头文件和库。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;编译器 (MSVC)&lt;/strong&gt; 最终完成代码编译。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3&gt;🌟 个人经验教训总结&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;路径习惯&lt;/strong&gt;：Windows 开发中，配置文件里的路径一律写成 &lt;code&gt;/&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;缓存意识&lt;/strong&gt;：改了配置不生效，先删 &lt;code&gt;build&lt;/code&gt; 文件夹。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;解耦配置&lt;/strong&gt;：尽量不要在 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 里写死绝对路径，通过 IDE 的设置或命令行传入，这样项目更易于移植。&lt;/li&gt;
-&lt;/ol&gt;
-</content:encoded></item><item><title>C# 学习整理</title><link>https://windholm.dpdns.org/posts/itplace-cs/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cs/</guid><description>从更自然的角度整理 C# 的入门思路，重点放在面向对象、托管环境和日常开发体验上。</description><pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C# 入门笔记&lt;/h1&gt;
-&lt;h2&gt;为什么会有 C#&lt;/h2&gt;
-&lt;p&gt;C# 的设计目标很直接，就是想让开发者写出更顺手、更安全、也更适合长期维护的代码。它不追求“写得最少”或者“最底层”，而是尽量在效率、类型安全和表达力之间找个平衡。&lt;/p&gt;
-&lt;p&gt;你可以把它理解成：既保留了托管语言的安全感，又尽量提供接近现代应用开发所需的灵活性。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;C# 好在哪里&lt;/h2&gt;
-&lt;h3&gt;1. 面向对象和组件化都很顺手&lt;/h3&gt;
-&lt;p&gt;很多人第一次接触 C#，会先感受到它的“整洁”。语言本身很强调对象、属性、事件这些概念，做界面、做业务、做工具都比较自然。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;类型系统比较统一，很多事情不用写太多样板代码。&lt;/li&gt;
-&lt;li&gt;属性、事件、委托这些特性，能让代码组织得更清楚。&lt;/li&gt;
-&lt;li&gt;编译后的程序集带元数据，反射和自动化工具都很好用。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;2. 托管环境更省心&lt;/h3&gt;
-&lt;p&gt;在 .NET 运行时里，很多内存和类型相关的问题都被统一处理了，这也是 C# 让人觉得“写起来轻松”的原因之一。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;垃圾回收帮你处理大部分内存管理。&lt;/li&gt;
-&lt;li&gt;强类型检查能减少很多低级错误。&lt;/li&gt;
-&lt;li&gt;泛型的体验也比较完整，写集合和工具类时会舒服不少。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;3. 日常开发很高效&lt;/h3&gt;
-&lt;p&gt;C# 的语法进化一直很积极，很多常见写法都在尽量减少重复劳动。你会慢慢发现，它更像是在帮你把注意力放在业务逻辑上，而不是和语言本身较劲。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;LINQ (语言集成查询)&lt;/strong&gt;：C# 的灵魂特性。它将函数式编程引入集合处理，让你能像写 SQL 一样筛选数据。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;示例&lt;/em&gt;：&lt;code&gt;var topStudents = students.Where(s =&amp;gt; s.Grade &amp;gt; 90).OrderBy(s =&amp;gt; s.Name);&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;异步模型鼻祖&lt;/strong&gt;：&lt;code&gt;async/await&lt;/code&gt; 模式最早由 C# 完善，极大地降低了高并发编程的门槛。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;语法糖武器库&lt;/strong&gt;：模式匹配 (Pattern Matching)、空合并运算符 (&lt;code&gt;??&lt;/code&gt;)、记录类型 (Records) 等，让代码简洁且易读。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;4. 跨平台与全场景覆盖 (The .NET Vision)&lt;/h3&gt;
-&lt;p&gt;从“Windows 专用”进化到“全平台全场景”。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;统一运行时&lt;/strong&gt;：通过 .NET 6/7/8+ 实现了 Windows, Linux, macOS, iOS, Android 的代码复用。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;性能跨度&lt;/strong&gt;：&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;高层&lt;/strong&gt;：支撑企业级 Web 应用 (ASP.NET Core)。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;低层&lt;/strong&gt;：通过 &lt;code&gt;Span&amp;lt;T&amp;gt;&lt;/code&gt;、&lt;code&gt;Memory&amp;lt;T&amp;gt;&lt;/code&gt; 和 &lt;code&gt;unsafe&lt;/code&gt; 模式提供接近 C++ 的指针级内存操作。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;p&gt;文章涉及实际应用部分知识由Gemini提供，感谢gemini在我疯狂压力下仍然愿意理解我&lt;/p&gt;
-</content:encoded></item><item><title>Python 学习整理</title><link>https://windholm.dpdns.org/posts/itplace-python/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-python/</guid><description>用更轻松的方式讲 Python 的入门思路，先建立手感，再慢慢扩展到日常脚本和小项目。</description><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Python 入门：先把脚本跑起来&lt;/h1&gt;
-&lt;h2&gt;引言&lt;/h2&gt;
-&lt;p&gt;如果你想找一门上手快、读起来也比较顺的语言，Python 很适合先接触一下。它的语法不算复杂，很多时候你可以先写出来、跑起来，再慢慢理解背后的东西。&lt;/p&gt;
-&lt;p&gt;我更喜欢把 Python 当成“先做事，再补概念”的语言。它可以是你的第一门编程语言，也可以是你在写脚本、做数据处理、自动化小工具时最顺手的选择。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么先学 Python？&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;语法短，容易把注意力放在逻辑上。&lt;/li&gt;
-&lt;li&gt;适合写小工具、自动化脚本和简单项目。&lt;/li&gt;
-&lt;li&gt;很多常见任务都能很快看到结果。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;准备&lt;/strong&gt;：装好 Python 和一个编辑器就行，VS Code、PyCharm 都可以。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;：不要一开始就追求“学完”，先学会写几个能跑的小脚本更重要。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第一步：先写一个能跑的程序&lt;/h2&gt;
-&lt;p&gt;Python 最常见的起点，就是一行 &lt;code&gt;print()&lt;/code&gt;。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;print(&quot;Hello, Python!&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;看起来很简单，但它能帮你先建立两个直觉:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;程序是从上到下执行的&lt;/li&gt;
-&lt;li&gt;输出结果是最直接的反馈&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果你已经能把这段代码跑出来，下一步就可以开始看变量和数据类型了。&lt;/p&gt;
-&lt;h2&gt;第二步：变量不用想太复杂&lt;/h2&gt;
-&lt;p&gt;Python 里定义变量很直接，不需要先声明类型。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;name = &quot;WindHolm&quot;
-year = 2025
-is_ready = True
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这类写法的好处是，你可以很快把注意力放在“这个值有什么用”，而不是先纠结语法细节。&lt;/p&gt;
-&lt;h2&gt;第三步：常用的数据结构先认识几个&lt;/h2&gt;
-&lt;p&gt;学 Python 时，下面这几种东西会经常用到:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;list&lt;/code&gt;：适合放一组有顺序的数据&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dict&lt;/code&gt;：适合做键值映射&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;tuple&lt;/code&gt;：适合存不想被改动的数据&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;set&lt;/code&gt;：适合去重和快速判断&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;items = [&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;]
-user = {&quot;name&quot;: &quot;Pars&quot;, &quot;role&quot;: &quot;author&quot;}
-tags = {&quot;python&quot;, &quot;markdown&quot;, &quot;blog&quot;}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;先不用把它们想得太抽象。你只要记住: &lt;code&gt;list&lt;/code&gt; 管顺序，&lt;code&gt;dict&lt;/code&gt; 管关系，&lt;code&gt;set&lt;/code&gt; 管去重，通常就够开始写东西了。&lt;/p&gt;
-&lt;h2&gt;第四步：把逻辑写清楚&lt;/h2&gt;
-&lt;p&gt;Python 的控制流也很直白，&lt;code&gt;if&lt;/code&gt;、&lt;code&gt;for&lt;/code&gt;、&lt;code&gt;while&lt;/code&gt; 基本就够覆盖大多数入门场景。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;score = 86
-
-if score &amp;gt;= 60:
-    print(&quot;通过&quot;)
-else:
-    print(&quot;继续加油&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;for item in items:
-    print(item)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;写这类代码时，最重要的不是花样，而是把流程表达清楚。&lt;/p&gt;
-&lt;h2&gt;第五步：开始做一点真正有用的事&lt;/h2&gt;
-&lt;p&gt;Python 真正好用的地方，在于你很快就能把它用到实际问题上。&lt;/p&gt;
-&lt;p&gt;比如:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;批量改文件名&lt;/li&gt;
-&lt;li&gt;简单的数据整理&lt;/li&gt;
-&lt;li&gt;爬取页面内容&lt;/li&gt;
-&lt;li&gt;自动化处理重复操作&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这些事情不一定复杂，但很容易让你感受到“代码真的能帮我省时间”。&lt;/p&gt;
-&lt;h2&gt;小项目建议&lt;/h2&gt;
-&lt;p&gt;如果你刚开始学 Python，我会建议从下面这些小东西做起:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;命令行计算器&lt;/li&gt;
-&lt;li&gt;简单的待办事项清单&lt;/li&gt;
-&lt;li&gt;批量重命名脚本&lt;/li&gt;
-&lt;li&gt;文本统计工具&lt;/li&gt;
-&lt;li&gt;一个小型文件整理器&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这些项目不大，但很适合把语法、逻辑和实际使用连起来。&lt;/p&gt;
-&lt;h2&gt;结尾&lt;/h2&gt;
-&lt;p&gt;Python 的优势不只是“简单”，而是它很容易让你从入门走到实用。&lt;/p&gt;
-&lt;p&gt;先把脚本跑起来，再慢慢补细节，这样学起来会轻松很多。等你开始用它解决自己的小问题时，Python 才算真正变成了你的工具。&lt;/p&gt;
 </content:encoded></item><item><title>C++ 学习笔记</title><link>https://windholm.dpdns.org/posts/itplace-cpp/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-cpp/</guid><description>把 C++ 的入门路径整理得更自然一些，重点放在理解基础、建立手感和动手实践。</description><pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 学习教程：从基础到实战&lt;/h3&gt;
 &lt;p&gt;如果你想认真学一门偏底层、但又足够灵活的语言，C++ 还是很值得碰一碰的。它既能让你看到程序到底是怎么跑起来的，也能支撑一些对性能要求比较高的场景，比如游戏、图形、工具链和实时计算。&lt;/p&gt;
 &lt;p&gt;这篇文章不会一上来就堆概念，而是按“先能跑，再理解，再写得像样”的顺序往前走。&lt;/p&gt;
@@ -1411,394 +1370,6 @@ print(json_str2)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;p&gt;此文章由本人学习配置语言时的总结整理而来，由gork辅助优化格式。&lt;/p&gt;
-</content:encoded></item><item><title>从 C 语言到 Java</title><link>https://windholm.dpdns.org/posts/itplace-java/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/itplace-java/</guid><description>用更自然的方式讲 C 语言和 Java 的入门路径，重点放在理解思路和实际编码感受上。</description><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;从 C 语言到 Java&lt;/h1&gt;
-&lt;h2&gt;引言&lt;/h2&gt;
-&lt;p&gt;如果你刚开始学编程，我会更建议先碰一碰 C，再去看 Java。C 语言会把很多底层概念直接摊开给你看，比如变量、函数、内存和程序入口；而 Java 会在这个基础上，带你进入更清晰的面向对象世界。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么这么安排？&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;C 先帮你建立编程直觉。&lt;/li&gt;
-&lt;li&gt;Java 再帮你把代码组织得更顺。&lt;/li&gt;
-&lt;li&gt;两者串起来看，很多概念会少一些“背诵感”。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;准备&lt;/strong&gt;：装好一个 C 编译器和 JDK 就行，IDE 不是必须，但会省很多事。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;：别只看，尽量把每段代码亲手敲一遍再跑一下。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第一部分：C语言入门&lt;/h2&gt;
-&lt;p&gt;C语言简单高效，但需注意细节（如分号和括号）。我们从基础开始。&lt;/p&gt;
-&lt;h3&gt;1.1 第一个程序：Hello World&lt;/h3&gt;
-&lt;p&gt;C程序的基本结构：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/code&gt;：引入标准输入输出库。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;main()&lt;/code&gt;：程序入口。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;printf()&lt;/code&gt;：输出。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;return 0;&lt;/code&gt;：结束。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    printf(&quot;Hello, World!\n&quot;);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;运行&lt;/strong&gt;：用&lt;code&gt;gcc hello.c -o hello&lt;/code&gt;编译，然后&lt;code&gt;./hello&lt;/code&gt;执行。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：修改输出你的名字。&lt;/p&gt;
-&lt;h3&gt;1.2 变量与数据类型&lt;/h3&gt;
-&lt;p&gt;C使用静态类型：声明时指定类型。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;int&lt;/code&gt;：整数（如10）。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;float&lt;/code&gt;：浮点数（如3.14）。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;char&lt;/code&gt;：字符（如&apos;a&apos;）。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;double&lt;/code&gt;：高精度浮点。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    int age = 25;
-    float height = 1.75;
-    char grade = &apos;A&apos;;
-    
-    printf(&quot;Age: %d, Height: %.2f, Grade: %c\n&quot;, age, height, grade);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;格式化输出&lt;/strong&gt;：&lt;code&gt;%d&lt;/code&gt;（int）、&lt;code&gt;%f&lt;/code&gt;（float）、&lt;code&gt;%c&lt;/code&gt;（char）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：计算BMI（体重/身高²），输入体重和身高。&lt;/p&gt;
-&lt;h3&gt;1.3 运算符与表达式&lt;/h3&gt;
-&lt;p&gt;基本运算：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;算术：&lt;code&gt;+ - * / %&lt;/code&gt;（取模）。&lt;/li&gt;
-&lt;li&gt;关系：&lt;code&gt;== != &amp;gt; &amp;lt; &amp;gt;= &amp;lt;=&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;逻辑：&lt;code&gt;&amp;amp;&amp;amp; || !&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例（简单计算器）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    int a = 10, b = 3;
-    printf(&quot;Sum: %d\n&quot;, a + b);
-    printf(&quot;Mod: %d\n&quot;, a % b);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：编写判断偶奇数的程序（用&lt;code&gt;% 2 == 0&lt;/code&gt;）。&lt;/p&gt;
-&lt;h3&gt;1.4 控制结构&lt;/h3&gt;
-&lt;h4&gt;条件语句（if-else）&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    int score;
-    printf(&quot;Enter score: &quot;);
-    scanf(&quot;%d&quot;, &amp;amp;score);  // 输入，用&amp;amp;取地址
-    
-    if (score &amp;gt;= 90) {
-        printf(&quot;A\n&quot;);
-    } else if (score &amp;gt;= 80) {
-        printf(&quot;B\n&quot;);
-    } else {
-        printf(&quot;C\n&quot;);
-    }
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;循环（for/while）&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;for&lt;/code&gt;：已知次数。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    for (int i = 1; i &amp;lt;= 5; i++) {
-        printf(&quot;%d &quot;, i);
-    }
-    printf(&quot;\n&quot;);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;while&lt;/code&gt;：未知次数。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    int sum = 0, num;
-    printf(&quot;Enter numbers (0 to stop): &quot;);
-    scanf(&quot;%d&quot;, &amp;amp;num);
-    while (num != 0) {
-        sum += num;
-        scanf(&quot;%d&quot;, &amp;amp;num);
-    }
-    printf(&quot;Sum: %d\n&quot;, sum);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：打印1-100的斐波那契数列（前20项）。&lt;/p&gt;
-&lt;h3&gt;1.5 函数&lt;/h3&gt;
-&lt;p&gt;函数封装代码，提高复用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-// 函数声明
-int add(int x, int y);
-
-int main() {
-    int result = add(5, 3);
-    printf(&quot;Result: %d\n&quot;, result);
-    return 0;
-}
-
-// 函数定义
-int add(int x, int y) {
-    return x + y;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：写一个&lt;code&gt;factorial(int n)&lt;/code&gt;函数计算阶乘。&lt;/p&gt;
-&lt;h3&gt;1.6 数组与简单指针&lt;/h3&gt;
-&lt;p&gt;数组：存储多个相同类型数据。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    for (int i = 0; i &amp;lt; 5; i++) {
-        printf(&quot;%d &quot;, arr[i]);
-    }
-    printf(&quot;\n&quot;);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;指针：变量的地址（C特色，Java无）。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    int num = 10;
-    int *ptr = &amp;amp;num;  // ptr指向num地址
-    printf(&quot;Value: %d, Address: %p\n&quot;, *ptr, ptr);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用数组计算10个数的平均值。避免深挖指针（初学者易错）。&lt;/p&gt;
-&lt;h3&gt;1.7 实用项目：简单计算器&lt;/h3&gt;
-&lt;p&gt;整合以上知识：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    double a, b;
-    char op;
-    
-    printf(&quot;Enter expression (a op b): &quot;);
-    scanf(&quot;%lf %c %lf&quot;, &amp;amp;a, &amp;amp;op, &amp;amp;b);
-    
-    switch (op) {
-        case &apos;+&apos;: printf(&quot;%.2f\n&quot;, a + b); break;
-        case &apos;-&apos;: printf(&quot;%.2f\n&quot;, a - b); break;
-        case &apos;*&apos;: printf(&quot;%.2f\n&quot;, a * b); break;
-        case &apos;/&apos;: 
-            if (b != 0) printf(&quot;%.2f\n&quot;, a / b);
-            else printf(&quot;Error: Division by zero\n&quot;);
-            break;
-        default: printf(&quot;Invalid operator\n&quot;);
-    }
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加循环支持多计算。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;C小结&lt;/strong&gt;：掌握后，你能写命令行工具。常见错误：忘记&lt;code&gt;;&lt;/code&gt;、&lt;code&gt;{}&lt;/code&gt;或&lt;code&gt;&amp;amp;&lt;/code&gt;输入。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第二部分：从C过渡到Java&lt;/h2&gt;
-&lt;p&gt;C和Java语法相似（Java受C影响），但Java更安全：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;相似&lt;/strong&gt;：变量、循环、if、函数（Java叫方法）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;不同&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;Java无指针、自动垃圾回收（无&lt;code&gt;free&lt;/code&gt;）。&lt;/li&gt;
-&lt;li&gt;一切是对象：用类封装。&lt;/li&gt;
-&lt;li&gt;强类型，但有自动类型转换。&lt;/li&gt;
-&lt;li&gt;输入输出：用&lt;code&gt;Scanner&lt;/code&gt;类。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;迁移提示&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;C的&lt;code&gt;main()&lt;/code&gt; → Java的&lt;code&gt;public static void main(String[] args)&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;C的&lt;code&gt;printf/scanf&lt;/code&gt; → Java的&lt;code&gt;System.out.println&lt;/code&gt;和&lt;code&gt;Scanner&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;数组：Java数组是对象，需&lt;code&gt;new&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;示例：C的Hello World到Java。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// Java版本
-public class Hello {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello, World!&quot;);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;编译运行&lt;/strong&gt;：&lt;code&gt;javac Hello.java&lt;/code&gt;，然后&lt;code&gt;java Hello&lt;/code&gt;。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;第三部分：Java扩展（OOP基础）&lt;/h2&gt;
-&lt;p&gt;Java的核心是面向对象：类、对象、继承。&lt;/p&gt;
-&lt;h3&gt;3.1 类与对象&lt;/h3&gt;
-&lt;p&gt;类：蓝图；对象：实例。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// 定义类
-class Person {
-    String name;  // 属性
-    int age;
-    
-    void greet() {  // 方法
-        System.out.println(&quot;Hi, I&apos;m &quot; + name);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Person p1 = new Person();  // 创建对象
-        p1.name = &quot;Alice&quot;;
-        p1.age = 25;
-        p1.greet();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：创建&lt;code&gt;Car&lt;/code&gt;类，有&lt;code&gt;brand&lt;/code&gt;和&lt;code&gt;drive()&lt;/code&gt;方法。&lt;/p&gt;
-&lt;h3&gt;3.2 构造函数与封装&lt;/h3&gt;
-&lt;p&gt;构造函数：初始化对象。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Person {
-    private String name;  // private：封装，保护数据
-    private int age;
-    
-    // 构造函数
-    public Person(String n, int a) {
-        name = n;
-        age = a;
-    }
-    
-    // Getter/Setter
-    public String getName() { return name; }
-    public void setName(String n) { name = n; }
-    
-    public void greet() {
-        System.out.println(&quot;Hi, I&apos;m &quot; + name + &quot;, age &quot; + age);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用Scanner输入创建Person对象。&lt;/p&gt;
-&lt;h3&gt;3.3 继承与多态&lt;/h3&gt;
-&lt;p&gt;继承：子类复用父类。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Animal {
-    void eat() { System.out.println(&quot;Eating...&quot;); }
-}
-
-class Dog extends Animal {  // 继承
-    void bark() { System.out.println(&quot;Woof!&quot;); }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-        d.eat();  // 继承的方法
-        d.bark();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;多态：父类引用子类对象。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Animal myDog = new Dog();  // 多态
-myDog.eat();  // 调用Dog的eat（若重写）
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：创建&lt;code&gt;Shape&lt;/code&gt;父类，&lt;code&gt;Circle&lt;/code&gt;子类计算面积。&lt;/p&gt;
-&lt;h3&gt;3.4 数组、集合与异常&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;数组：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;int[] nums = new int[5];
-nums[0] = 1;
-// 或 int[] nums = {1,2,3};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;集合（ArrayList，更灵活）：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;import java.util.ArrayList;
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        ArrayList&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
-        Scanner sc = new Scanner(System.in);
-        String input;
-        while (!(input = sc.nextLine()).equals(&quot;quit&quot;)) {
-            list.add(input);
-        }
-        System.out.println(list);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;异常处理：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;try {
-    int x = 10 / 0;
-} catch (ArithmeticException e) {
-    System.out.println(&quot;Error: &quot; + e.getMessage());
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;：用ArrayList存储学生成绩，计算平均分（处理输入异常）。&lt;/p&gt;
-&lt;h3&gt;3.5 实用项目：学生管理系统&lt;/h3&gt;
-&lt;p&gt;用OOP构建：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import java.util.ArrayList;
-import java.util.Scanner;
-
-class Student {
-    private String name;
-    private int score;
-    
-    public Student(String name, int score) {
-        this.name = name;
-        this.score = score;
-    }
-    
-    // Getters...
-    public String getName() { return name; }
-    public int getScore() { return score; }
-    
-    public String toString() {
-        return name + &quot;: &quot; + score;
-    }
-}
-
-public class StudentManager {
-    public static void main(String[] args) {
-        ArrayList&amp;lt;Student&amp;gt; students = new ArrayList&amp;lt;&amp;gt;();
-        Scanner sc = new Scanner(System.in);
-        
-        while (true) {
-            System.out.print(&quot;1.Add 2.List 3.Quit: &quot;);
-            int choice = sc.nextInt();
-            sc.nextLine();  // 消耗换行
-            
-            if (choice == 1) {
-                System.out.print(&quot;Name: &quot;);
-                String name = sc.nextLine();
-                System.out.print(&quot;Score: &quot;);
-                int score = sc.nextInt();
-                students.add(new Student(name, score));
-            } else if (choice == 2) {
-                for (Student s : students) {
-                    System.out.println(s);
-                }
-            } else {
-                break;
-            }
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;扩展&lt;/strong&gt;：添加删除功能、排序成绩。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Java小结&lt;/strong&gt;：OOP让代码模块化。常见错误：忘记&lt;code&gt;new&lt;/code&gt;或&lt;code&gt;import&lt;/code&gt;。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;资源&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;C：书籍《C Primer Plus》，在线：freeCodeCamp C教程。&lt;/li&gt;
-&lt;li&gt;Java：Oracle官方文档，书籍《Head First Java》，在线：Coursera “Java Programming”。&lt;/li&gt;
-&lt;li&gt;工具：VS Code（插件支持C/Java），LeetCode练习算法。&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded></item><item><title>你好，WindHolm</title><link>https://windholm.dpdns.org/posts/nihao/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/nihao/</guid><description>站点上线后的第一篇简单记录，留个正式的开始。</description><pubDate>Sun, 02 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;你好，WindHolm&lt;/h1&gt;
-&lt;p&gt;这是一篇很轻的开场白，主要是为了给站点留一个正式的起点。&lt;/p&gt;
-&lt;p&gt;后面我会在这里写一些搭建过程、功能记录和实际使用中的小问题。内容不一定总是很长，但会尽量写得直白一点，方便自己以后回头看。&lt;/p&gt;
 </content:encoded></item><item><title>Firefly 字体配置指南</title><link>https://windholm.dpdns.org/posts/firefly-font-config/</link><guid isPermaLink="true">https://windholm.dpdns.org/posts/firefly-font-config/</guid><description>介绍 Firefly 博客主题的字体配置方式、常见场景和优化建议。</description><pubDate>Fri, 24 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Firefly 字体配置指南&lt;/h1&gt;
 &lt;p&gt;Firefly 提供了一套灵活的字体管理方案，适合系统字体、Google Fonts 和自定义字体等不同场景。下面我们把配置入口、字段含义和常用优化方式梳理清楚，方便你快速上手。&lt;/p&gt;
 &lt;h2&gt;📋 目录&lt;/h2&gt;
