@@ -1,11 +1,10 @@
 ---
-title: 视差映射
+title: 视差映射Parallax Mapping
 published: 2026-10-10
 draft: false
-description: 日后修改
-tags: [视差映射]
-image: /assets/images/cpp.png
-category: unity
+description: Parallax Mapping
+tags: [视差映射, Parallax Mapping]
+category: unity Parallax Mapping
 author: Pars
 pinned: false
 ---
